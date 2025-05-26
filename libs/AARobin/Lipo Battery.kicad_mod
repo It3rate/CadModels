@@ -1,0 +1,123 @@
+(footprint "Lipo Battery"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(property "Reference" "REF**"
+		(at 0 -1 0)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(uuid "82d14e9d-ce5c-43a2-8480-28e9de47c041")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+		)
+	)
+	(property "Value" "Lipo_1cell"
+		(at 0 1 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "69da78eb-94b2-449c-8e17-b040dc7de585")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "5197b6a0-c1a5-43f9-be91-2caafdf9fdef")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "c0061e7c-26f8-49c4-8125-749b844abfa0")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr through_hole)
+	(fp_rect
+		(start -20 -9.5)
+		(end 20 10.5)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+		(uuid "db934b30-5cf5-4e09-bf9c-6c5cacd99be3")
+	)
+	(fp_text user "+"
+		(at 15.25 6.25 0)
+		(unlocked yes)
+		(layer "F.CrtYd")
+		(uuid "99da97d9-dc34-431e-8014-183835404ada")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+			(justify left bottom)
+		)
+	)
+	(fp_text user "-"
+		(at 15.25 8.75 0)
+		(unlocked yes)
+		(layer "F.CrtYd")
+		(uuid "bcd627b9-2cd1-45e6-91c1-e1b7ae95d6a4")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+			(justify left bottom)
+		)
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 3 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "d847f06a-91f6-43a7-bb5c-04c7e981bddd")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "1" smd roundrect
+		(at 18.25 5.75)
+		(size 3 2)
+		(layers "F.Cu")
+		(roundrect_rratio 0.15)
+		(thermal_bridge_angle 45)
+		(uuid "1a887893-5dec-4046-b1c4-4edeecb8791d")
+	)
+	(pad "2" smd roundrect
+		(at 18.25 8.25)
+		(size 3 2)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.15)
+		(thermal_bridge_angle 45)
+		(uuid "d2b657b1-f263-4622-99b5-0f96f4fcfa12")
+	)
+	(embedded_fonts no)
+)

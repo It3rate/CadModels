@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;stm32f411/blackPill.ioc&apos; to &apos;stm32f411.ioc&apos;" description="Rename resource &apos;blackPill.ioc&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="blackPill.ioc" name="stm32f411.ioc" stamp="1748225391381" updateReferences="true"/>
+</session>

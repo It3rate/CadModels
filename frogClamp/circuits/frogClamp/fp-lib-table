@@ -1,5 +1,4 @@
 (fp_lib_table
   (version 7)
-  (lib (name "Footprints")(type "KiCad")(uri "F:/edev/CNC/Repos/libs/Kicad-STM32/Footprints")(options "")(descr ""))
-  (lib (name "AARobin")(type "KiCad")(uri "F:/edev/CNC/Repos/libs/AARobin")(options "")(descr ""))
+  (lib (name "AARobin")(type "KiCad")(uri "F:/edev/Repos/eProjects/libs/AARobin")(options "")(descr ""))
 )

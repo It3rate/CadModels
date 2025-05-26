@@ -1,12 +1,4 @@
 (sym_lib_table
   (version 7)
-  (lib (name "YAAJ_BlackPill")(type "KiCad")(uri "F:/edev/CNC/Repos/libs/Kicad-STM32/Symbols/YAAJ_BlackPill.kicad_sym")(options "")(descr ""))
-  (lib (name "YAAJ_BlackPill_Part_Like")(type "KiCad")(uri "F:/edev/CNC/Repos/libs/Kicad-STM32/Symbols/YAAJ_BlackPill_Part_Like.kicad_sym")(options "")(descr ""))
-  (lib (name "YAAJ_BlackPill_Part_Like_SWD_Breakout")(type "KiCad")(uri "F:/edev/CNC/Repos/libs/Kicad-STM32/Symbols/YAAJ_BlackPill_Part_Like_SWD_Breakout.kicad_sym")(options "")(descr ""))
-  (lib (name "YAAJ_BlackPill_SWD_Breakout")(type "KiCad")(uri "F:/edev/CNC/Repos/libs/Kicad-STM32/Symbols/YAAJ_BlackPill_SWD_Breakout.kicad_sym")(options "")(descr ""))
-  (lib (name "YAAJ_BluePill")(type "KiCad")(uri "F:/edev/CNC/Repos/libs/Kicad-STM32/Symbols/YAAJ_BluePill.kicad_sym")(options "")(descr ""))
-  (lib (name "YAAJ_BluePill_Part_Like")(type "KiCad")(uri "F:/edev/CNC/Repos/libs/Kicad-STM32/Symbols/YAAJ_BluePill_Part_Like.kicad_sym")(options "")(descr ""))
-  (lib (name "YAAJ_BluePill_Part_Like_SWD_Breakout")(type "KiCad")(uri "F:/edev/CNC/Repos/libs/Kicad-STM32/Symbols/YAAJ_BluePill_Part_Like_SWD_Breakout.kicad_sym")(options "")(descr ""))
-  (lib (name "YAAJ_BluePill_SWD_Breakout")(type "KiCad")(uri "F:/edev/CNC/Repos/libs/Kicad-STM32/Symbols/YAAJ_BluePill_SWD_Breakout.kicad_sym")(options "")(descr ""))
-  (lib (name "AARobin")(type "KiCad")(uri "F:/edev/CNC/Repos/libs/AARobin.kicad_sym")(options "")(descr ""))
+  (lib (name "AARobin")(type "KiCad")(uri "F:/edev/Repos/eProjects/libs/AARobin.kicad_sym")(options "")(descr ""))
 )
