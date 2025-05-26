@@ -1,2 +1,18 @@
 *.FCBak
 Models*
+*-backup
+
+# KiCad temporary and backup files
+*.bak
+*.kicad_pcb-bak
+*.sch-bak
+*-cache.lib
+*.pro-bak
+*.kicad_prl
+# 3D print files
+*.stl
+*.gcode
+# Other generated files
+*.o
+*.elf
+*.bin
