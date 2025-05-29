@@ -1,2 +1,6 @@
 1748225301504	Delete resource 'FrogClamp/blackPill.ioc'
 1748225421425	Delete resource 'stm32f411'
+1748485648770	Delete resource 'FrogClamp/Core/Inc/BME280_STM32.h'
+1748485660122	Delete resource 'FrogClamp/Core/Src/BME280_STM32.c'
+1748486119299	Delete resource 'FrogClamp/Core/Src/bme280.c'
+1748486121305	Delete resource 'FrogClamp/Core/Inc/bme280.h'

@@ -1,0 +1,12 @@
+../Core/Src/Tm1638.cpp:16:1:Tm1638::Tm1638(SPI_HandleTypeDef*, GPIO_TypeDef*, uint16_t, GPIO_TypeDef*, uint16_t)	40	static
+../Core/Src/Tm1638.cpp:25:6:void Tm1638::test()	16	static
+../Core/Src/Tm1638.cpp:40:6:void Tm1638::turnOnFull()	24	static
+../Core/Src/Tm1638.cpp:44:6:void Tm1638::turnOn(uint8_t)	24	static
+../Core/Src/Tm1638.cpp:49:6:void Tm1638::clear()	24	static
+../Core/Src/Tm1638.cpp:59:6:void Tm1638::writeCharTo(uint8_t, char)	24	static
+../Core/Src/Tm1638.cpp:76:6:void Tm1638::writeLed(uint8_t, bool)	16	static
+../Core/Src/Tm1638.cpp:81:6:void Tm1638::writeHexTo(uint8_t, uint8_t, uint32_t)	24	static
+../Core/Src/Tm1638.cpp:88:9:uint8_t Tm1638::readButtons()	32	static
+../Core/Src/Tm1638.cpp:105:6:void Tm1638::setMode(const uint8_t*)	16	static
+../Core/Src/Tm1638.cpp:111:6:void Tm1638::writeTo(uint8_t, uint8_t)	16	static
+../Core/Src/Tm1638.cpp:121:6:void Tm1638::hexTo(char, uint8_t)	24	static

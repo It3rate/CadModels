@@ -1,0 +1,5 @@
+../Core/Src/EventLoop.cpp:9:6:void HAL_GPIO_EXTI_Callback(uint16_t)	2
+../Core/Src/EventLoop.cpp:17:6:void EventLoopCpp()	2
+../Core/Src/EventLoop.cpp:33:10:void EventLoopC()	1
+../Core/Src/EventLoop.cpp:37:1:void __static_initialization_and_destruction_0(int, int)	3
+../Core/Src/EventLoop.cpp:37:1:cpp)	1

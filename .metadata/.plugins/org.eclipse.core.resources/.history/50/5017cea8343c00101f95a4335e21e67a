@@ -1,0 +1,13 @@
+/*
+ * BME280.h
+ *
+ *  Created on: May 28, 2025
+ *      Author: Robin
+ */
+
+#ifndef INC_BME280_H_
+#define INC_BME280_H_
+
+
+
+#endif /* INC_BME280_H_ */

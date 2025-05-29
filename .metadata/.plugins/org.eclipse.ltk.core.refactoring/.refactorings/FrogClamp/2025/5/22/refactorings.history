@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;FrogClamp/Core/Inc/BME280.h&apos; to &apos;bme280.h&apos;" description="Rename resource &apos;BME280.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Core/Inc/BME280.h" name="bme280.h" stamp="1748485739625" updateReferences="true"/>
+</session>

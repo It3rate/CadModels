@@ -1,0 +1,10 @@
+11:28:56 **** Build of configuration Debug for project FrogClamp ****
+make -j16 all 
+arm-none-eabi-size  FrogClamp.elf 
+   text	   data	    bss	    dec	    hex	filename
+  10008	     12	   1652	  11672	   2d98	FrogClamp.elf
+Finished building: default.size.stdout
+ 
+
+11:28:56 Build Finished. 0 errors, 0 warnings. (took 367ms)
+
