@@ -21,7 +21,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "bme280.h"
+#include "bmp280.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -31,7 +31,6 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-#define BME280_API
 
 /* USER CODE END PD */
 
@@ -45,6 +44,10 @@ I2C_HandleTypeDef hi2c1;
 
 /* USER CODE BEGIN PV */
 
+BMP280_HandleTypedef bmp280;
+float pressure, temperature, humidity; // Humidity unused for BMP280
+uint16_t size;
+uint8_t Data[256];
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -57,7 +60,6 @@ static void MX_I2C1_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-float Temperature, Pressure, Humidity;
 
 /* USER CODE END 0 */
 
@@ -93,6 +95,20 @@ int main(void)
   MX_I2C1_Init();
   /* USER CODE BEGIN 2 */
 
+  // Initialize BMP280 with default parameters
+  bmp280_init_default_params(&bmp280.params);
+  bmp280.addr = BMP280_I2C_ADDRESS_0; // 0x76 (SDO low), use BMP280_I2C_ADDRESS_1 (0x77) if SDO high
+  bmp280.i2c = &hi2c1;
+
+
+  // Attempt to initialize BMP280
+  while (!bmp280_init(&bmp280, &bmp280.params)) {
+    HAL_Delay(2000);
+  }
+
+  // Check if BMP280 or BME280 (library supports both)
+  bool bme280p = bmp280.id == BME280_CHIP_ID;
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -102,8 +118,15 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	  BME280_I2C_bus_read();
-	  HAL_Delay (500);
+	  // Read temperature and pressure
+	    if (!bmp280_read_float(&bmp280, &temperature, &pressure, &humidity)) {
+	    	// success
+	    } else {
+	    	// fail to read
+	    }
+
+	    HAL_Delay(2000); // Read every 2 seconds
+
   }
   /* USER CODE END 3 */
 }

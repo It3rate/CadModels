@@ -16,3 +16,4 @@ Models*
 *.o
 *.elf
 *.bin
+/.metadata/
