@@ -1,0 +1,4 @@
+../Core/Src/EventLoop.cpp:12:6:void onPirChangedHandler(Pir*)	16	static
+../Core/Src/EventLoop.cpp:16:6:void EventLoopCpp()	24	static
+../Core/Src/EventLoop.cpp:29:13:void HAL_GPIO_EXTI_Callback(uint16_t)	16	static
+../Core/Src/EventLoop.cpp:36:6:void EventLoopC()	8	static

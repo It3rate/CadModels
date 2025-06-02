@@ -1,0 +1,11 @@
+../Core/Src/EventLoop.cpp:34:6:void HAL_ADC_ConvHalfCpltCallback(ADC_HandleTypeDef*)	1
+../Core/Src/EventLoop.cpp:38:6:void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef*)	1
+../Core/Src/EventLoop.cpp:44:13:void HAL_GPIO_EXTI_Callback(uint16_t)	1
+../Core/Src/EventLoop.cpp:63:6:void HAL_UART_RxCpltCallback(UART_HandleTypeDef*)	1
+../Core/Src/EventLoop.cpp:67:6:void HAL_SPI_RxCpltCallback(SPI_HandleTypeDef*)	2
+../Core/Src/EventLoop.cpp:77:6:void onButtonChangedHandler(Joy*)	1
+../Core/Src/EventLoop.cpp:81:6:void EventLoopCpp()	5
+../Core/Src/EventLoop.cpp:134:6:void EventLoopC()	1
+../Core/Src/EventLoop.cpp:137:1:void __static_initialization_and_destruction_0(int, int)	5
+../Core/Src/EventLoop.cpp:137:1:cpp)	1
+../Core/Src/EventLoop.cpp:137:1:cpp)	1

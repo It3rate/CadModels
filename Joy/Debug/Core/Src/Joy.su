@@ -1,0 +1,10 @@
+../Core/Src/Joy.cpp:6:1:Joy::Joy(ADC_HandleTypeDef*, TIM_HandleTypeDef*, uint16_t)	24	static
+../Core/Src/Joy.cpp:14:1:Joy::~Joy()	16	static
+../Core/Src/Joy.cpp:14:1:virtual Joy::~Joy()	16	static
+../Core/Src/Joy.cpp:17:6:void Joy::attachOnButtonChanged(ButtonChangedHandler)	16	static
+../Core/Src/Joy.cpp:22:16:const uint16_t Joy::getX()	16	static
+../Core/Src/Joy.cpp:26:16:const uint16_t Joy::getY()	16	static
+../Core/Src/Joy.cpp:30:16:const uint16_t Joy::getButton()	16	static
+../Core/Src/Joy.cpp:34:17:const uint16_t* Joy::getXYButton()	16	static
+../Core/Src/Joy.cpp:38:6:void Joy::OnButtonChange(uint16_t)	16	static
+../Core/Src/Joy.cpp:51:13:void HAL_GPIO_EXTI_Callback(uint16_t)	16	static
