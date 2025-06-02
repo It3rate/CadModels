@@ -88,8 +88,8 @@ all: main-build
 main-build: PIR.elf secondary-outputs
 
 # Tool invocations
-PIR.elf PIR.map: $(OBJS) $(USER_OBJS) F:\edev\STM\car\stm32Car\PIR\STM32F411CEUX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-g++ -o "PIR.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"F:\edev\STM\car\stm32Car\PIR\STM32F411CEUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PIR.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+PIR.elf PIR.map: $(OBJS) $(USER_OBJS) D:\source\repos\CadModels\PIR\STM32F411CEUX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-g++ -o "PIR.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"D:\source\repos\CadModels\PIR\STM32F411CEUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PIR.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
