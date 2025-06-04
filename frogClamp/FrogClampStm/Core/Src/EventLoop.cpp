@@ -1,10 +1,13 @@
+#include <bmp280.hpp>
 #include "EventLoop.h"
 #include "main.h"
 #include "spi.h"
-#include "bmp280.h"
+#include "i2c.h"
 #include "NRF24L.hpp"
 
-BMP280_HandleTypedef bmp280;
+BMP280::BMP280_HandleTypedef bmp280;
+BMP280 bmpDevice = BMP280(&bmp280);
+
 float pressure, temperature, humidity; // Humidity unused for BMP280
 uint16_t size;
 uint8_t Data[256];
@@ -28,38 +31,38 @@ uint8_t buffer[] = "Hello World\n";
 #define ADC_BUF_LEN 6
 uint32_t _adcBuf[ADC_BUF_LEN];
 
-void HAL_ADC_ConvHalfCpltCallback(ADC_HandleTypeDef* hadc) {
-  //HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_SET);
-}
-
-void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc) {
-  //HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET);
-}
-
-#define IS_TX
-
-extern void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
-{
-	Interrupts::Invoke_GPIO_EXTI(GPIO_Pin);
-#ifndef IS_TX
-    if (GPIO_Pin == GPIO_PIN_2) {
-		//uint8_t status = nrfDevice.GetStatus_RXFIFO();
-		//if (status != NRF24L::FifoStatus::EMPTY) {
-		//	NRF24L::RXResult result =
-			nrfDevice.ReadPayload(nRF24_payload, &payload_length);
-			nrfDevice.ClearIRQFlags();
-
-			tmDevice.writeHexTo(6, 2, nRF24_payload[0]);
-			tmDevice.writeHexTo(4, 2, nRF24_payload[1]);
-			tmDevice.writeHexTo(2, 2, nRF24_payload[2]);
-			tmDevice.writeHexTo(0, 2, nRF24_payload[3]);
-		//}
-    }
-#endif
-}
-void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart){
-	//CDC_Transmit_FS(RX_BUF, sizeof(RX_BUF));
-}
+//void HAL_ADC_ConvHalfCpltCallback(ADC_HandleTypeDef* hadc) {
+//  //HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_SET);
+//}
+//
+//void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc) {
+//  //HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET);
+//}
+//
+//#define IS_TX
+//
+//extern void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+//{
+//	Interrupts::Invoke_GPIO_EXTI(GPIO_Pin);
+//#ifndef IS_TX
+//    if (GPIO_Pin == GPIO_PIN_2) {
+//		//uint8_t status = nrfDevice.GetStatus_RXFIFO();
+//		//if (status != NRF24L::FifoStatus::EMPTY) {
+//		//	NRF24L::RXResult result =
+//			nrfDevice.ReadPayload(nRF24_payload, &payload_length);
+//			nrfDevice.ClearIRQFlags();
+//
+//			tmDevice.writeHexTo(6, 2, nRF24_payload[0]);
+//			tmDevice.writeHexTo(4, 2, nRF24_payload[1]);
+//			tmDevice.writeHexTo(2, 2, nRF24_payload[2]);
+//			tmDevice.writeHexTo(0, 2, nRF24_payload[3]);
+//		//}
+//    }
+//#endif
+//}
+//void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart){
+//	//CDC_Transmit_FS(RX_BUF, sizeof(RX_BUF));
+//}
 
 void HAL_SPI_RxCpltCallback(SPI_HandleTypeDef *hspi)
 {
@@ -71,19 +74,19 @@ void HAL_SPI_RxCpltCallback(SPI_HandleTypeDef *hspi)
 
 }
 
-void onButtonChangedHandler(Joy* instance)
-{
-	//CDC_Transmit_FS(buffer, sizeof(buffer));
-}
+//void onButtonChangedHandler(Joy* instance)
+//{
+//	//CDC_Transmit_FS(buffer, sizeof(buffer));
+//}
 void EventLoopCpp() {
 
 	// Initialize BMP280 with default parameters
-	bmp280_init_default_params(&bmp280.params);
+	//bmp280.bmp280_init_default_params(&bmp280.params);
 	bmp280.addr = BMP280_I2C_ADDRESS_0; // 0x76 (SDO low), use BMP280_I2C_ADDRESS_1 (0x77) if SDO high
 	bmp280.i2c = &hi2c1;
 
 	// Attempt to initialize BMP280
-	while (!bmp280_init(&bmp280, &bmp280.params)) {
+	while (!bmpDevice.bmp280_init()) {
 	  HAL_Delay(2000);
 	}
 
@@ -104,7 +107,7 @@ void EventLoopCpp() {
 	HAL_Delay(100);
 	while (1) {
 		  // Read temperature and pressure
-		    if (!bmp280_read_float(&bmp280, &temperature, &pressure, &humidity)) {
+		    if (!bmpDevice.bmp280_read_float(&temperature, &pressure, &humidity)) {
 		    	// success
 		    } else {
 		    	// fail to read

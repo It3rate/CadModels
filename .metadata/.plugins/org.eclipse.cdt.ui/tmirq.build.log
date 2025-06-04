@@ -1,4 +1,4 @@
-16:18:29 **** Incremental Build of configuration Debug for project tmirq ****
+10:42:00 **** Incremental Build of configuration Debug for project tmirq ****
 make -j8 all 
 arm-none-eabi-size  tmirq.elf 
    text	   data	    bss	    dec	    hex	filename
@@ -6,5 +6,5 @@ arm-none-eabi-size  tmirq.elf
 Finished building: default.size.stdout
  
 
-16:18:29 Build Finished. 0 errors, 0 warnings. (took 312ms)
+10:42:00 Build Finished. 0 errors, 0 warnings. (took 263ms)
 

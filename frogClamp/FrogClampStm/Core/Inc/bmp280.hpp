@@ -13,6 +13,10 @@
 #include <stdint.h>
 #include <stdbool.h>
 
+class BMP280 {
+
+public:
+
 /**
  * BMP280 or BME280 address is 0x77 if SDO pin is high, and is 0x76 if
  * SDO pin is low.
@@ -115,15 +119,11 @@ typedef struct {
 
 } BMP280_HandleTypedef;
 
-/**
- * Initialize default parameters.
- * Default configuration:
- *      mode: NORAML
- *      filter: OFF
- *      oversampling: x4
- *      standby time: 250ms
- */
-void bmp280_init_default_params(bmp280_params_t *params);
+BMP280(BMP280_HandleTypedef* device);
+~BMP280();
+
+void bmp280_init_default_params();
+
 
 /**
  * Initialize BMP280 module, probes for the device, soft resets the device,
@@ -136,20 +136,20 @@ void bmp280_init_default_params(bmp280_params_t *params);
  *
  * This may be called again to soft reset the device and initialize it again.
  */
-bool bmp280_init(BMP280_HandleTypedef *dev, bmp280_params_t *params);
+bool bmp280_init();
 
 /**
  * Start measurement in forced mode.
  * The module remains in forced mode after this call.
  * Do not call this method in normal mode.
  */
-bool bmp280_force_measurement(BMP280_HandleTypedef *dev);
+bool bmp280_force_measurement();
 
 /**
  * Check if BMP280 is busy with measuring temperature/pressure.
  * Return true if BMP280 is busy.
  */
-bool bmp280_is_measuring(BMP280_HandleTypedef *dev);
+bool bmp280_is_measuring();
 
 /**
  * Read compensated temperature and pressure data:
@@ -161,7 +161,7 @@ bool bmp280_is_measuring(BMP280_HandleTypedef *dev);
  *  Humidity is optional and only read for the BME280, in percent relative
  *  humidity as a fixed point 22 bit interger and 10 bit fraction format.
  */
-bool bmp280_read_fixed(BMP280_HandleTypedef *dev, int32_t *temperature,
+bool bmp280_read_fixed(int32_t *temperature,
                        uint32_t *pressure, uint32_t *humidity);
 
 /**
@@ -171,8 +171,27 @@ bool bmp280_read_fixed(BMP280_HandleTypedef *dev, int32_t *temperature,
  *  Humidity is optional and only read for the BME280, in percent relative
  *  humidity.
  */
-bool bmp280_read_float(BMP280_HandleTypedef *dev, float *temperature,
+bool bmp280_read_float(float *temperature,
                        float *pressure, float *humidity);
+
+private:
+
+BMP280_HandleTypedef *_device;
+
+
+
+bool read_register16(uint8_t addr, uint16_t *value);
+inline int read_data(uint8_t addr, uint8_t *value, uint8_t len);
+bool read_calibration_data();
+bool read_hum_calibration_data();
+int write_register8(uint8_t addr, uint8_t value);
+
+
+inline int32_t compensate_temperature(int32_t adc_temp, int32_t *fine_temp);
+inline uint32_t compensate_pressure(int32_t adc_press, int32_t fine_temp);
+inline uint32_t compensate_humidity(int32_t adc_hum, int32_t fine_temp);
+
+};
 
 
 #endif  // __BMP280_H__

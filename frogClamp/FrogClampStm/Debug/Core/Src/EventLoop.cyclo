@@ -1,0 +1,6 @@
+../Core/Src/EventLoop.cpp:67:6:void HAL_SPI_RxCpltCallback(SPI_HandleTypeDef*)	2
+../Core/Src/EventLoop.cpp:81:6:void EventLoopCpp()	2
+../Core/Src/EventLoop.cpp:151:6:void EventLoopC()	1
+../Core/Src/EventLoop.cpp:154:1:void __static_initialization_and_destruction_0(int, int)	5
+../Core/Src/EventLoop.cpp:154:1:cpp)	1
+../Core/Src/EventLoop.cpp:154:1:cpp)	1

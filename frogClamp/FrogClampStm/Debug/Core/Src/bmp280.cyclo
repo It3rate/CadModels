@@ -1,14 +1,16 @@
-../Core/Src/bmp280.c:55:6:bmp280_init_default_params	1
-../Core/Src/bmp280.c:64:13:read_register16	2
-../Core/Src/bmp280.c:78:19:read_data	2
-../Core/Src/bmp280.c:89:13:read_calibration_data	13
-../Core/Src/bmp280.c:111:13:read_hum_calibration_data	7
-../Core/Src/bmp280.c:129:12:write_register8	2
-../Core/Src/bmp280.c:140:6:bmp280_init	17
-../Core/Src/bmp280.c:205:6:bmp280_force_measurement	3
-../Core/Src/bmp280.c:217:6:bmp280_is_measuring	3
-../Core/Src/bmp280.c:232:23:compensate_temperature	1
-../Core/Src/bmp280.c:251:24:compensate_pressure	2
-../Core/Src/bmp280.c:281:24:compensate_humidity	1
-../Core/Src/bmp280.c:300:6:bmp280_read_fixed	6
-../Core/Src/bmp280.c:334:6:bmp280_read_float	4
+../Core/Src/bmp280.cpp:31:1:BMP280::BMP280(BMP280_HandleTypedef*)	1
+../Core/Src/bmp280.cpp:35:1:BMP280::~BMP280()	1
+../Core/Src/bmp280.cpp:37:6:void BMP280::bmp280_init_default_params()	1
+../Core/Src/bmp280.cpp:46:6:bool BMP280::read_register16(uint8_t, uint16_t*)	2
+../Core/Src/bmp280.cpp:60:12:int BMP280::read_data(uint8_t, uint8_t*, uint8_t)	2
+../Core/Src/bmp280.cpp:70:6:bool BMP280::read_calibration_data()	14
+../Core/Src/bmp280.cpp:91:6:bool BMP280::read_hum_calibration_data()	8
+../Core/Src/bmp280.cpp:109:5:int BMP280::write_register8(uint8_t, uint8_t)	2
+../Core/Src/bmp280.cpp:120:6:bool BMP280::bmp280_init()	19
+../Core/Src/bmp280.cpp:185:6:bool BMP280::bmp280_force_measurement()	3
+../Core/Src/bmp280.cpp:197:6:bool BMP280::bmp280_is_measuring()	3
+../Core/Src/bmp280.cpp:212:16:int32_t BMP280::compensate_temperature(int32_t, int32_t*)	1
+../Core/Src/bmp280.cpp:230:17:uint32_t BMP280::compensate_pressure(int32_t, int32_t)	2
+../Core/Src/bmp280.cpp:259:17:uint32_t BMP280::compensate_humidity(int32_t, int32_t)	1
+../Core/Src/bmp280.cpp:277:6:bool BMP280::bmp280_read_fixed(int32_t*, uint32_t*, uint32_t*)	6
+../Core/Src/bmp280.cpp:311:6:bool BMP280::bmp280_read_float(float*, float*, float*)	4

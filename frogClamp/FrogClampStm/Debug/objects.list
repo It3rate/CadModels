@@ -1,3 +1,5 @@
+"./Core/Src/EventLoop.o"
+"./Core/Src/NRF24L.o"
 "./Core/Src/bmp280.o"
 "./Core/Src/gpio.o"
 "./Core/Src/i2c.o"

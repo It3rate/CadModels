@@ -3843,3 +3843,6 @@ java.util.ConcurrentModificationException
 
 !ENTRY org.eclipse.cdt.core 1 0 2025-06-02 11:24:42.037
 !MESSAGE Indexed 'PIR' (36 sources, 215 headers) in 7.33 sec: 16,947 declarations; 53,902 references; 1 unresolved inclusions; 92 syntax errors; 925 unresolved names (1.3%)
+
+!ENTRY com.st.stm32cube.ide.mcu.build 1 1 2025-06-03 09:23:44.492
+!MESSAGE Converted project FrogClamp to C++ in 316 (ms)
