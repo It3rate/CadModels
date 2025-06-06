@@ -274,8 +274,7 @@ inline uint32_t BMP280::compensate_humidity(int32_t adc_hum, int32_t fine_temp) 
 	return v_x1_u32r >> 12;
 }
 
-bool BMP280::bmp280_read_fixed(int32_t *temperature, uint32_t *pressure,
-		uint32_t *humidity) {
+bool BMP280::bmp280_read_fixed(int32_t *temperature, uint32_t *pressure, uint32_t *humidity) {
 	int32_t adc_pressure;
 	int32_t adc_temp;
 	uint8_t data[8];
@@ -308,8 +307,7 @@ bool BMP280::bmp280_read_fixed(int32_t *temperature, uint32_t *pressure,
 	return true;
 }
 
-bool BMP280::bmp280_read_float(float *temperature, float *pressure,
-		float *humidity) {
+bool BMP280::bmp280_read_float(float *temperature, float *pressure, float *humidity) {
 	int32_t fixed_temperature;
 	uint32_t fixed_pressure;
 	uint32_t fixed_humidity;

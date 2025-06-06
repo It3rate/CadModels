@@ -1,4 +1,4 @@
-25602818150336181
+25608065658614936
 AARobin
 BME280_brd
 
@@ -21,12 +21,33 @@ Lipo Battery
 2
 2
 AARobin
+SolenoidValve_9.0
+
+
+0
+2
+2
+AARobin
 TP4056-18650
 
 
 0
 6
 6
+AARobin
+miniPump_1.2
+
+
+0
+2
+2
+AARobin
+nRF24L01_Breakout
+nRF24L01 breakout board
+nRF24L01 adapter breakout
+0
+8
+8
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)

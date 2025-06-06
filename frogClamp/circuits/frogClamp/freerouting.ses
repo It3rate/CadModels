@@ -1,0 +1,78 @@
+(session freerouting
+  (base_design freerouting)
+  (placement
+    (resolution um 10)
+    (component "Diode_THT:D_DO-201AD_P3.81mm_Vertical_AnodeUp"
+      (place D2 2024750 -595650 front 270)
+      (place D1 2024750 -692550 front 270)
+    )
+    (component AARobin:SolenoidValve_9.0
+      (place M2 2150000 -555000 front 0)
+    )
+    (component AARobin:miniPump_1.2
+      (place M1 2445000 -945000 front 270)
+    )
+    (component "Button_Switch_SMD:SW_SPST_B3U-1100P"
+      (place SW1 1533000 -533200 front 0)
+    )
+    (component Resistor_SMD:R_1206_3216Metric
+      (place R4 1840125 -635650 front 0)
+      (place R3 1840125 -585650 front 0)
+      (place R2 1840125 -677550 front 0)
+      (place R1 1840125 -727550 front 0)
+    )
+    (component "Package_TO_SOT_SMD:TO-252-2"
+      (place Q2 1940400 -610900 front 0)
+      (place Q1 1940400 -702800 front 0)
+    )
+    (component AARobin:nRF24L01_Breakout
+      (place NRF_Board1 1290895 -1441250 front 180)
+    )
+    (component "Crystal:Resonator-2Pin_W6.0mm_H3.0mm"
+      (place BZ1 1819750 -810650 front 0)
+    )
+    (component "AARobin:TP4056-18650"
+      (place RD_TP4046Bat_brd1 1118000 -1135000 front 0)
+    )
+    (component AARobin:BlackPill
+      (place BlackPill1 1681300 -783650 front 0)
+    )
+    (component AARobin:BME280_brd
+      (place Bme280_brd1 2146400 -1025000 front 270)
+    )
+    (component "AARobin:Lipo Battery"
+      (place BT1 1130500 -760000 back 90)
+    )
+  )
+  (was_is
+  )
+  (routes 
+    (resolution um 10)
+    (parser
+      (host_cad "KiCad's Pcbnew")
+      (host_version 9.0.2)
+    )
+    (library_out 
+      (padstack "Via[0-1]_600:300_um"
+        (shape
+          (circle F.Cu 6000 0 0)
+        )
+        (shape
+          (circle B.Cu 6000 0 0)
+        )
+        (attach off)
+      )
+      (padstack "Via[0-1]_600:300_um"
+        (shape
+          (circle F.Cu 6000 0 0)
+        )
+        (shape
+          (circle B.Cu 6000 0 0)
+        )
+        (attach off)
+      )
+    )
+    (network_out 
+    )
+  )
+)
