@@ -59,6 +59,10 @@ void Error_Handler(void);
 /* Private defines -----------------------------------------------------------*/
 #define LED1_Pin GPIO_PIN_13
 #define LED1_GPIO_Port GPIOC
+#define PUMP_Pin GPIO_PIN_0
+#define PUMP_GPIO_Port GPIOB
+#define VALVE_Pin GPIO_PIN_1
+#define VALVE_GPIO_Port GPIOB
 #define NRF_SCK_Pin GPIO_PIN_10
 #define NRF_SCK_GPIO_Port GPIOB
 #define NRF_CE_Pin GPIO_PIN_12
