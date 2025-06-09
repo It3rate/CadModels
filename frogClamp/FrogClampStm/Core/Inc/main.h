@@ -65,6 +65,8 @@ void Error_Handler(void);
 #define PUMP_GPIO_Port GPIOB
 #define VALVE_Pin GPIO_PIN_1
 #define VALVE_GPIO_Port GPIOB
+#define NRF_IRQ_Pin GPIO_PIN_2
+#define NRF_IRQ_GPIO_Port GPIOB
 #define NRF_SCK_Pin GPIO_PIN_10
 #define NRF_SCK_GPIO_Port GPIOB
 #define NRF_CE_Pin GPIO_PIN_12
