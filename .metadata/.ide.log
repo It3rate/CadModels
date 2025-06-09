@@ -1,0 +1,223 @@
+2025-06-08 20:25:33,814 [INFO] ADCParametersView:116 -                Rank 1 : false
+2025-06-08 20:25:33,823 [INFO] ADCParametersView:116 -                Rank 1 : false
+2025-06-08 20:25:33,823 [INFO] ADCParametersView:116 -                Rank 1 : false
+2025-06-08 20:25:33,823 [INFO] ADCParametersView:116 -                Rank 1 : false
+2025-06-08 20:25:33,823 [INFO] ADCParametersView:116 -                Rank 1 : false
+2025-06-08 20:25:33,823 [INFO] ADCParametersView:116 -                Rank 1 : false
+2025-06-08 20:25:33,823 [INFO] ADCParametersView:116 -                Rank 1 : false
+2025-06-08 20:25:33,823 [INFO] ADCParametersView:116 -                Rank 1 : false
+2025-06-08 20:25:33,823 [INFO] ADCParametersView:116 -                Rank 1 : false
+2025-06-08 20:25:33,824 [INFO] ADCParametersView:116 -                Rank 1 : false
+2025-06-08 20:25:33,824 [INFO] ADCParametersView:116 -                Rank 1 : false
+2025-06-08 20:25:33,824 [INFO] ADCParametersView:116 -                Rank 1 : false
+2025-06-08 20:25:33,824 [INFO] ADCParametersView:116 -                Rank 1 : false
+2025-06-08 20:25:33,824 [INFO] ADCParametersView:116 -                Rank 1 : false
+2025-06-08 20:25:33,836 [INFO] ADCParametersView:116 -                Rank 1 : false
+2025-06-08 20:25:33,853 [INFO] ADCParametersView:116 -                Rank 1 : false
+2025-06-08 20:25:33,853 [INFO] ADCParametersView:116 -                Rank 1 : false
+2025-06-08 20:25:33,854 [INFO] ADCParametersView:116 -                Rank 1 : false
+2025-06-08 20:25:33,854 [INFO] ADCParametersView:116 -                Rank 1 : false
+2025-06-08 20:25:33,854 [INFO] ADCParametersView:116 -                Rank 1 : false
+2025-06-08 20:25:33,854 [INFO] ADCParametersView:116 -                Rank 1 : false
+2025-06-08 20:25:33,854 [INFO] ADCParametersView:116 -                Rank 1 : false
+2025-06-08 20:25:33,854 [INFO] ADCParametersView:116 -                Rank 1 : false
+2025-06-08 20:25:33,854 [INFO] ADCParametersView:116 -                Rank 1 : false
+2025-06-08 20:25:33,854 [INFO] ADCParametersView:116 -                Rank 1 : false
+2025-06-08 20:25:33,854 [INFO] ADCParametersView:116 -                Rank 1 : false
+2025-06-08 20:25:33,854 [INFO] ADCParametersView:116 -                Rank 1 : false
+2025-06-08 20:25:33,854 [INFO] ADCParametersView:116 -                Rank 1 : false
+2025-06-08 20:25:33,854 [INFO] ADCParametersView:116 -                Rank 1 : false
+2025-06-08 20:25:33,866 [INFO] ADCParametersView:116 -                Rank 1 : false
+2025-06-08 20:25:33,908 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2025-06-08 20:25:33,908 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2025-06-08 20:25:33,908 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2025-06-08 20:25:33,908 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2025-06-08 20:25:33,930 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2025-06-08 20:25:33,930 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2025-06-08 20:25:33,950 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2025-06-08 20:25:33,950 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2025-06-08 20:25:33,959 [INFO] ADCParametersView:116 -                Rank 1 : false
+2025-06-08 20:25:33,959 [INFO] ADCParametersView:116 -                Rank 1 : false
+2025-06-08 20:25:33,959 [INFO] ADCParametersView:116 -                Rank 1 : false
+2025-06-08 20:25:33,959 [INFO] ADCParametersView:116 -                Rank 1 : false
+2025-06-08 20:25:33,959 [INFO] ADCParametersView:116 -                Rank 1 : false
+2025-06-08 20:25:33,959 [INFO] ADCParametersView:116 -                Rank 1 : false
+2025-06-08 20:25:33,959 [INFO] ADCParametersView:116 -                Rank 1 : false
+2025-06-08 20:25:33,959 [INFO] ADCParametersView:116 -                Rank 1 : false
+2025-06-08 20:25:33,959 [INFO] ADCParametersView:116 -                Rank 1 : false
+2025-06-08 20:25:33,959 [INFO] ADCParametersView:116 -                Rank 1 : false
+2025-06-08 20:25:33,959 [INFO] ADCParametersView:116 -                Rank 1 : false
+2025-06-08 20:25:33,959 [INFO] ADCParametersView:116 -                Rank 1 : false
+2025-06-08 20:25:33,960 [INFO] ADCParametersView:116 -                Rank 1 : false
+2025-06-08 20:25:33,960 [INFO] ADCParametersView:116 -                Rank 1 : false
+2025-06-08 20:25:33,972 [INFO] ADCParametersView:116 -                Rank 1 : false
+2025-06-08 20:25:33,988 [INFO] ADCParametersView:116 -                Rank 1 : false
+2025-06-08 20:25:33,988 [INFO] ADCParametersView:116 -                Rank 1 : false
+2025-06-08 20:25:33,988 [INFO] ADCParametersView:116 -                Rank 1 : false
+2025-06-08 20:25:33,988 [INFO] ADCParametersView:116 -                Rank 1 : false
+2025-06-08 20:25:33,988 [INFO] ADCParametersView:116 -                Rank 1 : false
+2025-06-08 20:25:33,988 [INFO] ADCParametersView:116 -                Rank 1 : false
+2025-06-08 20:25:33,988 [INFO] ADCParametersView:116 -                Rank 1 : false
+2025-06-08 20:25:33,988 [INFO] ADCParametersView:116 -                Rank 1 : false
+2025-06-08 20:25:33,988 [INFO] ADCParametersView:116 -                Rank 1 : false
+2025-06-08 20:25:33,988 [INFO] ADCParametersView:116 -                Rank 1 : false
+2025-06-08 20:25:33,988 [INFO] ADCParametersView:116 -                Rank 1 : false
+2025-06-08 20:25:33,988 [INFO] ADCParametersView:116 -                Rank 1 : false
+2025-06-08 20:25:33,988 [INFO] ADCParametersView:116 -                Rank 1 : false
+2025-06-08 20:25:33,988 [INFO] ADCParametersView:116 -                Rank 1 : false
+2025-06-08 20:25:33,999 [INFO] ADCParametersView:116 -                Rank 1 : false
+2025-06-08 20:26:03,161 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 735599984 Bytes (930086912)
+2025-06-08 20:26:03,243 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 310365152 Bytes (930086912)
+2025-06-08 20:26:03,703 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 343397344 Bytes (930086912)
+2025-06-08 20:26:03,855 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: SPI
+2025-06-08 20:26:03,855 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: NVIC
+2025-06-08 20:26:03,855 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: SYS
+2025-06-08 20:26:03,855 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: GPIO
+2025-06-08 20:26:03,856 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: ADC
+2025-06-08 20:26:03,856 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: RCC
+2025-06-08 20:26:03,856 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: I2C
+2025-06-08 20:26:03,856 [INFO] CodeGenerator:807 - code generatio: config db path: C:\ST\STM32CubeIDE_1.15.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.11.1.202404110753\\db\
+2025-06-08 20:26:03,859 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2025-06-08 20:26:03,859 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2025-06-08 20:26:03,980 [INFO] CodeEngine:255 - oldGeneratedFile, F:\edev\Repos\eProjects\frogClamp\FrogClampStm\MXTmpFiles\license.tmp_save
+2025-06-08 20:26:04,044 [INFO] CodeEngine:279 - Generated code: F:\edev\Repos\eProjects\frogClamp\FrogClampStm\MXTmpFiles\license.tmp
+2025-06-08 20:26:04,081 [INFO] CodeEngine:255 - oldGeneratedFile, F:\edev\Repos\eProjects\frogClamp\FrogClampStm\Core\Src\gpio.c_save
+2025-06-08 20:26:04,158 [INFO] CodeEngine:279 - Generated code: F:\edev\Repos\eProjects\frogClamp\FrogClampStm\Core\Src\gpio.c
+2025-06-08 20:26:04,177 [INFO] CodeEngine:255 - oldGeneratedFile, F:\edev\Repos\eProjects\frogClamp\FrogClampStm\Core\Inc\gpio.h_save
+2025-06-08 20:26:04,239 [INFO] CodeEngine:279 - Generated code: F:\edev\Repos\eProjects\frogClamp\FrogClampStm\Core\Inc\gpio.h
+2025-06-08 20:26:04,359 [INFO] CodeEngine:255 - oldGeneratedFile, F:\edev\Repos\eProjects\frogClamp\FrogClampStm\Core\Src\adc.c_save
+2025-06-08 20:26:04,441 [INFO] CodeEngine:279 - Generated code: F:\edev\Repos\eProjects\frogClamp\FrogClampStm\Core\Src\adc.c
+2025-06-08 20:26:04,464 [INFO] CodeEngine:255 - oldGeneratedFile, F:\edev\Repos\eProjects\frogClamp\FrogClampStm\Core\Inc\adc.h_save
+2025-06-08 20:26:04,526 [INFO] CodeEngine:279 - Generated code: F:\edev\Repos\eProjects\frogClamp\FrogClampStm\Core\Inc\adc.h
+2025-06-08 20:26:04,539 [INFO] CodeEngine:255 - oldGeneratedFile, F:\edev\Repos\eProjects\frogClamp\FrogClampStm\Core\Src\i2c.c_save
+2025-06-08 20:26:04,609 [INFO] CodeEngine:279 - Generated code: F:\edev\Repos\eProjects\frogClamp\FrogClampStm\Core\Src\i2c.c
+2025-06-08 20:26:04,614 [INFO] CodeEngine:255 - oldGeneratedFile, F:\edev\Repos\eProjects\frogClamp\FrogClampStm\Core\Inc\i2c.h_save
+2025-06-08 20:26:04,676 [INFO] CodeEngine:279 - Generated code: F:\edev\Repos\eProjects\frogClamp\FrogClampStm\Core\Inc\i2c.h
+2025-06-08 20:26:04,689 [INFO] CodeEngine:255 - oldGeneratedFile, F:\edev\Repos\eProjects\frogClamp\FrogClampStm\Core\Src\spi.c_save
+2025-06-08 20:26:04,759 [INFO] CodeEngine:279 - Generated code: F:\edev\Repos\eProjects\frogClamp\FrogClampStm\Core\Src\spi.c
+2025-06-08 20:26:04,763 [INFO] CodeEngine:255 - oldGeneratedFile, F:\edev\Repos\eProjects\frogClamp\FrogClampStm\Core\Inc\spi.h_save
+2025-06-08 20:26:04,826 [INFO] CodeEngine:279 - Generated code: F:\edev\Repos\eProjects\frogClamp\FrogClampStm\Core\Inc\spi.h
+2025-06-08 20:26:04,877 [INFO] CodeEngine:255 - oldGeneratedFile, F:\edev\Repos\eProjects\frogClamp\FrogClampStm\Core\Src\stm32f4xx_it.c_save
+2025-06-08 20:26:04,979 [INFO] CodeEngine:279 - Generated code: F:\edev\Repos\eProjects\frogClamp\FrogClampStm\Core\Src\stm32f4xx_it.c
+2025-06-08 20:26:05,000 [INFO] CodeEngine:255 - oldGeneratedFile, F:\edev\Repos\eProjects\frogClamp\FrogClampStm\Core\Inc\stm32f4xx_it.h_save
+2025-06-08 20:26:05,054 [INFO] CodeEngine:279 - Generated code: F:\edev\Repos\eProjects\frogClamp\FrogClampStm\Core\Inc\stm32f4xx_it.h
+2025-06-08 20:26:05,077 [INFO] CodeEngine:255 - oldGeneratedFile, F:\edev\Repos\eProjects\frogClamp\FrogClampStm\Core\Src\stm32f4xx_hal_msp.c_save
+2025-06-08 20:26:05,148 [INFO] CodeEngine:279 - Generated code: F:\edev\Repos\eProjects\frogClamp\FrogClampStm\Core\Src\stm32f4xx_hal_msp.c
+2025-06-08 20:26:05,158 [INFO] CodeEngine:255 - oldGeneratedFile, F:\edev\Repos\eProjects\frogClamp\FrogClampStm\MXTmpFiles\system.tmp_save
+2025-06-08 20:26:05,209 [INFO] CodeEngine:279 - Generated code: F:\edev\Repos\eProjects\frogClamp\FrogClampStm\MXTmpFiles\system.tmp
+2025-06-08 20:26:05,230 [INFO] CodeEngine:311 - oldGeneratedFile, F:\edev\Repos\eProjects\frogClamp\FrogClampStm\Core\Inc\stm32f4xx_hal_conf.h_save
+2025-06-08 20:26:05,298 [INFO] CodeEngine:335 - Generated code: F:\edev\Repos\eProjects\frogClamp\FrogClampStm\Core\Inc\stm32f4xx_hal_conf.h
+2025-06-08 20:26:05,335 [INFO] CodeEngine:255 - oldGeneratedFile, F:\edev\Repos\eProjects\frogClamp\FrogClampStm\Core\Inc\main.h_save
+2025-06-08 20:26:05,414 [INFO] CodeEngine:279 - Generated code: F:\edev\Repos\eProjects\frogClamp\FrogClampStm\Core\Inc\main.h
+2025-06-08 20:26:05,434 [INFO] CodeEngine:255 - oldGeneratedFile, F:\edev\Repos\eProjects\frogClamp\FrogClampStm\Core\Src\main.c_save
+2025-06-08 20:26:05,513 [INFO] CodeEngine:279 - Generated code: F:\edev\Repos\eProjects\frogClamp\FrogClampStm\Core\Src\main.c
+2025-06-08 20:26:05,777 [INFO] ProjectBuilder:3163 - Time for Copy HAL[1] : 165mS.
+2025-06-08 20:26:05,779 [INFO] ProjectBuilder:4736 - Project Generator version: 4.3.0-B58
+2025-06-08 20:26:05,837 [INFO] ConfigFileManager:1503 - The Die is : DIE431
+2025-06-08 20:26:06,491 [INFO] ProjectBuilder:5002 - Time for Generating toolchain IDE Files: 712mS.
+2025-06-08 20:26:06,492 [INFO] ProjectBuilder:3034 - Time for Copy CMSIS : 0mS.
+2025-06-08 20:26:06,494 [INFO] ProjectBuilder:3034 - Time for Copy CMSIS : 0mS.
+2025-06-08 20:26:40,463 [INFO] Gpio:277 - dependency for GPIO [I2C1, RCC, SPI2]
+2025-06-08 20:27:26,710 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 325290768 Bytes (930086912)
+2025-06-08 20:27:26,777 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 326511408 Bytes (930086912)
+2025-06-08 20:27:27,273 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 364386248 Bytes (930086912)
+2025-06-08 20:27:27,406 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: SPI
+2025-06-08 20:27:27,406 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: NVIC
+2025-06-08 20:27:27,406 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: SYS
+2025-06-08 20:27:27,406 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: GPIO
+2025-06-08 20:27:27,406 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: ADC
+2025-06-08 20:27:27,406 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: RCC
+2025-06-08 20:27:27,406 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: I2C
+2025-06-08 20:27:27,407 [INFO] CodeGenerator:807 - code generatio: config db path: C:\ST\STM32CubeIDE_1.15.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.11.1.202404110753\\db\
+2025-06-08 20:27:27,409 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2025-06-08 20:27:27,409 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2025-06-08 20:27:27,449 [INFO] CodeEngine:255 - oldGeneratedFile, F:\edev\Repos\eProjects\frogClamp\FrogClampStm\MXTmpFiles\license.tmp_save
+2025-06-08 20:27:27,506 [INFO] CodeEngine:279 - Generated code: F:\edev\Repos\eProjects\frogClamp\FrogClampStm\MXTmpFiles\license.tmp
+2025-06-08 20:27:27,525 [INFO] CodeEngine:255 - oldGeneratedFile, F:\edev\Repos\eProjects\frogClamp\FrogClampStm\Core\Src\gpio.c_save
+2025-06-08 20:27:27,596 [INFO] CodeEngine:279 - Generated code: F:\edev\Repos\eProjects\frogClamp\FrogClampStm\Core\Src\gpio.c
+2025-06-08 20:27:27,602 [INFO] CodeEngine:255 - oldGeneratedFile, F:\edev\Repos\eProjects\frogClamp\FrogClampStm\Core\Inc\gpio.h_save
+2025-06-08 20:27:27,644 [INFO] CodeEngine:279 - Generated code: F:\edev\Repos\eProjects\frogClamp\FrogClampStm\Core\Inc\gpio.h
+2025-06-08 20:27:27,694 [INFO] CodeEngine:255 - oldGeneratedFile, F:\edev\Repos\eProjects\frogClamp\FrogClampStm\Core\Src\adc.c_save
+2025-06-08 20:27:27,755 [INFO] CodeEngine:279 - Generated code: F:\edev\Repos\eProjects\frogClamp\FrogClampStm\Core\Src\adc.c
+2025-06-08 20:27:27,759 [INFO] CodeEngine:255 - oldGeneratedFile, F:\edev\Repos\eProjects\frogClamp\FrogClampStm\Core\Inc\adc.h_save
+2025-06-08 20:27:27,803 [INFO] CodeEngine:279 - Generated code: F:\edev\Repos\eProjects\frogClamp\FrogClampStm\Core\Inc\adc.h
+2025-06-08 20:27:27,820 [INFO] CodeEngine:255 - oldGeneratedFile, F:\edev\Repos\eProjects\frogClamp\FrogClampStm\Core\Src\i2c.c_save
+2025-06-08 20:27:27,878 [INFO] CodeEngine:279 - Generated code: F:\edev\Repos\eProjects\frogClamp\FrogClampStm\Core\Src\i2c.c
+2025-06-08 20:27:27,882 [INFO] CodeEngine:255 - oldGeneratedFile, F:\edev\Repos\eProjects\frogClamp\FrogClampStm\Core\Inc\i2c.h_save
+2025-06-08 20:27:27,925 [INFO] CodeEngine:279 - Generated code: F:\edev\Repos\eProjects\frogClamp\FrogClampStm\Core\Inc\i2c.h
+2025-06-08 20:27:27,938 [INFO] CodeEngine:255 - oldGeneratedFile, F:\edev\Repos\eProjects\frogClamp\FrogClampStm\Core\Src\spi.c_save
+2025-06-08 20:27:27,994 [INFO] CodeEngine:279 - Generated code: F:\edev\Repos\eProjects\frogClamp\FrogClampStm\Core\Src\spi.c
+2025-06-08 20:27:27,998 [INFO] CodeEngine:255 - oldGeneratedFile, F:\edev\Repos\eProjects\frogClamp\FrogClampStm\Core\Inc\spi.h_save
+2025-06-08 20:27:28,041 [INFO] CodeEngine:279 - Generated code: F:\edev\Repos\eProjects\frogClamp\FrogClampStm\Core\Inc\spi.h
+2025-06-08 20:27:28,055 [INFO] CodeEngine:255 - oldGeneratedFile, F:\edev\Repos\eProjects\frogClamp\FrogClampStm\Core\Src\stm32f4xx_it.c_save
+2025-06-08 20:27:28,104 [INFO] CodeEngine:279 - Generated code: F:\edev\Repos\eProjects\frogClamp\FrogClampStm\Core\Src\stm32f4xx_it.c
+2025-06-08 20:27:28,108 [INFO] CodeEngine:255 - oldGeneratedFile, F:\edev\Repos\eProjects\frogClamp\FrogClampStm\Core\Inc\stm32f4xx_it.h_save
+2025-06-08 20:27:28,151 [INFO] CodeEngine:279 - Generated code: F:\edev\Repos\eProjects\frogClamp\FrogClampStm\Core\Inc\stm32f4xx_it.h
+2025-06-08 20:27:28,164 [INFO] CodeEngine:255 - oldGeneratedFile, F:\edev\Repos\eProjects\frogClamp\FrogClampStm\Core\Src\stm32f4xx_hal_msp.c_save
+2025-06-08 20:27:28,222 [INFO] CodeEngine:279 - Generated code: F:\edev\Repos\eProjects\frogClamp\FrogClampStm\Core\Src\stm32f4xx_hal_msp.c
+2025-06-08 20:27:28,226 [INFO] CodeEngine:255 - oldGeneratedFile, F:\edev\Repos\eProjects\frogClamp\FrogClampStm\MXTmpFiles\system.tmp_save
+2025-06-08 20:27:28,265 [INFO] CodeEngine:279 - Generated code: F:\edev\Repos\eProjects\frogClamp\FrogClampStm\MXTmpFiles\system.tmp
+2025-06-08 20:27:28,279 [INFO] CodeEngine:311 - oldGeneratedFile, F:\edev\Repos\eProjects\frogClamp\FrogClampStm\Core\Inc\stm32f4xx_hal_conf.h_save
+2025-06-08 20:27:28,345 [INFO] CodeEngine:335 - Generated code: F:\edev\Repos\eProjects\frogClamp\FrogClampStm\Core\Inc\stm32f4xx_hal_conf.h
+2025-06-08 20:27:28,375 [INFO] CodeEngine:255 - oldGeneratedFile, F:\edev\Repos\eProjects\frogClamp\FrogClampStm\Core\Inc\main.h_save
+2025-06-08 20:27:28,423 [INFO] CodeEngine:279 - Generated code: F:\edev\Repos\eProjects\frogClamp\FrogClampStm\Core\Inc\main.h
+2025-06-08 20:27:28,435 [INFO] CodeEngine:255 - oldGeneratedFile, F:\edev\Repos\eProjects\frogClamp\FrogClampStm\Core\Src\main.c_save
+2025-06-08 20:27:28,495 [INFO] CodeEngine:279 - Generated code: F:\edev\Repos\eProjects\frogClamp\FrogClampStm\Core\Src\main.c
+2025-06-08 20:27:28,696 [INFO] ProjectBuilder:3163 - Time for Copy HAL[1] : 106mS.
+2025-06-08 20:27:28,699 [INFO] ProjectBuilder:4736 - Project Generator version: 4.3.0-B58
+2025-06-08 20:27:28,745 [INFO] ConfigFileManager:1503 - The Die is : DIE431
+2025-06-08 20:27:29,258 [INFO] ProjectBuilder:5002 - Time for Generating toolchain IDE Files: 559mS.
+2025-06-08 20:27:29,259 [INFO] ProjectBuilder:3034 - Time for Copy CMSIS : 1mS.
+2025-06-08 20:27:29,261 [INFO] ProjectBuilder:3034 - Time for Copy CMSIS : 0mS.
+2025-06-08 20:27:32,719 [ERROR] ConfigurationRetriever:142 - IOException on connection: Read timed out
+2025-06-08 20:31:07,496 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 421819112 Bytes (930086912)
+2025-06-08 20:31:07,554 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 330298216 Bytes (930086912)
+2025-06-08 20:31:08,058 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 402127696 Bytes (930086912)
+2025-06-08 20:31:08,193 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: SPI
+2025-06-08 20:31:08,194 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: NVIC
+2025-06-08 20:31:08,194 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: SYS
+2025-06-08 20:31:08,194 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: GPIO
+2025-06-08 20:31:08,194 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: ADC
+2025-06-08 20:31:08,194 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: RCC
+2025-06-08 20:31:08,194 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: I2C
+2025-06-08 20:31:08,194 [INFO] CodeGenerator:807 - code generatio: config db path: C:\ST\STM32CubeIDE_1.15.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.11.1.202404110753\\db\
+2025-06-08 20:31:08,197 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2025-06-08 20:31:08,197 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2025-06-08 20:31:08,238 [INFO] CodeEngine:255 - oldGeneratedFile, F:\edev\Repos\eProjects\frogClamp\FrogClampStm\MXTmpFiles\license.tmp_save
+2025-06-08 20:31:08,294 [INFO] CodeEngine:279 - Generated code: F:\edev\Repos\eProjects\frogClamp\FrogClampStm\MXTmpFiles\license.tmp
+2025-06-08 20:31:08,313 [INFO] CodeEngine:255 - oldGeneratedFile, F:\edev\Repos\eProjects\frogClamp\FrogClampStm\Core\Src\gpio.c_save
+2025-06-08 20:31:08,365 [INFO] CodeEngine:279 - Generated code: F:\edev\Repos\eProjects\frogClamp\FrogClampStm\Core\Src\gpio.c
+2025-06-08 20:31:08,369 [INFO] CodeEngine:255 - oldGeneratedFile, F:\edev\Repos\eProjects\frogClamp\FrogClampStm\Core\Inc\gpio.h_save
+2025-06-08 20:31:08,413 [INFO] CodeEngine:279 - Generated code: F:\edev\Repos\eProjects\frogClamp\FrogClampStm\Core\Inc\gpio.h
+2025-06-08 20:31:08,466 [INFO] CodeEngine:255 - oldGeneratedFile, F:\edev\Repos\eProjects\frogClamp\FrogClampStm\Core\Src\adc.c_save
+2025-06-08 20:31:08,526 [INFO] CodeEngine:279 - Generated code: F:\edev\Repos\eProjects\frogClamp\FrogClampStm\Core\Src\adc.c
+2025-06-08 20:31:08,530 [INFO] CodeEngine:255 - oldGeneratedFile, F:\edev\Repos\eProjects\frogClamp\FrogClampStm\Core\Inc\adc.h_save
+2025-06-08 20:31:08,574 [INFO] CodeEngine:279 - Generated code: F:\edev\Repos\eProjects\frogClamp\FrogClampStm\Core\Inc\adc.h
+2025-06-08 20:31:08,588 [INFO] CodeEngine:255 - oldGeneratedFile, F:\edev\Repos\eProjects\frogClamp\FrogClampStm\Core\Src\i2c.c_save
+2025-06-08 20:31:08,645 [INFO] CodeEngine:279 - Generated code: F:\edev\Repos\eProjects\frogClamp\FrogClampStm\Core\Src\i2c.c
+2025-06-08 20:31:08,649 [INFO] CodeEngine:255 - oldGeneratedFile, F:\edev\Repos\eProjects\frogClamp\FrogClampStm\Core\Inc\i2c.h_save
+2025-06-08 20:31:08,692 [INFO] CodeEngine:279 - Generated code: F:\edev\Repos\eProjects\frogClamp\FrogClampStm\Core\Inc\i2c.h
+2025-06-08 20:31:08,705 [INFO] CodeEngine:255 - oldGeneratedFile, F:\edev\Repos\eProjects\frogClamp\FrogClampStm\Core\Src\spi.c_save
+2025-06-08 20:31:08,760 [INFO] CodeEngine:279 - Generated code: F:\edev\Repos\eProjects\frogClamp\FrogClampStm\Core\Src\spi.c
+2025-06-08 20:31:08,764 [INFO] CodeEngine:255 - oldGeneratedFile, F:\edev\Repos\eProjects\frogClamp\FrogClampStm\Core\Inc\spi.h_save
+2025-06-08 20:31:08,807 [INFO] CodeEngine:279 - Generated code: F:\edev\Repos\eProjects\frogClamp\FrogClampStm\Core\Inc\spi.h
+2025-06-08 20:31:08,823 [INFO] CodeEngine:255 - oldGeneratedFile, F:\edev\Repos\eProjects\frogClamp\FrogClampStm\Core\Src\stm32f4xx_it.c_save
+2025-06-08 20:31:08,872 [INFO] CodeEngine:279 - Generated code: F:\edev\Repos\eProjects\frogClamp\FrogClampStm\Core\Src\stm32f4xx_it.c
+2025-06-08 20:31:08,877 [INFO] CodeEngine:255 - oldGeneratedFile, F:\edev\Repos\eProjects\frogClamp\FrogClampStm\Core\Inc\stm32f4xx_it.h_save
+2025-06-08 20:31:08,919 [INFO] CodeEngine:279 - Generated code: F:\edev\Repos\eProjects\frogClamp\FrogClampStm\Core\Inc\stm32f4xx_it.h
+2025-06-08 20:31:08,933 [INFO] CodeEngine:255 - oldGeneratedFile, F:\edev\Repos\eProjects\frogClamp\FrogClampStm\Core\Src\stm32f4xx_hal_msp.c_save
+2025-06-08 20:31:08,989 [INFO] CodeEngine:279 - Generated code: F:\edev\Repos\eProjects\frogClamp\FrogClampStm\Core\Src\stm32f4xx_hal_msp.c
+2025-06-08 20:31:08,992 [INFO] CodeEngine:255 - oldGeneratedFile, F:\edev\Repos\eProjects\frogClamp\FrogClampStm\MXTmpFiles\system.tmp_save
+2025-06-08 20:31:09,030 [INFO] CodeEngine:279 - Generated code: F:\edev\Repos\eProjects\frogClamp\FrogClampStm\MXTmpFiles\system.tmp
+2025-06-08 20:31:09,045 [INFO] CodeEngine:311 - oldGeneratedFile, F:\edev\Repos\eProjects\frogClamp\FrogClampStm\Core\Inc\stm32f4xx_hal_conf.h_save
+2025-06-08 20:31:09,114 [INFO] CodeEngine:335 - Generated code: F:\edev\Repos\eProjects\frogClamp\FrogClampStm\Core\Inc\stm32f4xx_hal_conf.h
+2025-06-08 20:31:09,143 [INFO] CodeEngine:255 - oldGeneratedFile, F:\edev\Repos\eProjects\frogClamp\FrogClampStm\Core\Inc\main.h_save
+2025-06-08 20:31:09,197 [INFO] CodeEngine:279 - Generated code: F:\edev\Repos\eProjects\frogClamp\FrogClampStm\Core\Inc\main.h
+2025-06-08 20:31:09,210 [INFO] CodeEngine:255 - oldGeneratedFile, F:\edev\Repos\eProjects\frogClamp\FrogClampStm\Core\Src\main.c_save
+2025-06-08 20:31:09,270 [INFO] CodeEngine:279 - Generated code: F:\edev\Repos\eProjects\frogClamp\FrogClampStm\Core\Src\main.c
+2025-06-08 20:31:09,475 [INFO] ProjectBuilder:3163 - Time for Copy HAL[1] : 108mS.
+2025-06-08 20:31:09,477 [INFO] ProjectBuilder:4736 - Project Generator version: 4.3.0-B58
+2025-06-08 20:31:09,531 [INFO] ConfigFileManager:1503 - The Die is : DIE431
+2025-06-08 20:31:10,134 [INFO] ProjectBuilder:5002 - Time for Generating toolchain IDE Files: 657mS.
+2025-06-08 20:31:10,135 [INFO] ProjectBuilder:3034 - Time for Copy CMSIS : 0mS.
+2025-06-08 20:31:10,137 [INFO] ProjectBuilder:3034 - Time for Copy CMSIS : 0mS.

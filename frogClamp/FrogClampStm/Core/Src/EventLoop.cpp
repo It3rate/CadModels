@@ -7,7 +7,7 @@
 
 BMP280::BMP280_HandleTypedef bmp280;
 BMP280 bmpDevice = BMP280(&bmp280);
-
+uint32_t last_bmp_read_time = 0;
 float pressure, temperature, humidity; // Humidity unused for BMP280
 uint16_t size;
 uint8_t Data[256];
@@ -27,6 +27,16 @@ uint8_t payload_length = 5;
 uint8_t nRF24_payload[32];
 
 uint8_t buffer[] = "Hello World\n";
+
+bool pump_running = false;
+uint32_t pump_on_delay = 1000;
+uint32_t pump_off_delay = 2000;
+uint32_t pump_reset_time = 0;
+uint32_t pump_time = 0;
+GPIO_PinState last_button_state = GPIO_PIN_SET; // Button not pressed (pull-up)
+uint32_t last_debounce_time = 0;
+const uint32_t debounce_delay = 50; // 50ms debounce time
+
 
 #define ADC_BUF_LEN 6
 uint32_t _adcBuf[ADC_BUF_LEN];
@@ -96,6 +106,8 @@ void EventLoopCpp() {
 	nrfDevice.Init();
 	nrfDevice.Check();
 
+	pump_reset_time = HAL_GetTick();
+
 #ifdef IS_TX
 	uint32_t count = 0;
 	NRF24L::TXResult tx_res;
@@ -106,14 +118,55 @@ void EventLoopCpp() {
 
 	HAL_Delay(100);
 	while (1) {
-		  // Read temperature and pressure
-		    if (!bmpDevice.bmp280_read_float(&temperature, &pressure, &humidity)) {
-		    	// success
-		    } else {
-		    	// fail to read
-		    }
+		if(HAL_GetTick() - last_bmp_read_time > 2000)
+		{
+			// Read temperature and pressure
+			if (!bmpDevice.bmp280_read_float(&temperature, &pressure, &humidity)) {
+				// success
+			} else {
+				// fail to read
+			}
+			last_bmp_read_time = HAL_GetTick();
+		}
 
-		    HAL_Delay(2000); // Read every 2 seconds
+		GPIO_PinState current_button_state = HAL_GPIO_ReadPin(BTN0_GPIO_Port, BTN0_Pin);
+		if (current_button_state != last_button_state)
+		{
+			last_debounce_time = HAL_GetTick();
+		}
+
+		if (last_debounce_time != 0 && current_button_state == GPIO_PIN_RESET && (HAL_GetTick() - last_debounce_time) > debounce_delay)
+		{
+			pump_running = !pump_running;
+			last_debounce_time = 0;
+			pump_reset_time = HAL_GetTick();
+		}
+
+		last_button_state = current_button_state;
+
+		if(pump_running)
+		{
+			pump_time = HAL_GetTick() - pump_reset_time;
+			if(pump_time < pump_on_delay)
+			{
+				HAL_GPIO_WritePin(PUMP_GPIO_Port, PUMP_Pin, GPIO_PIN_SET);
+			}
+			else if(pump_time < pump_on_delay + pump_off_delay)
+			{
+				HAL_GPIO_WritePin(PUMP_GPIO_Port, PUMP_Pin, GPIO_PIN_RESET);
+			}
+			else
+			{
+				pump_reset_time = HAL_GetTick();
+			}
+		}
+		else
+		{
+			HAL_GPIO_WritePin(PUMP_GPIO_Port, PUMP_Pin, GPIO_PIN_RESET);
+		}
+
+
+		//HAL_Delay(2000); // Read every 2 seconds
 //		uint8_t btns = tmDevice.readButtons();
 //		for (int i = 0; i < 8; i++) {
 //			bool val = (btns & (1 << i)) > 0 ? true : false;

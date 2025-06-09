@@ -13,4 +13,4 @@
 ../Core/Src/bmp280.cpp:230:17:uint32_t BMP280::compensate_pressure(int32_t, int32_t)	2
 ../Core/Src/bmp280.cpp:259:17:uint32_t BMP280::compensate_humidity(int32_t, int32_t)	1
 ../Core/Src/bmp280.cpp:277:6:bool BMP280::bmp280_read_fixed(int32_t*, uint32_t*, uint32_t*)	6
-../Core/Src/bmp280.cpp:311:6:bool BMP280::bmp280_read_float(float*, float*, float*)	4
+../Core/Src/bmp280.cpp:310:6:bool BMP280::bmp280_read_float(float*, float*, float*)	4
