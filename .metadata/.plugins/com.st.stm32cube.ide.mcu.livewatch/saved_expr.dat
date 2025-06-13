@@ -1,3 +1,5 @@
-Temperature
-Pressure
-Humidity
+temperature
+pressure
+humidity
+last_button_state
+pump_running

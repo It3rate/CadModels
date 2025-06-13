@@ -16,5 +16,9 @@ Models*
 *.o
 *.elf
 *.bin
+*.zip
+*.lck
 **/.metadata/
+**/.plugins/
 **/Debug/
+**/#auto_saved_files#
