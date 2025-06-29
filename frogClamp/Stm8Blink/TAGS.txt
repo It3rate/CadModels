@@ -1,0 +1,206 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+CLK_CCOR	clock.h	22;"	macro
+CLK_CKDIVR	clock.h	16;"	macro
+CLK_CMSR	clock.h	10;"	macro
+CLK_CPU_DIV_MASTER_EIGHT	clock.h	50;"	macro
+CLK_CPU_DIV_MASTER_FOUR	clock.h	49;"	macro
+CLK_CPU_DIV_MASTER_HUNTWENTYEIGHT	clock.h	54;"	macro
+CLK_CPU_DIV_MASTER_NONE	clock.h	47;"	macro
+CLK_CPU_DIV_MASTER_SIXTEEN	clock.h	51;"	macro
+CLK_CPU_DIV_MASTER_SIXTYFOUR	clock.h	53;"	macro
+CLK_CPU_DIV_MASTER_THIRTYTWO	clock.h	52;"	macro
+CLK_CPU_DIV_MASTER_TWO	clock.h	48;"	macro
+CLK_CSSR	clock.h	20;"	macro
+CLK_DELAY_CYCLES_MS_01	clock.h	62;"	macro
+CLK_DELAY_CYCLES_MS_02	clock.h	61;"	macro
+CLK_DELAY_CYCLES_MS_04	clock.h	60;"	macro
+CLK_DELAY_CYCLES_MS_08	clock.h	59;"	macro
+CLK_DELAY_CYCLES_MS_16	clock.h	58;"	macro
+CLK_Delay_ms	clock.c	44;"	function	signature:(unsigned long ms)
+CLK_Delay_ms	clock.h	83;"	prototype	signature:(unsigned long ms)
+CLK_ECKRR	clock.h	8;"	macro
+CLK_HSITRIMR	clock.h	26;"	macro
+CLK_HSI_DIV_EIGHT	clock.h	45;"	macro
+CLK_HSI_DIV_FOUR	clock.h	44;"	macro
+CLK_HSI_DIV_NONE	clock.h	42;"	macro
+CLK_HSI_DIV_TWO	clock.h	43;"	macro
+CLK_ICKR	clock.h	6;"	macro
+CLK_Init	clock.c	4;"	function	signature:(unsigned char clk_src, unsigned char ps , unsigned char cpu_div)
+CLK_Init	clock.h	76;"	prototype	signature:(unsigned char clk_src, unsigned char ps, unsigned char cpu_div)
+CLK_PCKENR1	clock.h	18;"	macro
+CLK_PCKENR2	clock.h	24;"	macro
+CLK_SRC_HSE	clock.h	38;"	macro
+CLK_SRC_HSI	clock.h	34;"	macro
+CLK_SRC_LSI	clock.h	36;"	macro
+CLK_SWCR	clock.h	14;"	macro
+CLK_SWIMCCR	clock.h	28;"	macro
+CLK_SWR	clock.h	12;"	macro
+CLK_Set_HSE_Freq	clock.h	74;"	prototype	signature:(unsigned long freq)
+CLOCK_H	clock.h	2;"	macro
+GPIO_Config_Pin	gpio.c	4;"	function	signature:(gpio_port_t port, gpio_pin_t pins, unsigned char pin_mode)
+GPIO_Config_Pin	gpio.h	73;"	prototype	signature:(gpio_port_t port, gpio_pin_t pins, unsigned char pin_mode)
+GPIO_H	gpio.h	2;"	macro
+GPIO_OFST_CR1	gpio.h	12;"	macro
+GPIO_OFST_CR2	gpio.h	13;"	macro
+GPIO_OFST_DDR	gpio.h	11;"	macro
+GPIO_OFST_IDR	gpio.h	10;"	macro
+GPIO_OFST_ODR	gpio.h	9;"	macro
+GPIO_PIN_0	gpio.h	28;"	macro
+GPIO_PIN_1	gpio.h	29;"	macro
+GPIO_PIN_2	gpio.h	30;"	macro
+GPIO_PIN_3	gpio.h	31;"	macro
+GPIO_PIN_4	gpio.h	32;"	macro
+GPIO_PIN_5	gpio.h	33;"	macro
+GPIO_PIN_6	gpio.h	34;"	macro
+GPIO_PIN_7	gpio.h	35;"	macro
+GPIO_PIN_ALL	gpio.h	36;"	macro
+GPIO_PORT_A	gpio.h	15;"	macro
+GPIO_PORT_B	gpio.h	17;"	macro
+GPIO_PORT_C	gpio.h	19;"	macro
+GPIO_PORT_D	gpio.h	21;"	macro
+GPIO_PORT_E	gpio.h	23;"	macro
+GPIO_PORT_F	gpio.h	25;"	macro
+GPIO_Read_Pin	gpio.c	39;"	function	signature:(gpio_port_t port, gpio_pin_t pin)
+GPIO_Read_Pin	gpio.h	118;"	prototype	signature:(gpio_port_t port, gpio_pin_t pin)
+GPIO_Read_Port	gpio.c	45;"	function	signature:(gpio_port_t port)
+GPIO_Read_Port	gpio.h	125;"	prototype	signature:(gpio_port_t port)
+GPIO_Set_Pin_High	gpio.c	29;"	function	signature:(gpio_port_t port, gpio_pin_t pins)
+GPIO_Set_Pin_High	gpio.h	85;"	prototype	signature:(gpio_port_t port, gpio_pin_t pins)
+GPIO_Set_Pin_Low	gpio.c	32;"	function	signature:(gpio_port_t port, gpio_pin_t pins)
+GPIO_Set_Pin_Low	gpio.h	96;"	prototype	signature:(gpio_port_t port, gpio_pin_t pins)
+GPIO_Toggle_Pin	gpio.c	35;"	function	signature:(gpio_port_t port, gpio_pin_t pins)
+GPIO_Toggle_Pin	gpio.h	107;"	prototype	signature:(gpio_port_t port, gpio_pin_t pins)
+NonHandledInterrupt	stm8_interrupt_vector.c	12;"	function	signature:(void)
+PIN_DIR_IN	gpio.h	39;"	macro
+PIN_DIR_OUT	gpio.h	40;"	macro
+PIN_MODE_INPUT_FL_INT	gpio.h	44;"	macro
+PIN_MODE_INPUT_FL_NO_INT	gpio.h	43;"	macro
+PIN_MODE_INPUT_PU_INT	gpio.h	46;"	macro
+PIN_MODE_INPUT_PU_NO_INT	gpio.h	45;"	macro
+PIN_MODE_OD	gpio.h	55;"	macro
+PIN_MODE_ODF	gpio.h	59;"	macro
+PIN_MODE_OUTPUT_OD	gpio.h	47;"	macro
+PIN_MODE_OUTPUT_OD_FAST	gpio.h	48;"	macro
+PIN_MODE_OUTPUT_PP	gpio.h	49;"	macro
+PIN_MODE_OUTPUT_PP_FAST	gpio.h	50;"	macro
+PIN_MODE_OUTPUT_TRUE_OD	gpio.h	51;"	macro
+PIN_MODE_PP	gpio.h	57;"	macro
+STM8S003_H	stm8s003.h	7;"	macro
+TIM1_ARRH	stm8s003.h	91;"	macro
+TIM1_ARRL	stm8s003.h	92;"	macro
+TIM1_BKR	stm8s003.h	102;"	macro
+TIM1_CCER1	stm8s003.h	85;"	macro
+TIM1_CCER2	stm8s003.h	86;"	macro
+TIM1_CCMR1	stm8s003.h	81;"	macro
+TIM1_CCMR2	stm8s003.h	82;"	macro
+TIM1_CCMR3	stm8s003.h	83;"	macro
+TIM1_CCMR4	stm8s003.h	84;"	macro
+TIM1_CCR1H	stm8s003.h	94;"	macro
+TIM1_CCR1L	stm8s003.h	95;"	macro
+TIM1_CCR2H	stm8s003.h	96;"	macro
+TIM1_CCR2L	stm8s003.h	97;"	macro
+TIM1_CCR3H	stm8s003.h	98;"	macro
+TIM1_CCR3L	stm8s003.h	99;"	macro
+TIM1_CCR4H	stm8s003.h	100;"	macro
+TIM1_CCR4L	stm8s003.h	101;"	macro
+TIM1_CNTRH	stm8s003.h	87;"	macro
+TIM1_CNTRL	stm8s003.h	88;"	macro
+TIM1_CR1	stm8s003.h	72;"	macro
+TIM1_CR2	stm8s003.h	73;"	macro
+TIM1_DCR1	stm8s003.h	105;"	macro
+TIM1_DCR2	stm8s003.h	106;"	macro
+TIM1_DER	stm8s003.h	76;"	macro
+TIM1_DMA1R	stm8s003.h	107;"	macro
+TIM1_DTR	stm8s003.h	103;"	macro
+TIM1_EGR	stm8s003.h	80;"	macro
+TIM1_ETR	stm8s003.h	75;"	macro
+TIM1_IER	stm8s003.h	77;"	macro
+TIM1_OISR	stm8s003.h	104;"	macro
+TIM1_PSCRH	stm8s003.h	89;"	macro
+TIM1_PSCRL	stm8s003.h	90;"	macro
+TIM1_RCR	stm8s003.h	93;"	macro
+TIM1_SMCR	stm8s003.h	74;"	macro
+TIM1_SR1	stm8s003.h	78;"	macro
+TIM1_SR2	stm8s003.h	79;"	macro
+TIM_CR1_APRE	stm8s003.h	120;"	macro
+TIM_CR1_CEN	stm8s003.h	127;"	macro
+TIM_CR1_CMSH	stm8s003.h	121;"	macro
+TIM_CR1_CMSL	stm8s003.h	122;"	macro
+TIM_CR1_DIR	stm8s003.h	123;"	macro
+TIM_CR1_OPM	stm8s003.h	124;"	macro
+TIM_CR1_UDIS	stm8s003.h	126;"	macro
+TIM_CR1_URS	stm8s003.h	125;"	macro
+TIM_IER_BIE	stm8s003.h	110;"	macro
+TIM_IER_CC1IE	stm8s003.h	116;"	macro
+TIM_IER_CC2IE	stm8s003.h	115;"	macro
+TIM_IER_CC3IE	stm8s003.h	114;"	macro
+TIM_IER_CC4IE	stm8s003.h	113;"	macro
+TIM_IER_COMIE	stm8s003.h	112;"	macro
+TIM_IER_TIE	stm8s003.h	111;"	macro
+TIM_IER_UIE	stm8s003.h	117;"	macro
+TIM_SR1_BIF	stm8s003.h	130;"	macro
+TIM_SR1_CC1IF	stm8s003.h	136;"	macro
+TIM_SR1_CC2IF	stm8s003.h	135;"	macro
+TIM_SR1_CC3IF	stm8s003.h	134;"	macro
+TIM_SR1_CC4IF	stm8s003.h	133;"	macro
+TIM_SR1_COMIF	stm8s003.h	132;"	macro
+TIM_SR1_TIF	stm8s003.h	131;"	macro
+TIM_SR1_UIF	stm8s003.h	137;"	macro
+USART1_BRR1	stm8s003.h	21;"	macro
+USART1_BRR2	stm8s003.h	22;"	macro
+USART1_CR1	stm8s003.h	23;"	macro
+USART1_CR2	stm8s003.h	24;"	macro
+USART1_CR3	stm8s003.h	25;"	macro
+USART1_CR4	stm8s003.h	26;"	macro
+USART1_CR5	stm8s003.h	27;"	macro
+USART1_DR	stm8s003.h	20;"	macro
+USART1_GTR	stm8s003.h	28;"	macro
+USART1_PSCR	stm8s003.h	29;"	macro
+USART1_SR	stm8s003.h	19;"	macro
+USART_CR1_M	stm8s003.h	35;"	macro
+USART_CR1_PCEN	stm8s003.h	37;"	macro
+USART_CR1_PIEN	stm8s003.h	39;"	macro
+USART_CR1_PS	stm8s003.h	38;"	macro
+USART_CR1_R8	stm8s003.h	32;"	macro
+USART_CR1_T8	stm8s003.h	33;"	macro
+USART_CR1_UARTD	stm8s003.h	34;"	macro
+USART_CR1_WAKE	stm8s003.h	36;"	macro
+USART_CR2_ILIEN	stm8s003.h	45;"	macro
+USART_CR2_REN	stm8s003.h	47;"	macro
+USART_CR2_RIEN	stm8s003.h	44;"	macro
+USART_CR2_RWU	stm8s003.h	48;"	macro
+USART_CR2_SBK	stm8s003.h	49;"	macro
+USART_CR2_TCIEN	stm8s003.h	43;"	macro
+USART_CR2_TEN	stm8s003.h	46;"	macro
+USART_CR2_TIEN	stm8s003.h	42;"	macro
+USART_CR3_CLKEN	stm8s003.h	55;"	macro
+USART_CR3_CPHA	stm8s003.h	57;"	macro
+USART_CR3_CPOL	stm8s003.h	56;"	macro
+USART_CR3_LBCL	stm8s003.h	58;"	macro
+USART_CR3_LINEN	stm8s003.h	52;"	macro
+USART_CR3_STOP1	stm8s003.h	54;"	macro
+USART_CR3_STOP2	stm8s003.h	53;"	macro
+USART_SR_FE	stm8s003.h	67;"	macro
+USART_SR_IDLE	stm8s003.h	64;"	macro
+USART_SR_NF	stm8s003.h	66;"	macro
+USART_SR_OR	stm8s003.h	65;"	macro
+USART_SR_PE	stm8s003.h	68;"	macro
+USART_SR_RXNE	stm8s003.h	63;"	macro
+USART_SR_TC	stm8s003.h	62;"	macro
+USART_SR_TXE	stm8s003.h	61;"	macro
+__MODS0__	c:\cosmic\fse_compilers\cxstm8\hstm8\mods0.h	12;"	macro
+_stext	stm8_interrupt_vector.c	20;"	prototype	file:
+_vectab	stm8_interrupt_vector.c	22;"	variable
+gpio_pin_t	gpio.h	6;"	typedef
+gpio_port_t	gpio.h	5;"	typedef
+init_gpio	blink.c	16;"	function	signature:(int ms)
+interrupt_handler	stm8_interrupt_vector.c	9;"	member	struct:interrupt_vector	file:
+interrupt_handler_t	stm8_interrupt_vector.c	5;"	typedef	file:
+interrupt_instruction	stm8_interrupt_vector.c	8;"	member	struct:interrupt_vector	file:
+interrupt_vector	stm8_interrupt_vector.c	7;"	struct	file:
+main	blink.c	23;"	function
