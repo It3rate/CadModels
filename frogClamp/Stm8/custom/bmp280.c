@@ -1,5 +1,6 @@
-#include "bme280.h"
 
+#include "stm8s.h"
+#include "bmp280.h"
 
 void bmp280_init(BMP280_HandleTypedef * device)
 {
@@ -11,35 +12,34 @@ void bmp280_init(BMP280_HandleTypedef * device)
 	device->params.standby = BMP280_STANDBY_250;
 }
 
+/*
 unsigned int read_data(uint8_t addr, uint8_t *value, uint8_t num_of_bytes)
 {                      
-   unsigned char bytes[2] = {0x00, 0x00};
-  
-   while(I2C_GetFlagStatus(I2C_FLAG_BUSBUSY));
-   
-   I2C_GenerateSTART(ENABLE);
-   while(!I2C_CheckEvent(I2C_EVENT_MASTER_MODE_SELECT));
-   
-   I2C_Send7bitAddress(BMP280_I2C_ADDRESS_0, I2C_DIRECTION_RX);
-   while(!I2C_CheckEvent(I2C_EVENT_MASTER_RECEIVER_MODE_SELECTED));
-   
-   while(num_of_bytes)
-   {
-        if(I2C_CheckEvent(I2C_EVENT_MASTER_BYTE_RECEIVED))
-       {   
-            if(num_of_bytes == 0)
-            {
-                 I2C_AcknowledgeConfig(I2C_ACK_NONE);
-                 I2C_GenerateSTOP(ENABLE);   
-             }
- 
-            addr[(num_of_bytes - 1)] = I2C_ReceiveData();
-            num_of_bytes--;
-         }
-   };    
-		return 1;
+	while(I2C_GetFlagStatus(I2C_FLAG_BUSBUSY));
+	
+	I2C_GenerateSTART(ENABLE);
+	while(!I2C_CheckEvent(I2C_EVENT_MASTER_MODE_SELECT));
+	
+	I2C_Send7bitAddress(BMP280_I2C_ADDRESS_0, I2C_DIRECTION_RX);
+	while(!I2C_CheckEvent(I2C_EVENT_MASTER_RECEIVER_MODE_SELECTED));
+	
+	while(num_of_bytes)
+	{
+		if(I2C_CheckEvent(I2C_EVENT_MASTER_BYTE_RECEIVED))
+		{   
+			if(num_of_bytes == 0)
+			{
+				I2C_AcknowledgeConfig(I2C_ACK_NONE);
+				I2C_GenerateSTOP(ENABLE);   
+			}
+		
+			addr[(num_of_bytes - 1)] = I2C_ReceiveData();
+			num_of_bytes--;
+		}
+	};    
+	value = ((bytes[1] << 8) | bytes[0]); 
+	return value;
 } 
-/*
 bool read_register16(uint8_t addr, uint16_t *value) {
 	uint16_t tx_buff;
 	uint8_t rx_buff[2];

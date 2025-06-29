@@ -5,7 +5,7 @@
 
 #include "stm8s.h"
 #include "stm8s_gpio.h"
-#include "bme280.h"
+#include "bmp280.h"
 
 void delay(int ms)
 {
