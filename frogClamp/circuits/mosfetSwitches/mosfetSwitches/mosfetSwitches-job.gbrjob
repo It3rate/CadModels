@@ -5,7 +5,7 @@
       "Application": "Pcbnew",
       "Version": "9.0.2"
     },
-    "CreationDate": "2025-06-21T16:37:01-05:00"
+    "CreationDate": "2025-06-30T15:03:41-05:00"
   },
   "GeneralSpecs": {
     "ProjectId": {
@@ -34,11 +34,6 @@
     {
       "Path": "mosfetSwitches-F_Cu.gbr",
       "FileFunction": "Copper,L1,Top",
-      "FilePolarity": "Positive"
-    },
-    {
-      "Path": "mosfetSwitches-F_Paste.gbr",
-      "FileFunction": "SolderPaste,Top",
       "FilePolarity": "Positive"
     },
     {

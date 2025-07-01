@@ -1,0 +1,8 @@
+Yellow drill, blue stripe. narrow and sharp
+sanding pads with no offset or cutting, just flipped.
+avoid edges (shifting?), but very level.
+
+depth -0.16
+tool diameter: 0.33
+#passes 2
+overlap 50%
