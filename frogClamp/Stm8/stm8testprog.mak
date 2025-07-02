@@ -35,7 +35,7 @@ all : $(OutputPath) $(ProjectSFile).elf
 $(OutputPath) : 
 	if not exist $(OutputPath)/ mkdir $(OutputPath)
 
-Debug\bme280.$(ObjectExt) : custom\bme280.c c:\cosmic\fse_compilers\cxstm8\hstm8\mods0.h custom\bme280.h libs\inc\stm8s.h libs\inc\stm8s_conf.h libs\inc\stm8s_adc1.h libs\inc\stm8s_awu.h libs\inc\stm8s_beep.h libs\inc\stm8s_clk.h libs\inc\stm8s_exti.h libs\inc\stm8s_flash.h libs\inc\stm8s_gpio.h libs\inc\stm8s_i2c.h libs\inc\stm8s_itc.h libs\inc\stm8s_iwdg.h libs\inc\stm8s_rst.h libs\inc\stm8s_spi.h libs\inc\stm8s_tim1.h libs\inc\stm8s_tim2.h libs\inc\stm8s_uart1.h libs\inc\stm8s_wwdg.h 
+Debug\bmp280.$(ObjectExt) : custom\bmp280.c c:\cosmic\fse_compilers\cxstm8\hstm8\mods0.h libs\inc\stm8s.h libs\inc\stm8s_conf.h libs\inc\stm8s_adc1.h libs\inc\stm8s_awu.h libs\inc\stm8s_beep.h libs\inc\stm8s_clk.h libs\inc\stm8s_exti.h libs\inc\stm8s_flash.h libs\inc\stm8s_gpio.h libs\inc\stm8s_i2c.h libs\inc\stm8s_itc.h libs\inc\stm8s_iwdg.h libs\inc\stm8s_rst.h libs\inc\stm8s_spi.h libs\inc\stm8s_tim1.h libs\inc\stm8s_tim2.h libs\inc\stm8s_uart1.h libs\inc\stm8s_wwdg.h custom\bmp280.h 
 	@if not exist $(dir $@)  mkdir $(dir $@)
 	$(CFLAGS_PRJ)
 
@@ -103,7 +103,7 @@ Debug\stm8s_wwdg.$(ObjectExt) : libs\src\stm8s_wwdg.c c:\cosmic\fse_compilers\cx
 	@if not exist $(dir $@)  mkdir $(dir $@)
 	$(CFLAGS_PRJ)
 
-Debug\main.$(ObjectExt) : main.c c:\cosmic\fse_compilers\cxstm8\hstm8\mods0.h libs\inc\stm8s.h libs\inc\stm8s_conf.h libs\inc\stm8s_adc1.h libs\inc\stm8s_awu.h libs\inc\stm8s_beep.h libs\inc\stm8s_clk.h libs\inc\stm8s_exti.h libs\inc\stm8s_flash.h libs\inc\stm8s_gpio.h libs\inc\stm8s_i2c.h libs\inc\stm8s_itc.h libs\inc\stm8s_iwdg.h libs\inc\stm8s_rst.h libs\inc\stm8s_spi.h libs\inc\stm8s_tim1.h libs\inc\stm8s_tim2.h libs\inc\stm8s_uart1.h libs\inc\stm8s_wwdg.h custom\bme280.h 
+Debug\main.$(ObjectExt) : main.c c:\cosmic\fse_compilers\cxstm8\hstm8\mods0.h libs\inc\stm8s.h libs\inc\stm8s_conf.h libs\inc\stm8s_adc1.h libs\inc\stm8s_awu.h libs\inc\stm8s_beep.h libs\inc\stm8s_clk.h libs\inc\stm8s_exti.h libs\inc\stm8s_flash.h libs\inc\stm8s_gpio.h libs\inc\stm8s_i2c.h libs\inc\stm8s_itc.h libs\inc\stm8s_iwdg.h libs\inc\stm8s_rst.h libs\inc\stm8s_spi.h libs\inc\stm8s_tim1.h libs\inc\stm8s_tim2.h libs\inc\stm8s_uart1.h libs\inc\stm8s_wwdg.h custom\bmp280.h 
 	@if not exist $(dir $@)  mkdir $(dir $@)
 	$(CFLAGS_PRJ)
 
@@ -111,13 +111,13 @@ Debug\stm8_interrupt_vector.$(ObjectExt) : stm8_interrupt_vector.c c:\cosmic\fse
 	@if not exist $(dir $@)  mkdir $(dir $@)
 	$(CFLAGS_PRJ)
 
-$(ProjectSFile).elf :  $(OutputPath)\bme280.o $(OutputPath)\stm8s_adc1.o $(OutputPath)\stm8s_awu.o $(OutputPath)\stm8s_beep.o $(OutputPath)\stm8s_clk.o $(OutputPath)\stm8s_exti.o $(OutputPath)\stm8s_flash.o $(OutputPath)\stm8s_gpio.o $(OutputPath)\stm8s_i2c.o $(OutputPath)\stm8s_itc.o $(OutputPath)\stm8s_iwdg.o $(OutputPath)\stm8s_rst.o $(OutputPath)\stm8s_spi.o $(OutputPath)\stm8s_tim1.o $(OutputPath)\stm8s_tim2.o $(OutputPath)\stm8s_uart1.o $(OutputPath)\stm8s_wwdg.o $(OutputPath)\main.o $(OutputPath)\stm8_interrupt_vector.o $(OutputPath)\stm8testprog.lkf
+$(ProjectSFile).elf :  $(OutputPath)\bmp280.o $(OutputPath)\stm8s_adc1.o $(OutputPath)\stm8s_awu.o $(OutputPath)\stm8s_beep.o $(OutputPath)\stm8s_clk.o $(OutputPath)\stm8s_exti.o $(OutputPath)\stm8s_flash.o $(OutputPath)\stm8s_gpio.o $(OutputPath)\stm8s_i2c.o $(OutputPath)\stm8s_itc.o $(OutputPath)\stm8s_iwdg.o $(OutputPath)\stm8s_rst.o $(OutputPath)\stm8s_spi.o $(OutputPath)\stm8s_tim1.o $(OutputPath)\stm8s_tim2.o $(OutputPath)\stm8s_uart1.o $(OutputPath)\stm8s_wwdg.o $(OutputPath)\main.o $(OutputPath)\stm8_interrupt_vector.o $(OutputPath)\stm8testprog.lkf
 	$(ToolsetBin)\clnk  $(ToolsetLibOpts) -o $(OutputPath)\$(TargetSName).sm8 -m$(OutputPath)\$(TargetSName).map $(OutputPath)\$(TargetSName).lkf 
 	$(ToolsetBin)\cvdwarf  $(OutputPath)\$(TargetSName).sm8
 
 	$(ToolsetBin)\chex  -o $(OutputPath)\$(TargetSName).s19 $(OutputPath)\$(TargetSName).sm8
 clean : 
-	-@erase $(OutputPath)\bme280.o
+	-@erase $(OutputPath)\bmp280.o
 	-@erase $(OutputPath)\stm8s_adc1.o
 	-@erase $(OutputPath)\stm8s_awu.o
 	-@erase $(OutputPath)\stm8s_beep.o
@@ -139,7 +139,7 @@ clean :
 	-@erase $(OutputPath)\stm8testprog.elf
 	-@erase $(OutputPath)\stm8testprog.elf
 	-@erase $(OutputPath)\stm8testprog.map
-	-@erase $(OutputPath)\bme280.ls
+	-@erase $(OutputPath)\bmp280.ls
 	-@erase $(OutputPath)\stm8s_adc1.ls
 	-@erase $(OutputPath)\stm8s_awu.ls
 	-@erase $(OutputPath)\stm8s_beep.ls
@@ -179,7 +179,7 @@ all : $(OutputPath) stm8testprog.elf
 $(OutputPath) : 
 	if not exist $(OutputPath)/ mkdir $(OutputPath)
 
-Release\bme280.$(ObjectExt) : custom\bme280.c c:\cosmic\fse_compilers\cxstm8\hstm8\mods0.h custom\bme280.h libs\inc\stm8s.h libs\inc\stm8s_conf.h libs\inc\stm8s_adc1.h libs\inc\stm8s_awu.h libs\inc\stm8s_beep.h libs\inc\stm8s_clk.h libs\inc\stm8s_exti.h libs\inc\stm8s_flash.h libs\inc\stm8s_gpio.h libs\inc\stm8s_i2c.h libs\inc\stm8s_itc.h libs\inc\stm8s_iwdg.h libs\inc\stm8s_rst.h libs\inc\stm8s_spi.h libs\inc\stm8s_tim1.h libs\inc\stm8s_tim2.h libs\inc\stm8s_uart1.h libs\inc\stm8s_wwdg.h 
+Release\bmp280.$(ObjectExt) : custom\bmp280.c c:\cosmic\fse_compilers\cxstm8\hstm8\mods0.h libs\inc\stm8s.h libs\inc\stm8s_conf.h libs\inc\stm8s_adc1.h libs\inc\stm8s_awu.h libs\inc\stm8s_beep.h libs\inc\stm8s_clk.h libs\inc\stm8s_exti.h libs\inc\stm8s_flash.h libs\inc\stm8s_gpio.h libs\inc\stm8s_i2c.h libs\inc\stm8s_itc.h libs\inc\stm8s_iwdg.h libs\inc\stm8s_rst.h libs\inc\stm8s_spi.h libs\inc\stm8s_tim1.h libs\inc\stm8s_tim2.h libs\inc\stm8s_uart1.h libs\inc\stm8s_wwdg.h custom\bmp280.h 
 	@if not exist $(dir $@)  mkdir $(dir $@)
 	$(CFLAGS_PRJ)
 
@@ -247,7 +247,7 @@ Release\stm8s_wwdg.$(ObjectExt) : libs\src\stm8s_wwdg.c c:\cosmic\fse_compilers\
 	@if not exist $(dir $@)  mkdir $(dir $@)
 	$(CFLAGS_PRJ)
 
-Release\main.$(ObjectExt) : main.c c:\cosmic\fse_compilers\cxstm8\hstm8\mods0.h libs\inc\stm8s.h libs\inc\stm8s_conf.h libs\inc\stm8s_adc1.h libs\inc\stm8s_awu.h libs\inc\stm8s_beep.h libs\inc\stm8s_clk.h libs\inc\stm8s_exti.h libs\inc\stm8s_flash.h libs\inc\stm8s_gpio.h libs\inc\stm8s_i2c.h libs\inc\stm8s_itc.h libs\inc\stm8s_iwdg.h libs\inc\stm8s_rst.h libs\inc\stm8s_spi.h libs\inc\stm8s_tim1.h libs\inc\stm8s_tim2.h libs\inc\stm8s_uart1.h libs\inc\stm8s_wwdg.h custom\bme280.h 
+Release\main.$(ObjectExt) : main.c c:\cosmic\fse_compilers\cxstm8\hstm8\mods0.h libs\inc\stm8s.h libs\inc\stm8s_conf.h libs\inc\stm8s_adc1.h libs\inc\stm8s_awu.h libs\inc\stm8s_beep.h libs\inc\stm8s_clk.h libs\inc\stm8s_exti.h libs\inc\stm8s_flash.h libs\inc\stm8s_gpio.h libs\inc\stm8s_i2c.h libs\inc\stm8s_itc.h libs\inc\stm8s_iwdg.h libs\inc\stm8s_rst.h libs\inc\stm8s_spi.h libs\inc\stm8s_tim1.h libs\inc\stm8s_tim2.h libs\inc\stm8s_uart1.h libs\inc\stm8s_wwdg.h custom\bmp280.h 
 	@if not exist $(dir $@)  mkdir $(dir $@)
 	$(CFLAGS_PRJ)
 
@@ -255,13 +255,13 @@ Release\stm8_interrupt_vector.$(ObjectExt) : stm8_interrupt_vector.c c:\cosmic\f
 	@if not exist $(dir $@)  mkdir $(dir $@)
 	$(CFLAGS_PRJ)
 
-stm8testprog.elf :  $(OutputPath)\bme280.o $(OutputPath)\stm8s_adc1.o $(OutputPath)\stm8s_awu.o $(OutputPath)\stm8s_beep.o $(OutputPath)\stm8s_clk.o $(OutputPath)\stm8s_exti.o $(OutputPath)\stm8s_flash.o $(OutputPath)\stm8s_gpio.o $(OutputPath)\stm8s_i2c.o $(OutputPath)\stm8s_itc.o $(OutputPath)\stm8s_iwdg.o $(OutputPath)\stm8s_rst.o $(OutputPath)\stm8s_spi.o $(OutputPath)\stm8s_tim1.o $(OutputPath)\stm8s_tim2.o $(OutputPath)\stm8s_uart1.o $(OutputPath)\stm8s_wwdg.o $(OutputPath)\main.o $(OutputPath)\stm8_interrupt_vector.o $(OutputPath)\stm8testprog.lkf
+stm8testprog.elf :  $(OutputPath)\bmp280.o $(OutputPath)\stm8s_adc1.o $(OutputPath)\stm8s_awu.o $(OutputPath)\stm8s_beep.o $(OutputPath)\stm8s_clk.o $(OutputPath)\stm8s_exti.o $(OutputPath)\stm8s_flash.o $(OutputPath)\stm8s_gpio.o $(OutputPath)\stm8s_i2c.o $(OutputPath)\stm8s_itc.o $(OutputPath)\stm8s_iwdg.o $(OutputPath)\stm8s_rst.o $(OutputPath)\stm8s_spi.o $(OutputPath)\stm8s_tim1.o $(OutputPath)\stm8s_tim2.o $(OutputPath)\stm8s_uart1.o $(OutputPath)\stm8s_wwdg.o $(OutputPath)\main.o $(OutputPath)\stm8_interrupt_vector.o $(OutputPath)\stm8testprog.lkf
 	$(ToolsetBin)\clnk  $(ToolsetLibOpts) -o $(OutputPath)\$(TargetSName).sm8 $(OutputPath)\$(TargetSName).lkf 
 	$(ToolsetBin)\cvdwarf  $(OutputPath)\$(TargetSName).sm8 
 
 	$(ToolsetBin)\chex  -o $(OutputPath)\$(TargetSName).s19 $(OutputPath)\$(TargetSName).sm8
 clean : 
-	-@erase $(OutputPath)\bme280.o
+	-@erase $(OutputPath)\bmp280.o
 	-@erase $(OutputPath)\stm8s_adc1.o
 	-@erase $(OutputPath)\stm8s_awu.o
 	-@erase $(OutputPath)\stm8s_beep.o
@@ -284,7 +284,7 @@ clean :
 	-@erase $(OutputPath)\stm8testprog.map
 	-@erase $(OutputPath)\stm8testprog.st7
 	-@erase $(OutputPath)\stm8testprog.s19
-	-@erase $(OutputPath)\bme280.ls
+	-@erase $(OutputPath)\bmp280.ls
 	-@erase $(OutputPath)\stm8s_adc1.ls
 	-@erase $(OutputPath)\stm8s_awu.ls
 	-@erase $(OutputPath)\stm8s_beep.ls

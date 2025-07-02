@@ -1,8 +1,0 @@
-blink.c
-clock.c
-gpio.c
-stm8_interrupt_vector.c
-clock.h
-gpio.h
-stm8s003.h
-c:\cosmic\fse_compilers\cxstm8\hstm8\mods0.h

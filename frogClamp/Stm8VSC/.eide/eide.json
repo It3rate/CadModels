@@ -1,0 +1,373 @@
+{
+  "name": "stm8s_cosmic_quickstart-quickstart",
+  "type": "C51",
+  "dependenceList": [],
+  "srcDirs": [],
+  "outDir": "build",
+  "deviceName": null,
+  "packDir": null,
+  "virtualFolder": {
+    "name": "<virtual_root>",
+    "files": [
+      {
+        "path": "stm8.lkf"
+      },
+      {
+        "path": "vector.c"
+      }
+    ],
+    "folders": [
+      {
+        "name": "Application",
+        "files": [
+          {
+            "path": "source/main.c"
+          }
+        ],
+        "folders": []
+      },
+      {
+        "name": "Libraries",
+        "files": [
+          {
+            "path": "libraries/STM8S_StdPeriph_Driver/stm8s_conf.h"
+          },
+          {
+            "path": "libraries/STM8S_StdPeriph_Driver/include/stm8s.h"
+          }
+        ],
+        "folders": [
+          {
+            "name": "STM8S_StdPeriph_Driver",
+            "files": [
+              {
+                "path": "libraries/STM8S_StdPeriph_Driver/source/stm8s_adc1.c"
+              },
+              {
+                "path": "libraries/STM8S_StdPeriph_Driver/source/stm8s_awu.c"
+              },
+              {
+                "path": "libraries/STM8S_StdPeriph_Driver/source/stm8s_beep.c"
+              },
+              {
+                "path": "libraries/STM8S_StdPeriph_Driver/source/stm8s_clk.c"
+              },
+              {
+                "path": "libraries/STM8S_StdPeriph_Driver/source/stm8s_exti.c"
+              },
+              {
+                "path": "libraries/STM8S_StdPeriph_Driver/source/stm8s_flash.c"
+              },
+              {
+                "path": "libraries/STM8S_StdPeriph_Driver/source/stm8s_gpio.c"
+              },
+              {
+                "path": "libraries/STM8S_StdPeriph_Driver/source/stm8s_i2c.c"
+              },
+              {
+                "path": "libraries/STM8S_StdPeriph_Driver/source/stm8s_itc.c"
+              },
+              {
+                "path": "libraries/STM8S_StdPeriph_Driver/source/stm8s_iwdg.c"
+              },
+              {
+                "path": "libraries/STM8S_StdPeriph_Driver/source/stm8s_rst.c"
+              },
+              {
+                "path": "libraries/STM8S_StdPeriph_Driver/source/stm8s_spi.c"
+              },
+              {
+                "path": "libraries/STM8S_StdPeriph_Driver/source/stm8s_tim1.c"
+              },
+              {
+                "path": "libraries/STM8S_StdPeriph_Driver/source/stm8s_tim2.c"
+              },
+              {
+                "path": "libraries/STM8S_StdPeriph_Driver/source/stm8s_tim4.c"
+              },
+              {
+                "path": "libraries/STM8S_StdPeriph_Driver/source/stm8s_uart1.c"
+              },
+              {
+                "path": "libraries/STM8S_StdPeriph_Driver/source/stm8s_wwdg.c"
+              },
+              {
+                "path": "libraries/STM8S_StdPeriph_Driver/source/stm8s_adc2.c"
+              },
+              {
+                "path": "libraries/STM8S_StdPeriph_Driver/source/stm8s_can.c"
+              },
+              {
+                "path": "libraries/STM8S_StdPeriph_Driver/source/stm8s_tim3.c"
+              },
+              {
+                "path": "libraries/STM8S_StdPeriph_Driver/source/stm8s_tim5.c"
+              },
+              {
+                "path": "libraries/STM8S_StdPeriph_Driver/source/stm8s_tim6.c"
+              },
+              {
+                "path": "libraries/STM8S_StdPeriph_Driver/source/stm8s_uart2.c"
+              },
+              {
+                "path": "libraries/STM8S_StdPeriph_Driver/source/stm8s_uart3.c"
+              },
+              {
+                "path": "libraries/STM8S_StdPeriph_Driver/source/stm8s_uart4.c"
+              }
+            ],
+            "folders": []
+          }
+        ]
+      }
+    ]
+  },
+  "miscInfo": {
+    "uid": "8db6e118a3e09cc142b48f51f6c62bba"
+  },
+  "targets": {
+    "STM8S003": {
+      "excludeList": [
+        "<virtual_root>/Libraries/STM8S_StdPeriph_Driver/stm8s_adc2.c",
+        "<virtual_root>/Libraries/STM8S_StdPeriph_Driver/stm8s_can.c",
+        "<virtual_root>/Libraries/STM8S_StdPeriph_Driver/stm8s_tim3.c",
+        "<virtual_root>/Libraries/STM8S_StdPeriph_Driver/stm8s_tim5.c",
+        "<virtual_root>/Libraries/STM8S_StdPeriph_Driver/stm8s_tim6.c",
+        "<virtual_root>/Libraries/STM8S_StdPeriph_Driver/stm8s_uart2.c",
+        "<virtual_root>/Libraries/STM8S_StdPeriph_Driver/stm8s_uart3.c",
+        "<virtual_root>/Libraries/STM8S_StdPeriph_Driver/stm8s_uart4.c"
+      ],
+      "toolchain": "COSMIC_STM8",
+      "compileConfig": {
+        "linkerScript": "stm8.lkf",
+        "options": "null"
+      },
+      "uploader": "STVP",
+      "uploadConfig": {
+        "deviceName": "STM8S003F3",
+        "bin": "",
+        "eepromFile": "null",
+        "optionByteFile": "null"
+      },
+      "uploadConfigMap": {},
+      "custom_dep": {
+        "name": "default",
+        "incList": [
+          "libraries/STM8S_StdPeriph_Driver/include",
+          "libraries/STM8S_StdPeriph_Driver",
+          "src"
+        ],
+        "libList": [],
+        "defineList": [
+          "STM8S003"
+        ]
+      },
+      "builderOptions": {
+        "SDCC": {
+          "version": 3,
+          "beforeBuildTasks": [],
+          "afterBuildTasks": [],
+          "global": {
+            "device": "stm8",
+            "optimize-type": "balanced"
+          },
+          "c/cpp-compiler": {
+            "language-c": "c99"
+          },
+          "asm-compiler": {},
+          "linker": {
+            "$mainFileName": "main",
+            "output-format": "hex"
+          }
+        },
+        "COSMIC_STM8": {
+          "version": 1,
+          "beforeBuildTasks": [],
+          "afterBuildTasks": [],
+          "global": {
+            "model": "large-0",
+            "output-debug-info": "enable",
+            "output-list-file": true
+          },
+          "c/cpp-compiler": {
+            "c99-mode": true,
+            "optimization": "none",
+            "split-functions": true,
+            "warnings": "all"
+          },
+          "asm-compiler": {
+            "optimization": "none"
+          },
+          "linker": {
+            "output-format": "elf",
+            "auto-include-stdc-libraries": true,
+            "crts-initialize": "crtsi"
+          }
+        }
+      }
+    },
+    "STM8S103": {
+      "excludeList": [
+        "<virtual_root>/Libraries/STM8S_StdPeriph_Driver/stm8s_adc2.c",
+        "<virtual_root>/Libraries/STM8S_StdPeriph_Driver/stm8s_can.c",
+        "<virtual_root>/Libraries/STM8S_StdPeriph_Driver/stm8s_tim3.c",
+        "<virtual_root>/Libraries/STM8S_StdPeriph_Driver/stm8s_tim5.c",
+        "<virtual_root>/Libraries/STM8S_StdPeriph_Driver/stm8s_tim6.c",
+        "<virtual_root>/Libraries/STM8S_StdPeriph_Driver/stm8s_uart3.c",
+        "<virtual_root>/Libraries/STM8S_StdPeriph_Driver/stm8s_uart2.c",
+        "<virtual_root>/Libraries/STM8S_StdPeriph_Driver/stm8s_uart4.c"
+      ],
+      "toolchain": "COSMIC_STM8",
+      "compileConfig": {
+        "linkerScript": "stm8.lkf",
+        "options": "null"
+      },
+      "uploader": "STVP",
+      "uploadConfig": {
+        "deviceName": "STM8S103F3",
+        "bin": "",
+        "eepromFile": "null",
+        "optionByteFile": "null"
+      },
+      "uploadConfigMap": {},
+      "custom_dep": {
+        "name": "default",
+        "incList": [
+          "c:/COSMIC/FSE_Compilers/CXSTM8/Lib",
+          "c:/COSMIC/FSE_Compilers/CXSTM8/Hstm8",
+          "libraries/STM8S_StdPeriph_Driver/include",
+          "libraries/STM8S_StdPeriph_Driver",
+          "src"
+        ],
+        "libList": [
+        ],
+        "defineList": [
+          "STM8S103"
+        ]
+      },
+      "builderOptions": {
+        "SDCC": {
+          "version": 3,
+          "beforeBuildTasks": [],
+          "afterBuildTasks": [],
+          "global": {
+            "device": "stm8",
+            "optimize-type": "balanced"
+          },
+          "c/cpp-compiler": {
+            "language-c": "c99"
+          },
+          "asm-compiler": {},
+          "linker": {
+            "$mainFileName": "main",
+            "output-format": "hex"
+          }
+        },
+        "COSMIC_STM8": {
+          "version": 1,
+          "beforeBuildTasks": [],
+          "afterBuildTasks": [],
+          "global": {
+            "model": "large-0",
+            "output-debug-info": "enable",
+            "output-list-file": true
+          },
+          "c/cpp-compiler": {
+            "c99-mode": true,
+            "optimization": "none",
+            "split-functions": true,
+            "warnings": "all"
+          },
+          "asm-compiler": {
+            "optimization": "none"
+          },
+          "linker": {
+            "output-format": "elf",
+            "auto-include-stdc-libraries": true,
+            "crts-initialize": "crtsi"
+          }
+        }
+      }
+    },
+    "STM8S005": {
+      "excludeList": [
+        "<virtual_root>/Libraries/STM8S_StdPeriph_Driver/stm8s_adc2.c",
+        "<virtual_root>/Libraries/STM8S_StdPeriph_Driver/stm8s_can.c",
+        "<virtual_root>/Libraries/STM8S_StdPeriph_Driver/stm8s_tim5.c",
+        "<virtual_root>/Libraries/STM8S_StdPeriph_Driver/stm8s_tim6.c",
+        "<virtual_root>/Libraries/STM8S_StdPeriph_Driver/stm8s_uart1.c",
+        "<virtual_root>/Libraries/STM8S_StdPeriph_Driver/stm8s_uart3.c",
+        "<virtual_root>/Libraries/STM8S_StdPeriph_Driver/stm8s_uart4.c"
+      ],
+      "toolchain": "COSMIC_STM8",
+      "compileConfig": {
+        "linkerScript": "stm8.lkf",
+        "options": "null"
+      },
+      "uploader": "STVP",
+      "uploadConfig": {
+        "deviceName": "STM8S005K6",
+        "bin": "",
+        "eepromFile": "null",
+        "optionByteFile": "null"
+      },
+      "uploadConfigMap": {},
+      "custom_dep": {
+        "name": "default",
+        "incList": [
+          "libraries/STM8S_StdPeriph_Driver/include",
+          "libraries/STM8S_StdPeriph_Driver",
+          "src"
+        ],
+        "libList": [],
+        "defineList": [
+          "STM8S005"
+        ]
+      },
+      "builderOptions": {
+        "SDCC": {
+          "version": 3,
+          "beforeBuildTasks": [],
+          "afterBuildTasks": [],
+          "global": {
+            "device": "stm8",
+            "optimize-type": "balanced"
+          },
+          "c/cpp-compiler": {
+            "language-c": "c99"
+          },
+          "asm-compiler": {},
+          "linker": {
+            "$mainFileName": "main",
+            "output-format": "hex"
+          }
+        },
+        "COSMIC_STM8": {
+          "version": 1,
+          "beforeBuildTasks": [],
+          "afterBuildTasks": [],
+          "global": {
+            "model": "large-0",
+            "output-debug-info": "enable",
+            "output-list-file": true
+          },
+          "c/cpp-compiler": {
+            "c99-mode": true,
+            "optimization": "none",
+            "split-functions": true,
+            "warnings": "all"
+          },
+          "asm-compiler": {
+            "optimization": "none"
+          },
+          "linker": {
+            "output-format": "elf",
+            "auto-include-stdc-libraries": true,
+            "crts-initialize": "crtsi"
+          }
+        }
+      }
+    }
+  },
+  "version": "3.5"
+}
