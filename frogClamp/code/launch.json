@@ -1,0 +1,17 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "stm8-debug",
+            "request": "launch",
+            "name": "Debug (COSMIC)",
+            "serverType": "stm8-sdcc",
+            "executable": "build/STM8S103/frogClamp.elf",
+            "runToMain": true,
+            "openOcdConfigs": [
+                "interface/stlink.cfg",
+                "target/stm8s003.cfg"
+            ]
+        }
+    ]
+}
