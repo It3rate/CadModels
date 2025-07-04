@@ -117,6 +117,12 @@
               },
               {
                 "path": "libraries/STM8S_StdPeriph_Driver/source/bmp280.c"
+              },
+              {
+                "path": "libraries/STM8S_StdPeriph_Driver/include/bmp280_defs.h"
+              },
+              {
+                "path": "libraries/STM8S_StdPeriph_Driver/include/bmp280.h"
               }
             ],
             "folders": []
@@ -147,7 +153,7 @@
       },
       "uploader": "STVP",
       "uploadConfig": {
-        "deviceName": "STM8S003F3",
+        "deviceName": "STM8S103F3",
         "bin": "",
         "eepromFile": "null",
         "optionByteFile": "null"
@@ -162,7 +168,7 @@
         ],
         "libList": [],
         "defineList": [
-          "STM8S003"
+          "STM8S103"
         ]
       },
       "builderOptions": {

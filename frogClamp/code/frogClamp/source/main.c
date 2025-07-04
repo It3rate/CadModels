@@ -2,25 +2,95 @@
 #include "stm8s_gpio.h"
 #include "bmp280.h"
 
-void delay(int ms)
-{
-	int i = 0;
-	int j = 0;
-	for( i = 0; i <= ms; i++)
-	{
-		for(j = 0; j < 120; j++)
-		{
-			_asm("nop");
-		}
-	}
+// void delay(int ms)
+// {
+// 	int i = 0;
+// 	int j = 0;
+// 	for( i = 0; i <= ms; i++)
+// 	{
+// 		for(j = 0; j < 120; j++)
+// 		{
+// 			_asm("nop");
+// 		}
+// 	}
+// }
+void Delay_us(uint32_t us) {
+    us = us * 2; /* ~8 cycles/us for STM8S103 */
+    while (us--) __asm("nop");
 }
 void clock_setup(void);
 void GPIO_setup(void);
 void I2C_setup(void);
 void TIM2_setup(void);
 
-BMP280_HandleTypedef bmp280;
+//BMP280_HandleTypedef bmp280;
 	
+/* Initialize I2C */
+void I2C_Init_BME280(void) {
+    I2C_DeInit();
+    I2C_Init(100000, 0, I2C_DUTYCYCLE_2, I2C_ACK_CURR, I2C_ADDMODE_7BIT, 16);
+    I2C_Cmd(ENABLE);
+}
+
+
+/* I2C Read (corrected signature) */
+int8_t I2C_ReadBME(uint8_t reg_addr, uint8_t *data, uint32_t len, void *intf_ptr) {
+    uint8_t addr = *(uint8_t *)intf_ptr; /* Extract device address */
+    uint16_t t = I2C_TIMEOUT;
+    I2C_GenerateSTART(ENABLE);
+    while (!I2C_CheckEvent(I2C_EVENT_MASTER_MODE_SELECT) && --t);
+    if (!t) goto err;
+    I2C_Send7bitAddress(addr, I2C_DIRECTION_TX);
+    while (!I2C_CheckEvent(I2C_EVENT_MASTER_TRANSMITTER_MODE_SELECTED) && --t);
+    if (!t) goto err;
+    I2C_SendData(reg_addr);
+    while (!I2C_CheckEvent(I2C_EVENT_MASTER_BYTE_TRANSMITTED) && --t);
+    if (!t) goto err;
+    I2C_GenerateSTART(ENABLE);
+    while (!I2C_CheckEvent(I2C_EVENT_MASTER_MODE_SELECT) && --t);
+    if (!t) goto err;
+    I2C_Send7bitAddress(addr, I2C_DIRECTION_RX);
+    while (!I2C_CheckEvent(I2C_EVENT_MASTER_RECEIVER_MODE_SELECTED) && --t);
+    if (!t) goto err;
+    while (len--) {
+        if (!len) I2C_AcknowledgeConfig(I2C_ACK_NONE);
+        while (!I2C_CheckEvent(I2C_EVENT_MASTER_BYTE_RECEIVED) && --t);
+        if (!t) { I2C_AcknowledgeConfig(I2C_ACK_CURR); goto err; }
+        *data++ = I2C_ReceiveData();
+    }
+    I2C_GenerateSTOP(ENABLE);
+    I2C_AcknowledgeConfig(I2C_ACK_CURR);
+    return 0;
+err:
+    I2C_GenerateSTOP(ENABLE);
+    return -1;
+}
+
+/* I2C Write (corrected signature) */
+int8_t I2C_WriteBME(uint8_t reg_addr, const uint8_t *data, uint32_t len, void *intf_ptr) {
+    uint8_t addr = *(uint8_t *)intf_ptr; /* Extract device address */
+    uint16_t t = I2C_TIMEOUT;
+    I2C_GenerateSTART(ENABLE);
+    while (!I2C_CheckEvent(I2C_EVENT_MASTER_MODE_SELECT) && --t);
+    if (!t) goto err;
+    I2C_Send7bitAddress(addr, I2C_DIRECTION_TX);
+    while (!I2C_CheckEvent(I2C_EVENT_MASTER_TRANSMITTER_MODE_SELECTED) && --t);
+    if (!t) goto err;
+    I2C_SendData(reg_addr);
+    while (!I2C_CheckEvent(I2C_EVENT_MASTER_BYTE_TRANSMITTED) && --t);
+    if (!t) goto err;
+    while (len--) {
+        I2C_SendData(*data++);
+        while (!I2C_CheckEvent(I2C_EVENT_MASTER_BYTE_TRANSMITTED) && --t);
+        if (!t) goto err;
+    }
+    I2C_GenerateSTOP(ENABLE);
+    return 0;
+err:
+    I2C_GenerateSTOP(ENABLE);
+    return -1;
+}
+
 main()
 {
 	clock_setup();
@@ -28,10 +98,31 @@ main()
 	I2C_setup();
 	TIM2_setup();
 	
-	bmp280_init(&bmp280);
-	
-    while(TRUE)
-    {
+	//bmp280_init(&bmp280);
+
+    struct bme280_dev dev = {0};
+    struct bme280_data data;
+    uint8_t addr = BME280_I2C_ADDR;
+
+    CLK_HSIPrescalerConfig(CLK_PRESCALER_HSIDIV1); /* 16 MHz */
+    I2C_Init_BME280();
+    dev.intf_ptr = &addr;
+    dev.read = I2C_ReadBME;
+    dev.write = I2C_WriteBME;
+    dev.delay_us = Delay_us;
+    bme280_init(&dev); /* Initialize, no error check */
+    uint32_t pressure;
+    uint32_t temperature;
+
+    while (1) {
+        uint8_t mode = (1 << 5) | (1 << 2) | BME280_POWERMODE_FORCED;
+        I2C_WriteBME(BME280_REG_CTRL_MEAS, &mode, 1, &addr); /* Forced mode */
+        Delay_us(5000); /* ~4.5 ms for osr_p=1x, osr_t=1x */
+        bme280_get_sensor_data(&data, &dev);
+        pressure = data.pressure; /* In Pa, use as needed */
+        temperature = data.temperature; /* In Pa, use as needed */
+        //Delay_us(1000000); /* ~1 s */
+        
         if(TIM2_GetCounter() > 976)
         {
             GPIO_WriteHigh(GPIOB, GPIO_PIN_5);
@@ -40,7 +131,7 @@ main()
         {
             GPIO_WriteLow(GPIOB, GPIO_PIN_5);
         }
-    };
+    }
 }
  
 
@@ -56,7 +147,7 @@ void I2C_setup(void)
 {
     I2C_DeInit();
     I2C_Init(100000, 
-             BMP280_I2C_ADDRESS_0, 
+             BME280_I2C_ADDR_PRIM, 
              I2C_DUTYCYCLE_2, 
              I2C_ACK_CURR, 
              I2C_ADDMODE_7BIT, 

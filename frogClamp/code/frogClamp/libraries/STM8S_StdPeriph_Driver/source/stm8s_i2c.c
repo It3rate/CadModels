@@ -60,6 +60,146 @@
   */
 
 /**
+ * @brief Write data to a BME280 register over I2C.
+ * @param device_addr I2C device address (e.g., 0x76 << 1).
+ * @param reg_addr Register address to write to.
+ * @param data Pointer to data buffer to write.
+ * @param len Number of bytes to write.
+ * @retval 0 on success, -1 on error.
+ */
+int8_t I2C_Write(uint8_t device_addr, uint8_t reg_addr, uint8_t *data, uint32_t len) {
+    uint32_t timeout;
+    uint32_t i;
+
+    /* Generate START condition */
+    I2C_GenerateSTART(ENABLE);
+    timeout = I2C_TIMEOUT;
+    while (!I2C_CheckEvent(I2C_EVENT_MASTER_MODE_SELECT) && --timeout);
+    if (timeout == 0) {
+        I2C_GenerateSTOP(ENABLE);
+        return -1; /* Timeout error */
+    }
+
+    /* Send device address (write mode) */
+    I2C_Send7bitAddress(device_addr, I2C_DIRECTION_TX);
+    timeout = I2C_TIMEOUT;
+    while (!I2C_CheckEvent(I2C_EVENT_MASTER_TRANSMITTER_MODE_SELECTED) && --timeout);
+    if (timeout == 0) {
+        I2C_GenerateSTOP(ENABLE);
+        return -1; /* Timeout or NACK */
+    }
+
+    /* Send register address */
+    I2C_SendData(reg_addr);
+    timeout = I2C_TIMEOUT;
+    while (!I2C_CheckEvent(I2C_EVENT_MASTER_BYTE_TRANSMITTED) && --timeout);
+    if (timeout == 0) {
+        I2C_GenerateSTOP(ENABLE);
+        return -1; /* Timeout */
+    }
+
+    /* Send data bytes */
+    for (i = 0; i < len; i++) {
+        I2C_SendData(data[i]);
+        timeout = I2C_TIMEOUT;
+        while (!I2C_CheckEvent(I2C_EVENT_MASTER_BYTE_TRANSMITTED) && --timeout);
+        if (timeout == 0) {
+            I2C_GenerateSTOP(ENABLE);
+            return -1; /* Timeout */
+        }
+    }
+
+    /* Generate STOP condition */
+    I2C_GenerateSTOP(ENABLE);
+
+    return 0; /* Success */
+}
+
+/**
+ * @brief Read data from a BME280 register over I2C.
+ * @param device_addr I2C device address (e.g., 0x76 << 1).
+ * @param reg_addr Register address to read from.
+ * @param data Pointer to buffer to store read data.
+ * @param len Number of bytes to read.
+ * @retval 0 on success, -1 on error.
+ */
+int8_t I2C_Read(uint8_t device_addr, uint8_t reg_addr, uint8_t *data, uint32_t len) {
+    uint32_t timeout;
+    uint32_t i;
+
+    /* Step 1: Write the register address (requires a write transaction) */
+    I2C_GenerateSTART(ENABLE);
+    timeout = I2C_TIMEOUT;
+    while (!I2C_CheckEvent(I2C_EVENT_MASTER_MODE_SELECT) && --timeout);
+    if (timeout == 0) {
+        I2C_GenerateSTOP(ENABLE);
+        return -1; /* Timeout */
+    }
+
+    /* Send device address (write mode) */
+    I2C_Send7bitAddress(device_addr, I2C_DIRECTION_TX);
+    timeout = I2C_TIMEOUT;
+    while (!I2C_CheckEvent(I2C_EVENT_MASTER_TRANSMITTER_MODE_SELECTED) && --timeout);
+    if (timeout == 0) {
+        I2C_GenerateSTOP(ENABLE);
+        return -1; /* Timeout or NACK */
+    }
+
+    /* Send register address */
+    I2C_SendData(reg_addr);
+    timeout = I2C_TIMEOUT;
+    while (!I2C_CheckEvent(I2C_EVENT_MASTER_BYTE_TRANSMITTED) && --timeout);
+    if (timeout == 0) {
+        I2C_GenerateSTOP(ENABLE);
+        return -1; /* Timeout */
+    }
+
+    /* Step 2: Read data (repeated start) */
+    I2C_GenerateSTART(ENABLE);
+    timeout = I2C_TIMEOUT;
+    while (!I2C_CheckEvent(I2C_EVENT_MASTER_MODE_SELECT) && --timeout);
+    if (timeout == 0) {
+        I2C_GenerateSTOP(ENABLE);
+        return -1; /* Timeout */
+    }
+
+    /* Send device address (read mode) */
+    I2C_Send7bitAddress(device_addr, I2C_DIRECTION_RX);
+    timeout = I2C_TIMEOUT;
+    while (!I2C_CheckEvent(I2C_EVENT_MASTER_RECEIVER_MODE_SELECTED) && --timeout);
+    if (timeout == 0) {
+        I2C_GenerateSTOP(ENABLE);
+        return -1; /* Timeout or NACK */
+    }
+
+    /* Read data bytes */
+    for (i = 0; i < len; i++) {
+        if (i == len - 1) {
+            /* Disable ACK for the last byte */
+            I2C_AcknowledgeConfig(I2C_ACK_NONE);
+        }
+
+        timeout = I2C_TIMEOUT;
+        while (!I2C_CheckEvent(I2C_EVENT_MASTER_BYTE_RECEIVED) && --timeout);
+        if (timeout == 0) {
+            I2C_GenerateSTOP(ENABLE);
+            I2C_AcknowledgeConfig(I2C_ACK_CURR); /* Restore ACK */
+            return -1; /* Timeout */
+        }
+
+        data[i] = I2C_ReceiveData();
+    }
+
+    /* Generate STOP condition */
+    I2C_GenerateSTOP(ENABLE);
+
+    /* Restore acknowledge for future transactions */
+    I2C_AcknowledgeConfig(I2C_ACK_CURR);
+
+    return 0; /* Success */
+}
+
+/**
   * @brief  Deinitializes the I2C peripheral registers to their default reset values.
   * @param  None
   * @retval None

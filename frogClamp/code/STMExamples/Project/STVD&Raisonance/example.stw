@@ -1,0 +1,12 @@
+;	STMicroelectronics Workspace file
+
+[Version]
+Keyword=ST7Workspace-V0.7
+
+[Project0]
+Filename=example.stp
+Dependencies=
+[Options]
+ActiveProject=example
+ActiveConfig=Debug
+AddSortedElements=1
