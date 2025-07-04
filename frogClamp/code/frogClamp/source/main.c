@@ -123,14 +123,14 @@ main()
         temperature = data.temperature; /* In Pa, use as needed */
         //Delay_us(1000000); /* ~1 s */
         
-        if(TIM2_GetCounter() > 976)
-        {
-            GPIO_WriteHigh(GPIOB, GPIO_PIN_5);
-        }
-        else
-        {
-            GPIO_WriteLow(GPIOB, GPIO_PIN_5);
-        }
+        // if(TIM2_GetCounter() > 976)
+        // {
+        //     GPIO_WriteHigh(GPIOB, GPIO_PIN_5);
+        // }
+        // else
+        // {
+        //     GPIO_WriteLow(GPIOB, GPIO_PIN_5);
+        // }
     }
 }
  
@@ -157,8 +157,13 @@ void I2C_setup(void)
 
 void TIM2_setup(void)
 {
+    // TIM2_DeInit();
+    // TIM2_TimeBaseInit(TIM2_PRESCALER_2048, 1952);
+    // TIM2_Cmd(ENABLE);
+
     TIM2_DeInit();
-    TIM2_TimeBaseInit(TIM2_PRESCALER_2048, 1952);
+    TIM2_TimeBaseInit(TIM2_PRESCALER_128, 1952);
+    //TIM2_ITConfig(TIM2, ENABLE);
     TIM2_Cmd(ENABLE);
 }
 void clock_setup(void)
