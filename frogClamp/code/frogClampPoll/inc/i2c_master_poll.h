@@ -43,7 +43,7 @@
 
 void I2C_Init(void);
 void TIM4_Init(void);
-void I2C_RandomRead(u8 i2cDevice, u8 u8_NumByteToRead, u8 *u8_ReadBuffer);
+void I2C_RandomRead(u8 i2cDevice, u8 *u8_ReadBuffer, u8 u8_NumByteToRead);
 void I2C_ReadRegister(u8 i2cDevice, u8 u8_regAddr, u8 *u8_ReadBuffer, u8 u8_NumByteToRead);
 void I2C_WriteRegister(u8 i2cDevice, u8 u8_regAddr, u8 *u8_DataBuffer, u8 u8_NumByteToWrite);
 void ErrProc(void);

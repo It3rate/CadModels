@@ -2,6 +2,7 @@
 #define BME280_H
 
 #include <stdint.h>
+#include "i2c_master_poll.h"
 
 #define BME280_I2C_ADDR_PRIM                      UINT8_C(0x76)
 #define BME280_I2C_ADDR_SEC                       UINT8_C(0x77)
@@ -10,7 +11,7 @@
 #define BME280_E_COMM_FAIL -1
 #define BME280_E_DEV_NOT_FOUND -2
 #define BME280_INTF_RET_SUCCESS 0
-#define BME280_CHIP_ID 0x60
+#define BME280_CHIP_ID 0x58 //0x60
 #define BME280_REG_CHIP_ID 0xD0
 #define BME280_REG_RESET 0xE0
 #define BME280_SOFT_RESET_COMMAND 0xB6
@@ -36,12 +37,11 @@ struct bme280_data {
 
 struct bme280_dev {
     uint8_t chip_id, intf_rslt;
-    void *intf_ptr;
+    u8 deviceId;
     struct bme280_calib_data calib_data;
+    void (*randomRead)(u8 i2cDevice, u8 *u8_ReadBuffer, u8 u8_NumByteToRead);
     void (*readReg)(u8 i2cDevice, u8 u8_regAddr, u8 *u8_DataBuffer, u8 u8_NumByteToRead);
     void (*writeReg)(u8 i2cDevice, u8 u8_regAddr, u8 *u8_DataBuffer, u8 u8_NumByteToWrite);
-    int8_t (*read)(u8 reg_addr, uint8_t *data, uint32_t len, void *intf_ptr);
-    int8_t (*write)(u8 reg_addr, const uint8_t *data, uint32_t len, void *intf_ptr);
     void (*delay_us)(uint32_t period);
 };
 

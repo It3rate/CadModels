@@ -58,7 +58,7 @@ void I2C_Init(void) {
 * Return 		    : None
 * See also 		  : None
 *******************************************************************************/
-void I2C_RandomRead(u8 i2cDevice, u8 u8_NumByteToRead, u8 *u8_DataBuffer) 
+void I2C_RandomRead(u8 i2cDevice, u8 *u8_DataBuffer, u8 u8_NumByteToRead) 
 {
   /*--------------- BUSY? -> STOP request ---------------------*/
 	while(I2C->SR3 & I2C_SR3_BUSY  &&  tout())	  				// Wait while the bus is busy
