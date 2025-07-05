@@ -52,6 +52,8 @@ ADC2_TDRH_RESET_VALUE	..\..\inc\stm8s.h	251;"	macro
 ADC2_TDRL_RESET_VALUE	..\..\inc\stm8s.h	250;"	macro
 ADC2_TypeDef	..\..\inc\stm8s.h	241;"	typedef	typeref:struct:ADC2_struct
 ADC2_struct	..\..\inc\stm8s.h	230;"	struct
+ADDR_03	..\..\inc\i2c_master_poll.h	36;"	macro
+ADDR_13	..\..\inc\i2c_master_poll.h	42;"	macro
 APR	..\..\inc\stm8s.h	285;"	member	struct:AWU_struct
 AREA	..\..\inc\stm8s.h	2553;"	macro
 ARR	..\..\inc\stm8s.h	1129;"	member	struct:TIM6_struct
@@ -112,10 +114,12 @@ BRR1	..\..\inc\stm8s.h	1851;"	member	struct:UART3_struct
 BRR2	..\..\inc\stm8s.h	1646;"	member	struct:UART1_struct
 BRR2	..\..\inc\stm8s.h	1744;"	member	struct:UART2_struct
 BRR2	..\..\inc\stm8s.h	1852;"	member	struct:UART3_struct
+BTF_04	..\..\inc\i2c_master_poll.h	37;"	macro
+BTF_14	..\..\inc\i2c_master_poll.h	43;"	macro
+BTF_15	..\..\inc\i2c_master_poll.h	44;"	macro
+BTF_17	..\..\inc\i2c_master_poll.h	46;"	macro
 BTR1	..\..\inc\stm8s.h	2069;"	member	struct:__anon1::__anon2::__anon8
 BTR2	..\..\inc\stm8s.h	2070;"	member	struct:__anon1::__anon2::__anon8
-BUFFER	..\..\src\main.c	6;"	variable
-BUFFER_LEN	..\..\inc\i2c_master_poll.h	66;"	macro
 BYTE_0	..\..\inc\stm8s.h	2534;"	macro
 BYTE_1	..\..\inc\stm8s.h	2535;"	macro
 BYTE_2	..\..\inc\stm8s.h	2536;"	macro
@@ -475,7 +479,7 @@ DRL	..\..\inc\stm8s.h	163;"	member	struct:ADC1_struct
 DRL	..\..\inc\stm8s.h	237;"	member	struct:ADC2_struct
 DTR	..\..\inc\stm8s.h	497;"	member	struct:TIM1_struct
 DUKR	..\..\inc\stm8s.h	1389;"	member	struct:FLASH_struct
-Delay_us	..\..\src\main.c	17;"	function	signature:(uint32_t us)
+Delay_us	..\..\src\main.c	11;"	function	signature:(uint32_t us)
 ECKR	..\..\inc\stm8s.h	360;"	member	struct:CLK_struct
 EGR	..\..\inc\stm8s.h	1126;"	member	struct:TIM6_struct
 EGR	..\..\inc\stm8s.h	474;"	member	struct:TIM1_struct
@@ -500,8 +504,8 @@ EXTI_CR2_RESET_VALUE	..\..\inc\stm8s.h	1348;"	macro
 EXTI_CR2_TLIS	..\..\inc\stm8s.h	1363;"	macro
 EXTI_TypeDef	..\..\inc\stm8s.h	1341;"	typedef	typeref:struct:EXTI_struct
 EXTI_struct	..\..\inc\stm8s.h	1336;"	struct
-ErrProc	..\..\inc\i2c_master_poll.h	49;"	prototype	signature:(void)
-ErrProc	..\..\src\i2c_master_poll.c	282;"	function	signature:(void)
+ErrProc	..\..\inc\i2c_master_poll.h	14;"	prototype	signature:(void)
+ErrProc	..\..\src\i2c_master_poll.c	196;"	function	signature:(void)
 ErrorStatus	..\..\inc\stm8s_type.h	85;"	typedef	typeref:enum:__anon13
 F0R1	..\..\inc\stm8s.h	1999;"	member	struct:__anon1::__anon2::__anon5
 F0R2	..\..\inc\stm8s.h	2000;"	member	struct:__anon1::__anon2::__anon5
@@ -554,6 +558,7 @@ F5R8	..\..\inc\stm8s.h	2059;"	member	struct:__anon1::__anon2::__anon7
 FALSE	..\..\inc\stm8s_type.h	62;"	enumerator	enum:__anon10
 FAR	..\..\inc\stm8s.h	66;"	macro
 FAR	..\..\inc\stm8s.h	71;"	macro
+FAST_I2C_MODE	..\..\inc\i2c_master_poll.h	8;"	macro
 FCR1	..\..\inc\stm8s.h	2074;"	member	struct:__anon1::__anon2::__anon8
 FCR2	..\..\inc\stm8s.h	2075;"	member	struct:__anon1::__anon2::__anon8
 FCR3	..\..\inc\stm8s.h	2076;"	member	struct:__anon1::__anon2::__anon8
@@ -645,6 +650,8 @@ HSITRIMR	..\..\inc\stm8s.h	371;"	member	struct:CLK_struct
 HTRH	..\..\inc\stm8s.h	166;"	member	struct:ADC1_struct
 HTRL	..\..\inc\stm8s.h	167;"	member	struct:ADC1_struct
 I2C	..\..\inc\stm8s.h	2439;"	macro
+I2CInterruptHandle	..\..\inc\i2c_master_poll.h	49;"	prototype	signature:(void)
+I2CInterruptHandle	..\..\src\i2c_master_poll.c	302;"	function	signature:(void)
 I2C_BaseAddress	..\..\inc\stm8s.h	2360;"	macro
 I2C_CCRH_CCR	..\..\inc\stm8s.h	1285;"	macro
 I2C_CCRH_DUTY	..\..\inc\stm8s.h	1284;"	macro
@@ -670,8 +677,8 @@ I2C_ITR_ITBUFEN	..\..\inc\stm8s.h	1277;"	macro
 I2C_ITR_ITERREN	..\..\inc\stm8s.h	1279;"	macro
 I2C_ITR_ITEVTEN	..\..\inc\stm8s.h	1278;"	macro
 I2C_ITR_RESET_VALUE	..\..\inc\stm8s.h	1224;"	macro
-I2C_Init	..\..\inc\i2c_master_poll.h	44;"	prototype	signature:(void)
-I2C_Init	..\..\src\i2c_master_poll.c	30;"	function	signature:(void)
+I2C_Init	..\..\inc\i2c_master_poll.h	10;"	prototype	signature:(void)
+I2C_Init	..\..\src\i2c_master_poll.c	19;"	function	signature:(void)
 I2C_OARH_ADD	..\..\inc\stm8s.h	1254;"	macro
 I2C_OARH_ADDCONF	..\..\inc\stm8s.h	1253;"	macro
 I2C_OARH_ADDMODE	..\..\inc\stm8s.h	1252;"	macro
@@ -679,10 +686,9 @@ I2C_OARH_RESET_VALUE	..\..\inc\stm8s.h	1219;"	macro
 I2C_OARL_ADD	..\..\inc\stm8s.h	1249;"	macro
 I2C_OARL_ADD0	..\..\inc\stm8s.h	1250;"	macro
 I2C_OARL_RESET_VALUE	..\..\inc\stm8s.h	1218;"	macro
-I2C_RandomRead	..\..\inc\i2c_master_poll.h	46;"	prototype	signature:(u8 i2cDevice, u8 *u8_ReadBuffer, u8 u8_NumByteToRead)
-I2C_RandomRead	..\..\src\i2c_master_poll.c	61;"	function	signature:(u8 i2cDevice, u8 *u8_DataBuffer, u8 u8_NumByteToRead)
-I2C_ReadRegister	..\..\inc\i2c_master_poll.h	47;"	prototype	signature:(u8 i2cDevice, u8 u8_regAddr, u8 *u8_ReadBuffer, u8 u8_NumByteToRead)
-I2C_ReadRegister	..\..\src\i2c_master_poll.c	135;"	function	signature:(u8 i2cDevice, u8 u8_regAddr, u8 *u8_DataBuffer, u8 u8_NumByteToRead)
+I2C_ReadRegister	..\..\inc\i2c_master_poll.h	12;"	prototype	signature:(u8 i2cDevice, u8 u8_regAddr, u8 *u8_ReadBuffer, u8 u8_NumByteToRead)
+I2C_ReadRegister	..\..\src\i2c_master_poll.c	56;"	function	signature:(u8 i2cDevice, u8 u8_regAddr, u8 *u8_DataBuffer, u8 u8_NumByteToRead)
+I2C_ReadRegisterInterrupt	..\..\src\i2c_master_poll.c	273;"	function	signature:(u16 u16_SlaveAdd, u8 u8_AddType, u8 u8_NoStop, u8 u8_NumByteToRead, u8 *u8_DataBuffer)
 I2C_SR1_ADD10	..\..\inc\stm8s.h	1261;"	macro
 I2C_SR1_ADDR	..\..\inc\stm8s.h	1263;"	macro
 I2C_SR1_BTF	..\..\inc\stm8s.h	1262;"	macro
@@ -702,13 +708,15 @@ I2C_SR3_GENCALL	..\..\inc\stm8s.h	1272;"	macro
 I2C_SR3_MSL	..\..\inc\stm8s.h	1275;"	macro
 I2C_SR3_RESET_VALUE	..\..\inc\stm8s.h	1223;"	macro
 I2C_SR3_TRA	..\..\inc\stm8s.h	1273;"	macro
+I2C_TOUT	..\..\inc\i2c_master_poll.h	24;"	macro
 I2C_TRISER_RESET_VALUE	..\..\inc\stm8s.h	1227;"	macro
 I2C_TRISER_TRISE	..\..\inc\stm8s.h	1287;"	macro
 I2C_TypeDef	..\..\inc\stm8s.h	1209;"	typedef	typeref:struct:I2C_struct
-I2C_WriteRegister	..\..\inc\i2c_master_poll.h	48;"	prototype	signature:(u8 i2cDevice, u8 u8_regAddr, u8 *u8_DataBuffer, u8 u8_NumByteToWrite)
-I2C_WriteRegister	..\..\src\i2c_master_poll.c	237;"	function	signature:(u8 i2cDevice, u8 u8_regAddr, u8 *u8_DataBuffer, u8 u8_NumByteToWrite)
-I2C_error_Interrupt_Handler	..\..\inc\i2c_master_poll.h	61;"	prototype	signature:(void)
-I2C_error_Interrupt_Handler	..\..\src\i2c_master_poll.c	315;"	function	signature:(void)
+I2C_WriteRegister	..\..\inc\i2c_master_poll.h	13;"	prototype	signature:(u8 i2cDevice, u8 u8_regAddr, u8 *u8_DataBuffer, u8 u8_NumByteToWrite)
+I2C_WriteRegister	..\..\src\i2c_master_poll.c	158;"	function	signature:(u8 i2cDevice, u8 u8_regAddr, u8 *u8_DataBuffer, u8 u8_NumByteToWrite)
+I2C_WriteRegisterInterrupt	..\..\src\i2c_master_poll.c	236;"	function	signature:(u16 u16_SlaveAdd, u8 u8_AddType, u8 u8_NoStop, u8 u8_NumByteToWrite, u8 *pu8_DataBuffer)
+I2C_error_Interrupt_Handler	..\..\inc\i2c_master_poll.h	50;"	prototype	signature:(void)
+I2C_error_Interrupt_Handler	..\..\src\i2c_master_poll.c	213;"	function	signature:(void)
 I2C_struct	..\..\inc\stm8s.h	1191;"	struct
 IAPSR	..\..\inc\stm8s.h	1384;"	member	struct:FLASH_struct
 ICKR	..\..\inc\stm8s.h	359;"	member	struct:CLK_struct
@@ -721,32 +729,33 @@ IER	..\..\inc\stm8s.h	685;"	member	struct:TIM2_struct
 IER	..\..\inc\stm8s.h	809;"	member	struct:TIM3_struct
 IER	..\..\inc\stm8s.h	920;"	member	struct:TIM4_struct
 IER	..\..\inc\stm8s.h	981;"	member	struct:TIM5_struct
-INT16_C	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	98;"	macro
-INT16_MAX	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	51;"	macro
-INT16_MIN	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	48;"	macro
-INT32_C	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	99;"	macro
-INT32_MAX	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	52;"	macro
-INT32_MIN	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	49;"	macro
-INT8_C	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	97;"	macro
-INT8_MAX	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	50;"	macro
-INT8_MIN	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	47;"	macro
-INTMAX_C	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	105;"	macro
-INTMAX_MAX	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	92;"	macro
-INTMAX_MIN	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	91;"	macro
-INTPTR_MAX	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	84;"	macro
-INTPTR_MIN	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	83;"	macro
-INT_FAST16_MAX	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	75;"	macro
-INT_FAST16_MIN	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	72;"	macro
-INT_FAST32_MAX	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	76;"	macro
-INT_FAST32_MIN	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	73;"	macro
-INT_FAST8_MAX	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	74;"	macro
-INT_FAST8_MIN	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	71;"	macro
-INT_LEAST16_MAX	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	63;"	macro
-INT_LEAST16_MIN	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	60;"	macro
-INT_LEAST32_MAX	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	64;"	macro
-INT_LEAST32_MIN	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	61;"	macro
-INT_LEAST8_MAX	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	62;"	macro
-INT_LEAST8_MIN	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	59;"	macro
+INI_00	..\..\inc\i2c_master_poll.h	31;"	macro
+INT16_C	c:\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	98;"	macro
+INT16_MAX	c:\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	51;"	macro
+INT16_MIN	c:\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	48;"	macro
+INT32_C	c:\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	99;"	macro
+INT32_MAX	c:\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	52;"	macro
+INT32_MIN	c:\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	49;"	macro
+INT8_C	c:\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	97;"	macro
+INT8_MAX	c:\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	50;"	macro
+INT8_MIN	c:\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	47;"	macro
+INTMAX_C	c:\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	105;"	macro
+INTMAX_MAX	c:\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	92;"	macro
+INTMAX_MIN	c:\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	91;"	macro
+INTPTR_MAX	c:\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	84;"	macro
+INTPTR_MIN	c:\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	83;"	macro
+INT_FAST16_MAX	c:\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	75;"	macro
+INT_FAST16_MIN	c:\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	72;"	macro
+INT_FAST32_MAX	c:\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	76;"	macro
+INT_FAST32_MIN	c:\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	73;"	macro
+INT_FAST8_MAX	c:\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	74;"	macro
+INT_FAST8_MIN	c:\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	71;"	macro
+INT_LEAST16_MAX	c:\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	63;"	macro
+INT_LEAST16_MIN	c:\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	60;"	macro
+INT_LEAST32_MAX	c:\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	64;"	macro
+INT_LEAST32_MIN	c:\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	61;"	macro
+INT_LEAST8_MAX	c:\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	62;"	macro
+INT_LEAST8_MIN	c:\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	59;"	macro
 ISPR1	..\..\inc\stm8s.h	1300;"	member	struct:ITC_struct
 ISPR2	..\..\inc\stm8s.h	1301;"	member	struct:ITC_struct
 ISPR3	..\..\inc\stm8s.h	1302;"	member	struct:ITC_struct
@@ -771,7 +780,6 @@ IWDG_RLR_RESET_VALUE	..\..\inc\stm8s.h	1485;"	macro
 IWDG_TypeDef	..\..\inc\stm8s.h	1478;"	typedef	typeref:struct:IWDG_struct
 IWDG_struct	..\..\inc\stm8s.h	1472;"	struct
 KR	..\..\inc\stm8s.h	1474;"	member	struct:IWDG_struct
-LED1	..\..\inc\i2c_master_poll.h	67;"	macro
 LTRH	..\..\inc\stm8s.h	168;"	member	struct:ADC1_struct
 LTRL	..\..\inc\stm8s.h	169;"	member	struct:ADC1_struct
 MCR	..\..\inc\stm8s.h	1942;"	member	struct:__anon1
@@ -819,7 +827,8 @@ NOPT3	..\..\inc\stm8s.h	1455;"	member	struct:OPT_struct
 NOPT4	..\..\inc\stm8s.h	1457;"	member	struct:OPT_struct
 NOPT5	..\..\inc\stm8s.h	1459;"	member	struct:OPT_struct
 NOPT7	..\..\inc\stm8s.h	1463;"	member	struct:OPT_struct
-NULL	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\string.h	9;"	macro
+NOSTOP	..\..\inc\i2c_master_poll.h	28;"	macro
+NULL	c:\cosmic\fse_compilers\cxstm8\hstm8\string.h	9;"	macro
 NonHandledInterrupt	stm8_interrupt_vector.c	15;"	function	signature:(void)
 OARH	..\..\inc\stm8s.h	1197;"	member	struct:I2C_struct
 OARL	..\..\inc\stm8s.h	1196;"	member	struct:I2C_struct
@@ -849,14 +858,15 @@ PSCR	..\..\inc\stm8s.h	992;"	member	struct:TIM5_struct
 PSCRH	..\..\inc\stm8s.h	483;"	member	struct:TIM1_struct
 PSCRL	..\..\inc\stm8s.h	484;"	member	struct:TIM1_struct
 PSR	..\..\inc\stm8s.h	1949;"	member	struct:__anon1
-PTRDIFF_MAX	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	87;"	macro
-PTRDIFF_MIN	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	86;"	macro
+PTRDIFF_MAX	c:\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	87;"	macro
+PTRDIFF_MIN	c:\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	86;"	macro
 PUKR	..\..\inc\stm8s.h	1387;"	member	struct:FLASH_struct
 Page	..\..\inc\stm8s.h	2101;"	member	struct:__anon1	typeref:union:__anon1::__anon2
 PointerAttr	..\..\inc\stm8s.h	78;"	macro
 PointerAttr	..\..\inc\stm8s.h	80;"	macro
 PointerAttr_Far	..\..\inc\stm8s.h	63;"	macro
 RCR	..\..\inc\stm8s.h	487;"	member	struct:TIM1_struct
+READ	..\..\inc\i2c_master_poll.h	26;"	macro
 RECR	..\..\inc\stm8s.h	2068;"	member	struct:__anon1::__anon2::__anon8
 RESERVED	..\..\inc\stm8s.h	157;"	member	struct:ADC1_struct
 RESERVED	..\..\inc\stm8s.h	1857;"	member	struct:UART3_struct
@@ -886,6 +896,8 @@ RST_SR_WWDGF	..\..\inc\stm8s.h	1548;"	macro
 RST_TypeDef	..\..\inc\stm8s.h	1538;"	typedef	typeref:struct:RST_struct
 RST_struct	..\..\inc\stm8s.h	1534;"	struct
 RXCRCR	..\..\inc\stm8s.h	1567;"	member	struct:SPI_struct
+RXNE_16	..\..\inc\i2c_master_poll.h	45;"	macro
+RXNE_18	..\..\inc\i2c_master_poll.h	47;"	macro
 Reserved1	..\..\inc\stm8s.h	2071;"	member	struct:__anon1::__anon2::__anon8
 Reserved2	..\..\inc\stm8s.h	2077;"	member	struct:__anon1::__anon2::__anon8
 RxFIFO	..\..\inc\stm8s.h	2100;"	member	union:__anon1::__anon2	typeref:struct:__anon1::__anon2::__anon9
@@ -895,6 +907,8 @@ S32_MAX	..\..\inc\stm8s_type.h	94;"	macro
 S32_MIN	..\..\inc\stm8s_type.h	95;"	macro
 S8_MAX	..\..\inc\stm8s_type.h	88;"	macro
 S8_MIN	..\..\inc\stm8s_type.h	89;"	macro
+SB_01	..\..\inc\i2c_master_poll.h	34;"	macro
+SB_11	..\..\inc\i2c_master_poll.h	40;"	macro
 SET	..\..\inc\stm8s_type.h	69;"	enumerator	enum:__anon11
 SMCR	..\..\inc\stm8s.h	1123;"	member	struct:TIM6_struct
 SMCR	..\..\inc\stm8s.h	469;"	member	struct:TIM1_struct
@@ -953,7 +967,9 @@ SR2	..\..\inc\stm8s.h	687;"	member	struct:TIM2_struct
 SR2	..\..\inc\stm8s.h	811;"	member	struct:TIM3_struct
 SR2	..\..\inc\stm8s.h	983;"	member	struct:TIM5_struct
 SR3	..\..\inc\stm8s.h	1202;"	member	struct:I2C_struct
+STATE	..\..\src\i2c_master_poll.c	4;"	variable
 STM8S208	..\..\inc\stm8s.h	45;"	macro
+STOP	..\..\inc\i2c_master_poll.h	27;"	macro
 SUCCESS	..\..\inc\stm8s_type.h	83;"	enumerator	enum:__anon13
 SWCR	..\..\inc\stm8s.h	364;"	member	struct:CLK_struct
 SWIM	..\..\inc\stm8s.h	2476;"	macro
@@ -1224,8 +1240,8 @@ TIM3_SR2_RESET_VALUE	..\..\inc\stm8s.h	835;"	macro
 TIM3_TypeDef	..\..\inc\stm8s.h	826;"	typedef	typeref:struct:TIM3_struct
 TIM3_struct	..\..\inc\stm8s.h	806;"	struct
 TIM4	..\..\inc\stm8s.h	2464;"	macro
-TIM4InterruptHandle	..\..\inc\i2c_master_poll.h	62;"	prototype	signature:(void)
-TIM4InterruptHandle	..\..\src\i2c_master_poll.c	326;"	function	signature:(void)
+TIM4InterruptHandle	..\..\inc\i2c_master_poll.h	51;"	prototype	signature:(void)
+TIM4InterruptHandle	..\..\src\i2c_master_poll.c	217;"	function	signature:(void)
 TIM4InterruptHandle	stm8_interrupt_vector.c	6;"	prototype	file:	signature:(void)
 TIM4_ARR_ARR	..\..\inc\stm8s.h	965;"	macro
 TIM4_ARR_RESET_VALUE	..\..\inc\stm8s.h	939;"	macro
@@ -1242,15 +1258,15 @@ TIM4_EGR_RESET_VALUE	..\..\inc\stm8s.h	936;"	macro
 TIM4_EGR_UG	..\..\inc\stm8s.h	959;"	macro
 TIM4_IER_RESET_VALUE	..\..\inc\stm8s.h	934;"	macro
 TIM4_IER_UIE	..\..\inc\stm8s.h	955;"	macro
-TIM4_Init	..\..\inc\i2c_master_poll.h	45;"	prototype	signature:(void)
-TIM4_Init	..\..\src\i2c_master_poll.c	301;"	function	signature:(void)
+TIM4_Init	..\..\inc\i2c_master_poll.h	11;"	prototype	signature:(void)
+TIM4_Init	..\..\src\i2c_master_poll.c	206;"	function	signature:(void)
 TIM4_PSCR_PSC	..\..\inc\stm8s.h	963;"	macro
 TIM4_PSCR_RESET_VALUE	..\..\inc\stm8s.h	938;"	macro
 TIM4_SR1_RESET_VALUE	..\..\inc\stm8s.h	935;"	macro
 TIM4_SR1_UIF	..\..\inc\stm8s.h	957;"	macro
 TIM4_TypeDef	..\..\inc\stm8s.h	927;"	typedef	typeref:struct:TIM4_struct
 TIM4_struct	..\..\inc\stm8s.h	913;"	struct
-TIM4_tout	..\..\src\main.c	10;"	variable
+TIM4_tout	..\..\src\i2c_master_poll.c	7;"	variable
 TIM5	..\..\inc\stm8s.h	2468;"	macro
 TIM5_ARRH_ARR	..\..\inc\stm8s.h	1097;"	macro
 TIM5_ARRH_RESET_VALUE	..\..\inc\stm8s.h	1022;"	macro
@@ -1541,23 +1557,24 @@ UART3_SR_TC	..\..\inc\stm8s.h	1884;"	macro
 UART3_SR_TXE	..\..\inc\stm8s.h	1883;"	macro
 UART3_TypeDef	..\..\inc\stm8s.h	1860;"	typedef	typeref:struct:UART3_struct
 UART3_struct	..\..\inc\stm8s.h	1847;"	struct
-UINT16_C	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	102;"	macro
-UINT16_MAX	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	54;"	macro
-UINT32_C	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	103;"	macro
-UINT32_MAX	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	55;"	macro
-UINT8_C	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	101;"	macro
-UINT8_MAX	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	53;"	macro
-UINTMAX_C	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	106;"	macro
-UINTMAX_MAX	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	93;"	macro
-UINTPTR_MAX	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	85;"	macro
-UINT_FAST16_MAX	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	78;"	macro
-UINT_FAST32_MAX	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	79;"	macro
-UINT_FAST8_MAX	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	77;"	macro
-UINT_LEAST16_MAX	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	66;"	macro
-UINT_LEAST32_MAX	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	67;"	macro
-UINT_LEAST8_MAX	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	65;"	macro
+UINT16_C	c:\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	102;"	macro
+UINT16_MAX	c:\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	54;"	macro
+UINT32_C	c:\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	103;"	macro
+UINT32_MAX	c:\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	55;"	macro
+UINT8_C	c:\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	101;"	macro
+UINT8_MAX	c:\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	53;"	macro
+UINTMAX_C	c:\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	106;"	macro
+UINTMAX_MAX	c:\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	93;"	macro
+UINTPTR_MAX	c:\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	85;"	macro
+UINT_FAST16_MAX	c:\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	78;"	macro
+UINT_FAST32_MAX	c:\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	79;"	macro
+UINT_FAST8_MAX	c:\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	77;"	macro
+UINT_LEAST16_MAX	c:\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	66;"	macro
+UINT_LEAST32_MAX	c:\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	67;"	macro
+UINT_LEAST8_MAX	c:\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	65;"	macro
 ValBit	..\..\inc\stm8s.h	2532;"	macro
 WR	..\..\inc\stm8s.h	1499;"	member	struct:WWDG_struct
+WRITE	..\..\inc\i2c_master_poll.h	25;"	macro
 WWDG	..\..\inc\stm8s.h	2435;"	macro
 WWDG_BaseAddress	..\..\inc\stm8s.h	2355;"	macro
 WWDG_CR_RESET_VALUE	..\..\inc\stm8s.h	1507;"	macro
@@ -1569,41 +1586,38 @@ WWDG_WR_MSB	..\..\inc\stm8s.h	1522;"	macro
 WWDG_WR_RESET_VALUE	..\..\inc\stm8s.h	1508;"	macro
 WWDG_WR_W	..\..\inc\stm8s.h	1523;"	macro
 WWDG_struct	..\..\inc\stm8s.h	1496;"	struct
-WorkingBuffer	..\..\src\main.c	8;"	variable
 _COSMIC_	..\..\inc\stm8s.h	32;"	macro
 _COSMIC_	..\..\inc\stm8s.h	34;"	macro
-_INLINE	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\string.h	13;"	macro
-_INLINE	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\string.h	15;"	macro
+_INLINE	c:\cosmic\fse_compilers\cxstm8\hstm8\string.h	13;"	macro
+_INLINE	c:\cosmic\fse_compilers\cxstm8\hstm8\string.h	15;"	macro
 _RAISONANCE_	..\..\inc\stm8s.h	31;"	macro
 _RAISONANCE_	..\..\inc\stm8s.h	35;"	macro
 __CONST	..\..\inc\stm8s.h	69;"	macro
 __CONST	..\..\inc\stm8s.h	74;"	macro
-__I2C_OPT_H	..\..\inc\i2c_master_poll.h	22;"	macro
-__MODS0__	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\mods0.h	12;"	macro
-__STDINT__	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	6;"	macro
+__I2C_OPT_H	..\..\inc\i2c_master_poll.h	3;"	macro
+__MODS0__	c:\cosmic\fse_compilers\cxstm8\hstm8\mods0.h	12;"	macro
+__STDINT__	c:\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	6;"	macro
 __STM8S_H	..\..\inc\stm8s.h	24;"	macro
 __STM8S_TYPE_H	..\..\inc\stm8s_type.h	24;"	macro
-__STRING__	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\string.h	6;"	macro
+__STRING__	c:\cosmic\fse_compilers\cxstm8\hstm8\string.h	6;"	macro
 _stext	stm8_interrupt_vector.c	23;"	prototype	file:
 _vectab	stm8_interrupt_vector.c	25;"	variable
 bme280_calib_data	..\..\inc\bmp280.h	23;"	struct
 bme280_data	..\..\inc\bmp280.h	33;"	struct
 bme280_dev	..\..\inc\bmp280.h	38;"	struct
-bme280_get_sensor_data	..\..\inc\bmp280.h	49;"	prototype	signature:(struct bme280_data *comp_data, struct bme280_dev *dev)
+bme280_get_sensor_data	..\..\inc\bmp280.h	48;"	prototype	signature:(struct bme280_data *comp_data, struct bme280_dev *dev)
 bme280_get_sensor_data	..\..\src\bmp280.c	95;"	function	signature:(struct bme280_data *comp_data, struct bme280_dev *dev)
-bme280_init	..\..\inc\bmp280.h	48;"	prototype	signature:(struct bme280_dev *dev)
+bme280_init	..\..\inc\bmp280.h	47;"	prototype	signature:(struct bme280_dev *dev)
 bme280_init	..\..\src\bmp280.c	71;"	function	signature:(struct bme280_dev *dev)
 bme280_uncomp_data	..\..\inc\bmp280.h	29;"	struct
-bmeCalibData	..\..\src\main.c	15;"	variable
 bool	..\..\inc\stm8s_type.h	65;"	typedef	typeref:enum:__anon10
 calib_data	..\..\inc\bmp280.h	41;"	member	struct:bme280_dev	typeref:struct:bme280_dev::bme280_calib_data
 chip_id	..\..\inc\bmp280.h	39;"	member	struct:bme280_dev
 compensate_pressure	..\..\src\bmp280.c	50;"	function	file:	signature:(const struct bme280_uncomp_data *uncomp_data, const struct bme280_calib_data *cal)
 compensate_temperature	..\..\src\bmp280.c	40;"	function	file:	signature:(const struct bme280_uncomp_data *uncomp_data, struct bme280_calib_data *cal)
-dead_time	..\..\inc\i2c_master_poll.h	52;"	macro
-delay	..\..\inc\i2c_master_poll.h	53;"	macro
-delay_us	..\..\inc\bmp280.h	45;"	member	struct:bme280_dev
-dev	..\..\src\main.c	14;"	variable	typeref:struct:bme280_dev
+dead_time	..\..\inc\i2c_master_poll.h	17;"	macro
+delay_us	..\..\inc\bmp280.h	44;"	member	struct:bme280_dev
+dev	..\..\src\main.c	6;"	variable	typeref:struct:bme280_dev
 deviceId	..\..\inc\bmp280.h	40;"	member	struct:bme280_dev
 dig_p1	..\..\inc\bmp280.h	24;"	member	struct:bme280_calib_data
 dig_p2	..\..\inc\bmp280.h	25;"	member	struct:bme280_calib_data
@@ -1619,45 +1633,45 @@ dig_t2	..\..\inc\bmp280.h	25;"	member	struct:bme280_calib_data
 dig_t3	..\..\inc\bmp280.h	25;"	member	struct:bme280_calib_data
 disableInterrupts	..\..\inc\stm8s.h	2491;"	macro
 disableInterrupts	..\..\inc\stm8s.h	2500;"	macro
-eepera	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\string.h	41;"	macro
+eepera	c:\cosmic\fse_compilers\cxstm8\hstm8\string.h	41;"	macro
 enableInterrupts	..\..\inc\stm8s.h	2490;"	macro
 enableInterrupts	..\..\inc\stm8s.h	2499;"	macro
-err_save	..\..\src\main.c	9;"	variable
+err_save	..\..\src\i2c_master_poll.c	6;"	variable
+err_state	..\..\src\i2c_master_poll.c	5;"	variable
 get_calib_data	..\..\src\bmp280.c	33;"	function	file:	signature:(struct bme280_dev *dev)
 get_regs	..\..\src\bmp280.c	5;"	function	file:	signature:(struct bme280_dev *dev, uint8_t reg_addr, uint8_t *data, uint8_t len)
 halt	..\..\inc\stm8s.h	2497;"	macro
 halt	..\..\inc\stm8s.h	2506;"	macro
-i2cDevice	..\..\src\main.c	13;"	variable
-int16_t	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	11;"	typedef
-int32_t	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	12;"	typedef
-int8_t	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	10;"	typedef
-int_fast16_t	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	29;"	typedef
-int_fast32_t	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	30;"	typedef
-int_fast8_t	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	28;"	typedef
-int_least16_t	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	20;"	typedef
-int_least32_t	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	21;"	typedef
-int_least8_t	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	19;"	typedef
+int16_t	c:\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	11;"	typedef
+int32_t	c:\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	12;"	typedef
+int8_t	c:\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	10;"	typedef
+int_fast16_t	c:\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	29;"	typedef
+int_fast32_t	c:\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	30;"	typedef
+int_fast8_t	c:\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	28;"	typedef
+int_least16_t	c:\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	20;"	typedef
+int_least32_t	c:\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	21;"	typedef
+int_least8_t	c:\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	19;"	typedef
 interrupt_handler	stm8_interrupt_vector.c	12;"	member	struct:interrupt_vector	file:
 interrupt_handler_t	stm8_interrupt_vector.c	8;"	typedef	file:
 interrupt_instruction	stm8_interrupt_vector.c	11;"	member	struct:interrupt_vector	file:
 interrupt_vector	stm8_interrupt_vector.c	10;"	struct	file:
 intf_rslt	..\..\inc\bmp280.h	39;"	member	struct:bme280_dev
-intmax_t	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	42;"	typedef
-intptr_t	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	37;"	typedef
-loop_count	..\..\src\main.c	11;"	variable
-main	..\..\src\main.c	22;"	function	signature:(void)
-memchr	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\string.h	34;"	prototype	signature:(void *s, char c, unsigned int n)
-memcmp	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\string.h	28;"	prototype	signature:(void *s1, void *s2, unsigned int n)
-memcpy	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\string.h	35;"	prototype	signature:(void *s1, void *s2, unsigned int n)
-memmove	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\string.h	36;"	prototype	signature:(void *s1, void *s2, unsigned int n)
-memset	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\string.h	37;"	prototype	signature:(void *s, char c, unsigned int n)
+intmax_t	c:\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	42;"	typedef
+intptr_t	c:\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	37;"	typedef
+main	..\..\src\main.c	16;"	function	signature:(void)
+memchr	c:\cosmic\fse_compilers\cxstm8\hstm8\string.h	34;"	prototype	signature:(void *s, char c, unsigned int n)
+memcmp	c:\cosmic\fse_compilers\cxstm8\hstm8\string.h	28;"	prototype	signature:(void *s1, void *s2, unsigned int n)
+memcpy	c:\cosmic\fse_compilers\cxstm8\hstm8\string.h	35;"	prototype	signature:(void *s1, void *s2, unsigned int n)
+memmove	c:\cosmic\fse_compilers\cxstm8\hstm8\string.h	36;"	prototype	signature:(void *s1, void *s2, unsigned int n)
+memset	c:\cosmic\fse_compilers\cxstm8\hstm8\string.h	37;"	prototype	signature:(void *s, char c, unsigned int n)
 nop	..\..\inc\stm8s.h	2494;"	macro
 nop	..\..\inc\stm8s.h	2503;"	macro
 parse_calib_data	..\..\src\bmp280.c	16;"	function	file:	signature:(const uint8_t *reg_data, struct bme280_dev *dev)
 pressure	..\..\inc\bmp280.h	30;"	member	struct:bme280_uncomp_data
 pressure	..\..\inc\bmp280.h	34;"	member	struct:bme280_data
-randomRead	..\..\inc\bmp280.h	42;"	member	struct:bme280_dev
-readReg	..\..\inc\bmp280.h	43;"	member	struct:bme280_dev
+pressure	..\..\src\main.c	8;"	variable
+pu8_DataBuffer_cpy	..\..\src\i2c_master_poll.c	13;"	variable
+readReg	..\..\inc\bmp280.h	42;"	member	struct:bme280_dev
 rim	..\..\inc\stm8s.h	2492;"	macro
 rim	..\..\inc\stm8s.h	2501;"	macro
 s16	..\..\inc\stm8s_type.h	29;"	typedef
@@ -1667,47 +1681,53 @@ sc16	..\..\inc\stm8s_type.h	33;"	typedef
 sc32	..\..\inc\stm8s_type.h	32;"	typedef
 sc8	..\..\inc\stm8s_type.h	34;"	typedef
 set_regs	..\..\src\bmp280.c	10;"	function	file:	signature:(struct bme280_dev *dev, uint8_t reg_addr, const uint8_t *data, uint8_t len)
-set_tout_ms	..\..\inc\i2c_master_poll.h	55;"	macro
+set_tout_ms	..\..\inc\i2c_master_poll.h	19;"	macro
 sim	..\..\inc\stm8s.h	2493;"	macro
 sim	..\..\inc\stm8s.h	2502;"	macro
-strcat	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\string.h	20;"	prototype	signature:(char *s1, char *s2)
-strchr	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\string.h	21;"	prototype	signature:(char *s, char c)
-strcmp	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\string.h	29;"	prototype	signature:(char *s1, char *s2)
-strcpy	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\string.h	22;"	prototype	signature:(char *s1, char *s2)
-strcspn	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\string.h	31;"	prototype	signature:(char *s1, char *s2)
-strlen	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\string.h	32;"	prototype	signature:(char *s)
-strncat	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\string.h	23;"	prototype	signature:(char *s1, char *s2, unsigned int n)
-strncmp	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\string.h	30;"	prototype	signature:(char *s1, char *s2, unsigned int n)
-strncpy	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\string.h	24;"	prototype	signature:(char *s1, char *s2, unsigned int n)
-strpbrk	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\string.h	25;"	prototype	signature:(char *s1, char *s2)
-strrchr	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\string.h	26;"	prototype	signature:(char *s, char c)
-strspn	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\string.h	33;"	prototype	signature:(char *s1, char *s2)
-strstr	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\string.h	27;"	prototype	signature:(char *s1, char *s2)
-switch_off	..\..\inc\i2c_master_poll.h	69;"	macro
-switch_on	..\..\inc\i2c_master_poll.h	68;"	macro
+strcat	c:\cosmic\fse_compilers\cxstm8\hstm8\string.h	20;"	prototype	signature:(char *s1, char *s2)
+strchr	c:\cosmic\fse_compilers\cxstm8\hstm8\string.h	21;"	prototype	signature:(char *s, char c)
+strcmp	c:\cosmic\fse_compilers\cxstm8\hstm8\string.h	29;"	prototype	signature:(char *s1, char *s2)
+strcpy	c:\cosmic\fse_compilers\cxstm8\hstm8\string.h	22;"	prototype	signature:(char *s1, char *s2)
+strcspn	c:\cosmic\fse_compilers\cxstm8\hstm8\string.h	31;"	prototype	signature:(char *s1, char *s2)
+strlen	c:\cosmic\fse_compilers\cxstm8\hstm8\string.h	32;"	prototype	signature:(char *s)
+strncat	c:\cosmic\fse_compilers\cxstm8\hstm8\string.h	23;"	prototype	signature:(char *s1, char *s2, unsigned int n)
+strncmp	c:\cosmic\fse_compilers\cxstm8\hstm8\string.h	30;"	prototype	signature:(char *s1, char *s2, unsigned int n)
+strncpy	c:\cosmic\fse_compilers\cxstm8\hstm8\string.h	24;"	prototype	signature:(char *s1, char *s2, unsigned int n)
+strpbrk	c:\cosmic\fse_compilers\cxstm8\hstm8\string.h	25;"	prototype	signature:(char *s1, char *s2)
+strrchr	c:\cosmic\fse_compilers\cxstm8\hstm8\string.h	26;"	prototype	signature:(char *s, char c)
+strspn	c:\cosmic\fse_compilers\cxstm8\hstm8\string.h	33;"	prototype	signature:(char *s1, char *s2)
+strstr	c:\cosmic\fse_compilers\cxstm8\hstm8\string.h	27;"	prototype	signature:(char *s1, char *s2)
 t_fine	..\..\inc\bmp280.h	26;"	member	struct:bme280_calib_data
+tempPressureData	..\..\src\main.c	7;"	variable	typeref:struct:bme280_data
 temperature	..\..\inc\bmp280.h	30;"	member	struct:bme280_uncomp_data
 temperature	..\..\inc\bmp280.h	35;"	member	struct:bme280_data
-tout	..\..\inc\i2c_master_poll.h	54;"	macro
+temperature	..\..\src\main.c	9;"	variable
+tout	..\..\inc\i2c_master_poll.h	18;"	macro
 trap	..\..\inc\stm8s.h	2495;"	macro
 trap	..\..\inc\stm8s.h	2504;"	macro
 u16	..\..\inc\stm8s_type.h	45;"	typedef
+u16_SlaveAdd_cpy	..\..\src\i2c_master_poll.c	14;"	variable
 u32	..\..\inc\stm8s_type.h	44;"	typedef
 u8	..\..\inc\stm8s_type.h	46;"	typedef
+u8_AddType_cpy	..\..\src\i2c_master_poll.c	15;"	variable
+u8_Direction	..\..\src\i2c_master_poll.c	10;"	variable
+u8_NoStop_cpy	..\..\src\i2c_master_poll.c	16;"	variable
+u8_NumByte_cpy	..\..\src\i2c_master_poll.c	12;"	variable
+u8_regAddr	..\..\src\i2c_master_poll.c	9;"	variable
 uc16	..\..\inc\stm8s_type.h	49;"	typedef
 uc32	..\..\inc\stm8s_type.h	48;"	typedef
 uc8	..\..\inc\stm8s_type.h	50;"	typedef
-uint16_t	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	14;"	typedef
-uint32_t	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	15;"	typedef
-uint8_t	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	13;"	typedef
-uint_fast16_t	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	32;"	typedef
-uint_fast32_t	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	33;"	typedef
-uint_fast8_t	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	31;"	typedef
-uint_least16_t	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	23;"	typedef
-uint_least32_t	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	24;"	typedef
-uint_least8_t	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	22;"	typedef
-uintmax_t	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	43;"	typedef
-uintptr_t	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	38;"	typedef
+uint16_t	c:\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	14;"	typedef
+uint32_t	c:\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	15;"	typedef
+uint8_t	c:\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	13;"	typedef
+uint_fast16_t	c:\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	32;"	typedef
+uint_fast32_t	c:\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	33;"	typedef
+uint_fast8_t	c:\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	31;"	typedef
+uint_least16_t	c:\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	23;"	typedef
+uint_least32_t	c:\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	24;"	typedef
+uint_least8_t	c:\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	22;"	typedef
+uintmax_t	c:\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	43;"	typedef
+uintptr_t	c:\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	38;"	typedef
 vs16	..\..\inc\stm8s_type.h	37;"	typedef
 vs32	..\..\inc\stm8s_type.h	36;"	typedef
 vs8	..\..\inc\stm8s_type.h	38;"	typedef
@@ -1722,4 +1742,4 @@ vuc32	..\..\inc\stm8s_type.h	56;"	typedef
 vuc8	..\..\inc\stm8s_type.h	58;"	typedef
 wfi	..\..\inc\stm8s.h	2496;"	macro
 wfi	..\..\inc\stm8s.h	2505;"	macro
-writeReg	..\..\inc\bmp280.h	44;"	member	struct:bme280_dev
+writeReg	..\..\inc\bmp280.h	43;"	member	struct:bme280_dev

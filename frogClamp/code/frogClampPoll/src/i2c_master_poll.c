@@ -1,19 +1,21 @@
 #include "i2c_master_poll.h"
+#include <string.h> 
 
+u8  STATE;								// curent I2C states machine state
+volatile u8 err_state;  	// error state 
+volatile u8 err_save;   	// I2C->SR2 copy in case of error
+volatile u16 TIM4_tout;  // Timout Value  
 
- u8  STATE;								// curent I2C states machine state
- volatile u8 err_state;  	// error state 
- volatile u8 err_save;   	// I2C->SR2 copy in case of error
- volatile u16 TIM4_tout;  // Timout Value  
- 
- u8  u8_regAddr ;					
- u8  u8_Direction;
- 
- u8  u8_NumByte_cpy ; 
- u8* pu8_DataBuffer_cpy ;
- u16 u16_SlaveAdd_cpy;
- u8  u8_AddType_cpy;
- u8  u8_NoStop_cpy;
+u8  u8_regAddr ;					
+u8  u8_Direction;
+
+u8  u8_NumByte_cpy ; 
+u8* pu8_DataBuffer_cpy ;
+u8 u8_SlaveAdd_cpy;
+u8  u8_NoStop_cpy;
+
+#define MAX_I2C_BUFFER_SIZE 32
+u8 mergedBuffer[MAX_I2C_BUFFER_SIZE];
  
  
 void I2C_Init(void) {
@@ -225,15 +227,15 @@ ErrProc();
 }
 
 /******************************************************************************
-* Function name : I2C_WriteRegister
+* Function name : I2C_WriteInterrupt
 * Description 	: write defined number bytes to slave memory starting with defined offset
-* Input param 	: Slave Address ; Address type (TEN_BIT_ADDRESS or SEV_BIT_ADDRESS) ; STOP/NOSTOP ;
+* Input param 	: Slave Address ; STOP/NOSTOP ;
 *									Number byte to Write ; address of the application send buffer
 * Return 		    : 0 : START Writing not performed -> Communication onging on the bus
 *                 1 : START Writing performed 
 * See also 		  : None.
 *******************************************************************************/
-u8 I2C_WriteRegisterInterrupt(u16 u16_SlaveAdd, u8 u8_AddType, u8 u8_NoStop, u8 u8_NumByteToWrite, u8 *pu8_DataBuffer) 
+u8 I2C_WriteInterrupt(u8 i2cDevice, u8 u8_NoStop, u8 *pu8_DataBuffer, u8 u8_NumByteToWrite) 
 {
 	// check if communication on going
 	if ((I2C->SR3 & I2C_SR3_BUSY) == I2C_SR3_BUSY)
@@ -248,11 +250,10 @@ u8 I2C_WriteRegisterInterrupt(u16 u16_SlaveAdd, u8 u8_AddType, u8 u8_NoStop, u8 
 	// setup I2C comm. in write
 	u8_Direction = WRITE;
 	// copy parametters for interrupt routines
+	u8_SlaveAdd_cpy = i2cDevice;
 	u8_NoStop_cpy = u8_NoStop;
-	u16_SlaveAdd_cpy = u16_SlaveAdd;
 	u8_NumByte_cpy = u8_NumByteToWrite; 
 	pu8_DataBuffer_cpy  = pu8_DataBuffer;
-	u8_AddType_cpy = u8_AddType;
 	// set comunication Timeout
 	set_tout_ms(I2C_TOUT);
 	// generate Start
@@ -262,7 +263,7 @@ u8 I2C_WriteRegisterInterrupt(u16 u16_SlaveAdd, u8 u8_AddType, u8 u8_NoStop, u8 
 }
 
 /******************************************************************************
-* Function name : I2C_ReadRegister
+* Function name : I2C_ReadInterrupt
 * Description 	: Read defined number bytes from slave memory starting with defined offset
 * Input param 	: Slave Address ; Address type (TEN_BIT_ADDRESS or SEV_BIT_ADDRESS) ; STOP/NOSTOP ;
 *									Number byte to Read ; address of the application receive buffer
@@ -270,7 +271,7 @@ u8 I2C_WriteRegisterInterrupt(u16 u16_SlaveAdd, u8 u8_AddType, u8 u8_NoStop, u8 
 *                 1 : START Reading performed 
 * See also 		  : None
 *******************************************************************************/
-u8 I2C_ReadRegisterInterrupt(u16 u16_SlaveAdd, u8 u8_AddType, u8 u8_NoStop, u8 u8_NumByteToRead, u8 *u8_DataBuffer) 
+u8 I2C_ReadInterrupt(u8 i2cDevice, u8 u8_NoStop, u8 *u8_DataBuffer, u8 u8_NumByteToRead) 
 {
 	// check if communication on going
 	if (((I2C->SR3 & I2C_SR3_BUSY) == I2C_SR3_BUSY) && (u8_NoStop == 0))
@@ -285,9 +286,8 @@ u8 I2C_ReadRegisterInterrupt(u16 u16_SlaveAdd, u8 u8_AddType, u8 u8_NoStop, u8 u
 	// setup I2C comm. in Read
 	u8_Direction = READ;
 	// copy parametters for interrupt routines
+	u8_SlaveAdd_cpy = i2cDevice;
 	u8_NoStop_cpy = u8_NoStop;
-	u8_AddType_cpy = u8_AddType;
-	u16_SlaveAdd_cpy = u16_SlaveAdd;
 	u8_NumByte_cpy = u8_NumByteToRead; 
 	pu8_DataBuffer_cpy = u8_DataBuffer;
 	// set comunication Timeout
@@ -296,6 +296,27 @@ u8 I2C_ReadRegisterInterrupt(u16 u16_SlaveAdd, u8 u8_AddType, u8 u8_NoStop, u8 u
 	 I2C->CR2 |= 1;
 	 STATE = SB_11;
 	 I2C->ITR |= 3;                  // re-enable interrupt
+	return 1;
+}
+
+u8 I2C_WriteRegisterInterrupt(u8 i2cDevice, u8 u8_regAddr, u8 *u8_DataBuffer, u8 u8_NumByteToWrite)
+{        
+	if (u8_NumByteToWrite > (MAX_I2C_BUFFER_SIZE - 2)) {
+		return 0;
+	}
+	mergedBuffer[0] = u8_regAddr;
+	memcpy(&mergedBuffer[1], u8_DataBuffer, u8_NumByteToWrite);
+	while (!I2C_WriteInterrupt(i2cDevice, NOSTOP, mergedBuffer, u8_NumByteToWrite + 1));
+	return 1;
+}
+
+u8 I2C_ReadRegisterInterrupt(u8 i2cDevice, u8 u8_regAddr, u8 *u8_DataBuffer, u8 u8_NumByteToRead)
+{       
+	if (u8_NumByteToRead > (MAX_I2C_BUFFER_SIZE - 1)) {
+		return 0;
+	}  
+	while (!I2C_WriteInterrupt(i2cDevice, NOSTOP, &u8_regAddr, 1));
+	while (!I2C_ReadInterrupt(i2cDevice, NOSTOP, u8_DataBuffer, u8_NumByteToRead));
 	return 1;
 }
 
@@ -318,12 +339,12 @@ u8 I2C_ReadRegisterInterrupt(u16 u16_SlaveAdd, u8 u8_AddType, u8 u8_NoStop, u8 u
 		switch(STATE) 
 		{
 			case SB_01: // write 
-				I2C->DR = (u8)(u16_SlaveAdd_cpy << 1);   // send 7-bit device address & Write (R/W = 0)
+				I2C->DR = (u8)(u8_SlaveAdd_cpy << 1);   // send 7-bit device address & Write (R/W = 0)
 				STATE = ADDR_03; 
 				break;
 			
 			case SB_11: // read
-				I2C->DR = (u8)(u16_SlaveAdd_cpy << 1)|1 ; // send 7-bit device address & Write (R/W = 1)
+				I2C->DR = (u8)(u8_SlaveAdd_cpy << 1)|1 ; // send 7-bit device address & Read (R/W = 1)
 				STATE = ADDR_13; 
 				break;
 			
@@ -340,6 +361,7 @@ u8 I2C_ReadRegisterInterrupt(u16 u16_SlaveAdd, u8 u8_AddType, u8 u8_NoStop, u8 u
 			case ADDR_13 : // read 1, 2, 3, or more bytes
 				if (u8_NumByte_cpy == 3)
 				{
+					/* Clear Add Ack Flag */
 					I2C->SR3;
 					STATE = BTF_15;
 					break;
@@ -380,8 +402,8 @@ u8 I2C_ReadRegisterInterrupt(u16 u16_SlaveAdd, u8 u8_AddType, u8 u8_NoStop, u8 u
 			case ADDR_03 : // write
 				/* Clear Add Ack Flag */
 				I2C->SR3;
-				I2C->DR = *pu8_DataBuffer_cpy++ ;
-					u8_NumByte_cpy -- ;
+				I2C->DR = *pu8_DataBuffer_cpy++;
+				u8_NumByte_cpy -- ;
 				STATE = BTF_04;
 				break;
 								
@@ -391,7 +413,7 @@ u8 I2C_ReadRegisterInterrupt(u16 u16_SlaveAdd, u8 u8_AddType, u8 u8_NoStop, u8 u
 		}
 	}
 
-	if ((sr1  & I2C_SR1_RXNE)==I2C_SR1_RXNE)
+	if ((sr1 & I2C_SR1_RXNE)==I2C_SR1_RXNE)
 	{
 		switch (STATE)
 		{

@@ -16,8 +16,8 @@
   * CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
   *
   *                COPYRIGHT 2009 STMicroelectronics
-  */ 
-	
+  */
+
 #include "stm8s.h"
 #include "i2c_master_interrupt.h"
 
@@ -25,14 +25,14 @@
 // Global Variables definition
 
  u8  STATE;								// curent I2C states machine state
- volatile u8 err_state;  	// error state 
+ volatile u8 err_state;  	// error state
  volatile u8 err_save;   	// I2C->SR2 copy in case of error
- volatile u16 TIM4_tout;  // Timout Value  
- 
- u8  u8_regAddr ;					
+ volatile u16 TIM4_tout;  // Timout Value
+
+ u8  u8_regAddr ;
  u8  u8_Direction;
- 
- u8  u8_NumByte_cpy ; 
+
+ u8  u8_NumByte_cpy ;
  u8* pu8_DataBuffer_cpy ;
  u16 u16_SlaveAdd_cpy;
  u8  u8_AddType_cpy;
@@ -46,14 +46,14 @@
 * See also 		  : None
 *******************************************************************************/
 void I2C_Init(void) {
-  
-	//define SDA, SCL outputs, HiZ, Open drain, Fast
-	GPIOE->ODR |= 0x06;               
+
+  //define SDA, SCL outputs, HiZ, Open drain, Fast
+  GPIOE->ODR |= 0x06;
   GPIOE->DDR |= 0x06;
   GPIOE->CR2 |= 0x06;
 
 #ifdef FAST_I2C_MODE
-  I2C->FREQR = 16;               // input clock to I2C - 16MHz 
+  I2C->FREQR = 16;               // input clock to I2C - 16MHz
   I2C->CCRL = 15;                // 900/62.5= 15, (SCLhi must be at least 600+300=900ns!)
   I2C->CCRH = 0x80;              // fast mode, duty 2/1 (bus speed 62.5*3*15~356kHz)
   I2C->TRISER = 5;               // 300/62.5 + 1= 5  (maximum 300ns)
@@ -65,11 +65,11 @@ void I2C_Init(void) {
 #endif
   I2C->OARL = 0xA0;              // own address A0;
   I2C->OARH |= 0x40;
-  I2C->ITR = 3;                  // enable Event & error interrupts 
+  I2C->ITR = 3;                  // enable Event & error interrupts
   I2C->CR2 |= 0x04;              // ACK=1, Ack enable
   I2C->CR1 |= 0x01;              // PE=1
 	I2C->CR1 &= ~0x80;             // Stretch enable
-	
+
 	// Initialise I2C State Machine
 	err_save= 0;
 	STATE == INI_00;
@@ -98,10 +98,10 @@ void ErrProc (void)
 * Input param 	: Slave Address ; Address type (TEN_BIT_ADDRESS or SEV_BIT_ADDRESS) ; STOP/NOSTOP ;
 *									Number byte to Write ; address of the application send buffer
 * Return 		    : 0 : START Writing not performed -> Communication onging on the bus
-*                 1 : START Writing performed 
+*                 1 : START Writing performed
 * See also 		  : None.
 *******************************************************************************/
-u8 I2C_WriteRegister(u16 u16_SlaveAdd, u8 u8_AddType, u8 u8_NoStop, u8 u8_NumByteToWrite, u8 *pu8_DataBuffer) 
+u8 I2C_WriteRegister(u16 u16_SlaveAdd, u8 u8_AddType, u8 u8_NoStop, u8 u8_NumByteToWrite, u8 *pu8_DataBuffer)
 {
 	// check if communication on going
 	if ((I2C->SR3 & I2C_SR3_BUSY) == I2C_SR3_BUSY)
@@ -118,7 +118,7 @@ u8 I2C_WriteRegister(u16 u16_SlaveAdd, u8 u8_AddType, u8 u8_NoStop, u8 u8_NumByt
 	// copy parametters for interrupt routines
 	u8_NoStop_cpy = u8_NoStop;
 	u16_SlaveAdd_cpy = u16_SlaveAdd;
-	u8_NumByte_cpy = u8_NumByteToWrite; 
+	u8_NumByte_cpy = u8_NumByteToWrite;
 	pu8_DataBuffer_cpy  = pu8_DataBuffer;
 	u8_AddType_cpy = u8_AddType;
 	// set comunication Timeout
@@ -135,10 +135,10 @@ u8 I2C_WriteRegister(u16 u16_SlaveAdd, u8 u8_AddType, u8 u8_NoStop, u8 u8_NumByt
 * Input param 	: Slave Address ; Address type (TEN_BIT_ADDRESS or SEV_BIT_ADDRESS) ; STOP/NOSTOP ;
 *									Number byte to Read ; address of the application receive buffer
 * Return 		    : 0 : START Reading not performed -> Communication onging on the bus
-*                 1 : START Reading performed 
+*                 1 : START Reading performed
 * See also 		  : None
 *******************************************************************************/
-u8 I2C_ReadRegister(u16 u16_SlaveAdd, u8 u8_AddType, u8 u8_NoStop, u8 u8_NumByteToRead, u8 *u8_DataBuffer) 
+u8 I2C_ReadRegister(u16 u16_SlaveAdd, u8 u8_AddType, u8 u8_NoStop, u8 u8_NumByteToRead, u8 *u8_DataBuffer)
 {
 	// check if communication on going
 	if (((I2C->SR3 & I2C_SR3_BUSY) == I2C_SR3_BUSY) && (u8_NoStop == 0))
@@ -156,7 +156,7 @@ u8 I2C_ReadRegister(u16 u16_SlaveAdd, u8 u8_AddType, u8 u8_NoStop, u8 u8_NumByte
 	u8_NoStop_cpy = u8_NoStop;
 	u8_AddType_cpy = u8_AddType;
 	u16_SlaveAdd_cpy = u16_SlaveAdd;
-	u8_NumByte_cpy = u8_NumByteToRead; 
+	u8_NumByte_cpy = u8_NumByteToRead;
 	pu8_DataBuffer_cpy = u8_DataBuffer;
 	// set comunication Timeout
 	set_tout_ms(I2C_TOUT);
@@ -169,7 +169,7 @@ u8 I2C_ReadRegister(u16 u16_SlaveAdd, u8 u8_AddType, u8 u8_NoStop, u8 u8_NumByte
 
 /******************************************************************************
 * Function name : I2CInterruptHandle
-* Description 	: Manage all I2C interrupt (STATE MACHINE) 
+* Description 	: Manage all I2C interrupt (STATE MACHINE)
 * Input param 	: None
 * Return 		    : None
 * See also 		  : None
@@ -195,71 +195,71 @@ switch_on(LED1); //test purpose
 /* Check for error in communication */
 if (sr2 != 0)
 {
-	ErrProc();					
+	ErrProc();
 }
-	
+
 	/* Start bit detected */
 	if ((sr1 & I2C_SR1_SB) == 1)
   {
-		switch(STATE) 
+		switch(STATE)
 		{
-			case SB_01:  
+			case SB_01:
 								if (u8_AddType_cpy == TEN_BIT_ADDRESS)
 								{
 									I2C->DR = (u8)(((u16_SlaveAdd_cpy >> 7) & 6) | 0xF0);  // send header of 10-bit device address (R/W = 0)
-									STATE = ADD10_02; 
+									STATE = ADD10_02;
 									break;
 								} else {
 									I2C->DR = (u8)(u16_SlaveAdd_cpy << 1);   // send 7-bit device address & Write (R/W = 0)
-									STATE = ADDR_03; 
+									STATE = ADDR_03;
 									break;
 								}
-								
+
 			case SB_11:
 								if (u8_AddType_cpy == TEN_BIT_ADDRESS)
 								{
 									I2C->DR = (u8)(((u16_SlaveAdd_cpy >> 7) & 6) | 0xF1);// send header of 10-bit device address (R/W = 1)
 								} else {
-									I2C->DR = (u8)(u16_SlaveAdd_cpy << 1)|1 ; // send 7-bit device address & Write (R/W = 1)
+									I2C->DR = (u8)(u16_SlaveAdd_cpy << 1)|1 ; // send 7-bit device address & Read (R/W = 1)
 								}
-								STATE = ADDR_13; 
+								STATE = ADDR_13;
 								break;
-			
+
 			default : ErrProc();
 							break;
 		}
-		
+
 	}
-	
-	
+
+
 	/* ADD10*/
 	if (I2C->SR1 & I2C_SR1_ADD10) {
 		switch(STATE)
 		{
 			case ADD10_02:
-								I2C->DR = (u8)(u16_SlaveAdd_cpy);                // send lower 8-bit device address & Write  
+								I2C->DR = (u8)(u16_SlaveAdd_cpy);                // send lower 8-bit device address & Write
 								STATE = ADDR_03;
 								break;
-	
+
 			default : ErrProc();
 							break;
 		}
 	}
-	
+
 	/* ADDR*/
-  if ((sr1 & I2C_SR1_ADDR) == I2C_SR1_ADDR) 
+  if ((sr1 & I2C_SR1_ADDR) == I2C_SR1_ADDR)
   {
 		switch (STATE)
-		{					
-			case ADDR_13 : 
-								
+		{
+			case ADDR_13 :
+
 									if (u8_NumByte_cpy == 3)
 									{
 										I2C->SR3;
 										STATE = BTF_15;
 										break;
 									}
-									
+
 									if (u8_NumByte_cpy == 2)
 									{
 										// set POS bit
@@ -289,19 +289,19 @@ if (sr2 != 0)
 									}
 									ErrProc();
 									break;
-									
-			case ADDR_03 : 
-								
+
+			case ADDR_03 :
+
 								/* Clear Add Ack Flag */
 								I2C->SR3;
 								I2C->DR = *pu8_DataBuffer_cpy++ ;
 									u8_NumByte_cpy -- ;
 								STATE = BTF_04;
 								break;
-								
+
 			default : ErrProc();
 							break;
-								
+
 		}
 	}
 
@@ -336,15 +336,15 @@ if ((sr1  & I2C_SR1_RXNE)==I2C_SR1_RXNE)
 									STATE = INI_00;
 									set_tout_ms(0);
 									break;
-								
-			case BTF_14 :	
+
+			case BTF_14 :
 									*(pu8_DataBuffer_cpy++) = I2C->DR;
 									u8_NumByte_cpy --;
 									if (u8_NumByte_cpy <= 3)
 										STATE = BTF_15;
 									break;
-			
-			case BTF_15 : 	
+
+			case BTF_15 :
 										I2C->CR2 &= ~I2C_CR2_ACK;                     		// Set NACK (ACK=0)
 										*(pu8_DataBuffer_cpy++) = I2C->DR;                    // Read next data byte
 										I2C->CR2 |= I2C_CR2_STOP;                        // Generate stop here (STOP=1)
@@ -352,23 +352,23 @@ if ((sr1  & I2C_SR1_RXNE)==I2C_SR1_RXNE)
 										I2C->ITR |= I2C_ITR_ITBUFEN; 										// Enable Buffer interrupts (errata)
 										STATE = RXNE_16;
 										break;
-												
-			case BTF_04 : 
+
+			case BTF_04 :
 								if ((u8_NumByte_cpy) && ((I2C->SR1 & I2C_SR1_TXE) == I2C_SR1_TXE))
 								{
 									I2C->DR = *pu8_DataBuffer_cpy++ ;												// Write next data byte
 									u8_NumByte_cpy -- ;
 									break;
-								} 
-								else 
+								}
+								else
 								{
 										if (u8_NoStop_cpy == 0)
-										{										
+										{
 											I2C->CR2 |= I2C_CR2_STOP;                   			// Generate stop here (STOP=1)
 										}
 										else
 										{
-											I2C->ITR = 0;                  // disable interrupt 
+											I2C->ITR = 0;                  // disable interrupt
 										}
 										STATE = INI_00;
 										set_tout_ms(0);
@@ -389,7 +389,7 @@ switch_off(LED1);	//test purpose
 *******************************************************************************/
 void TIM4_Init (void) {
   CLK->PCKENR1 |= 4;               // TIM4 clock enable
-  
+
   TIM4->ARR = 0x80;                // init timer4 1ms interrupts
   TIM4->PSCR= 7;
   TIM4->IER = 1;
@@ -398,7 +398,7 @@ void TIM4_Init (void) {
 
 /******************************************************************************
 * Function name : TIM4InterruptHandle
-* Description 	: Testing load for Main 
+* Description 	: Testing load for Main
 * Input param 	: None
 * Return 		    : None
 * See also 		  : None
@@ -410,9 +410,9 @@ void TIM4InterruptHandle (void) interrupt 23 {
 #endif
 
   u8 dly= 10;
-  
+
   TIM4->SR1= 0;
-  
+
   if(TIM4_tout)
     if(--TIM4_tout == 0)
 		{
