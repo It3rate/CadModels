@@ -475,7 +475,7 @@ DRL	..\..\inc\stm8s.h	163;"	member	struct:ADC1_struct
 DRL	..\..\inc\stm8s.h	237;"	member	struct:ADC2_struct
 DTR	..\..\inc\stm8s.h	497;"	member	struct:TIM1_struct
 DUKR	..\..\inc\stm8s.h	1389;"	member	struct:FLASH_struct
-Delay_us	..\..\src\main.c	17;"	function	signature:(uint32_t us)
+Delay_us	..\..\src\main.c	21;"	function	signature:(uint32_t us)
 ECKR	..\..\inc\stm8s.h	360;"	member	struct:CLK_struct
 EGR	..\..\inc\stm8s.h	1126;"	member	struct:TIM6_struct
 EGR	..\..\inc\stm8s.h	474;"	member	struct:TIM1_struct
@@ -1594,7 +1594,7 @@ bme280_get_sensor_data	..\..\src\bmp280.c	95;"	function	signature:(struct bme280
 bme280_init	..\..\inc\bmp280.h	48;"	prototype	signature:(struct bme280_dev *dev)
 bme280_init	..\..\src\bmp280.c	71;"	function	signature:(struct bme280_dev *dev)
 bme280_uncomp_data	..\..\inc\bmp280.h	29;"	struct
-bmeCalibData	..\..\src\main.c	15;"	variable
+bmeCalibData	..\..\src\main.c	16;"	variable
 bool	..\..\inc\stm8s_type.h	65;"	typedef	typeref:enum:__anon10
 calib_data	..\..\inc\bmp280.h	41;"	member	struct:bme280_dev	typeref:struct:bme280_dev::bme280_calib_data
 chip_id	..\..\inc\bmp280.h	39;"	member	struct:bme280_dev
@@ -1645,17 +1645,19 @@ intf_rslt	..\..\inc\bmp280.h	39;"	member	struct:bme280_dev
 intmax_t	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	42;"	typedef
 intptr_t	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	37;"	typedef
 loop_count	..\..\src\main.c	11;"	variable
-main	..\..\src\main.c	22;"	function	signature:(void)
+main	..\..\src\main.c	26;"	function	signature:(void)
 memchr	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\string.h	34;"	prototype	signature:(void *s, char c, unsigned int n)
 memcmp	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\string.h	28;"	prototype	signature:(void *s1, void *s2, unsigned int n)
 memcpy	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\string.h	35;"	prototype	signature:(void *s1, void *s2, unsigned int n)
 memmove	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\string.h	36;"	prototype	signature:(void *s1, void *s2, unsigned int n)
 memset	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\string.h	37;"	prototype	signature:(void *s, char c, unsigned int n)
+mode	..\..\src\main.c	19;"	variable
 nop	..\..\inc\stm8s.h	2494;"	macro
 nop	..\..\inc\stm8s.h	2503;"	macro
 parse_calib_data	..\..\src\bmp280.c	16;"	function	file:	signature:(const uint8_t *reg_data, struct bme280_dev *dev)
 pressure	..\..\inc\bmp280.h	30;"	member	struct:bme280_uncomp_data
 pressure	..\..\inc\bmp280.h	34;"	member	struct:bme280_data
+pressure	..\..\src\main.c	17;"	variable
 randomRead	..\..\inc\bmp280.h	42;"	member	struct:bme280_dev
 readReg	..\..\inc\bmp280.h	43;"	member	struct:bme280_dev
 rim	..\..\inc\stm8s.h	2492;"	macro
@@ -1686,8 +1688,10 @@ strstr	..\..\..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\string.h	27;"	p
 switch_off	..\..\inc\i2c_master_poll.h	69;"	macro
 switch_on	..\..\inc\i2c_master_poll.h	68;"	macro
 t_fine	..\..\inc\bmp280.h	26;"	member	struct:bme280_calib_data
+tempPressureData	..\..\src\main.c	15;"	variable	typeref:struct:bme280_data
 temperature	..\..\inc\bmp280.h	30;"	member	struct:bme280_uncomp_data
 temperature	..\..\inc\bmp280.h	35;"	member	struct:bme280_data
+temperature	..\..\src\main.c	18;"	variable
 tout	..\..\inc\i2c_master_poll.h	54;"	macro
 trap	..\..\inc\stm8s.h	2495;"	macro
 trap	..\..\inc\stm8s.h	2504;"	macro
