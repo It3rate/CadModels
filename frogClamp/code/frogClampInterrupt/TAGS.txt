@@ -1573,7 +1573,6 @@ UINT_FAST8_MAX	..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	77;"
 UINT_LEAST16_MAX	..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	66;"	macro
 UINT_LEAST32_MAX	..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	67;"	macro
 UINT_LEAST8_MAX	..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	65;"	macro
-USE_I2C_INTERRUPT	inc\config.h	2;"	macro
 ValBit	inc\stm8s.h	2532;"	macro
 WR	inc\stm8s.h	1499;"	member	struct:WWDG_struct
 WRITE	inc\i2c_interrupt.h	22;"	macro

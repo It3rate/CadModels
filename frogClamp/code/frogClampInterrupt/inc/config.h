@@ -1,2 +1,2 @@
 
-#define USE_I2C_INTERRUPT
+//#define USE_I2C_INTERRUPT

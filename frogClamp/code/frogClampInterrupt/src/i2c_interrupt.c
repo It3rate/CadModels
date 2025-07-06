@@ -307,9 +307,9 @@ u8 I2C_ReadInterrupt(u8 i2cDevice, u8 u8_NoStop, u8 *u8_DataBuffer, u8 u8_NumByt
 	// set comunication Timeout
 	set_tout_ms(I2C_TOUT);
 	//generate Start
-	 I2C->CR2 |= 1;
-	 STATE = SB_11;
-	 I2C->ITR |= 3;                  // re-enable interrupt
+	I2C->CR2 |= 1;
+	STATE = SB_11;
+	I2C->ITR |= 3;                  // re-enable interrupt
 	return 1;
 }
 

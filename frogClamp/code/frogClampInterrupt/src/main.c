@@ -26,15 +26,13 @@ void main (void) {
   TIM4_Init();                    
 	I2C_Init();     
 	
-	// Enable all interrupts  
-	enableInterrupts();
-	
 	dev.deviceId = BME280_I2C_ADDR_PRIM;
 	dev.delay_us = Delay_us;	
 	
 #ifdef USE_I2C_INTERRUPT
 	dev.readReg = I2C_ReadRegisterInterrupt;
 	dev.writeReg = I2C_WriteRegisterInterrupt;
+	enableInterrupts();
 #else
 	dev.readReg = I2C_ReadRegister;
 	dev.writeReg = I2C_WriteRegister;
