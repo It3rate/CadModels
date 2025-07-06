@@ -1,0 +1,12 @@
+src\bmp280.c
+src\i2c_interrupt.c
+src\main.c
+stm8_interrupt_vector.c
+inc\bmp280.h
+inc\config.h
+inc\i2c_interrupt.h
+inc\stm8s.h
+inc\stm8s_type.h
+..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\mods0.h
+..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\stdint.h
+..\..\..\..\..\..\cosmic\fse_compilers\cxstm8\hstm8\string.h

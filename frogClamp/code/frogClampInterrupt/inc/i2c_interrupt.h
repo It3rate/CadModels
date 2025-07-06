@@ -1,6 +1,6 @@
 
-#ifndef __I2C_OPT_H
-#define __I2C_OPT_H
+#ifndef __I2C_INTERRUPT_H
+#define __I2C_INTERRUPT_H
 
 #include "config.h"
 #include "stm8s.h"
@@ -58,4 +58,4 @@ u8 I2C_WriteRegisterInterrupt(u8 i2cDevice, u8 u8_regAddr, u8 *u8_DataBuffer, u8
 //@far @interrupt void I2C_error_Interrupt_Handler (void);
 @far @interrupt void TIM4InterruptHandle (void);
 
-#endif /* __I2C_OPT_H */
+#endif /* __I2C_INTERRUPT_H */

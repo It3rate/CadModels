@@ -2,7 +2,7 @@
 #include <string.h>
 #include "config.h"
 #include "stm8s.h"
-#include "i2c_master_poll.h"
+#include "i2c_interrupt.h"
 #include "bmp280.h"
 	
 struct bme280_dev dev = {0};

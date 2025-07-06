@@ -1,4 +1,4 @@
-#include "i2c_master_poll.h"
+#include "i2c_interrupt.h"
 #include <string.h> 
 
 u8  STATE;								// curent I2C states machine state
