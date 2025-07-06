@@ -1,74 +1,61 @@
-/**
-  ******************************************************************************
-  * @file    i2c_opt.h
-  * @author  MCD Application Team
-  * @version V0.0.3
-  * @date    Feb 2010
-  * @brief   This file contains definitions for optimized I2C software
-  ******************************************************************************
-  *
-  * THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS
-  * WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE
-  * TIME. AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY
-  * DIRECT, INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING
-  * FROM THE CONTENT OF SUCH FIRMWARE AND/OR THE USE MADE BY CUSTOMERS OF THE
-  * CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
-  *
-  *                     COPYRIGHT 2009 STMicroelectronics  
-  */ 
 
-/* Define to prevent recursive inclusion */
 #ifndef __I2C_OPT_H
 #define __I2C_OPT_H
 
 #include "stm8s.h"
 #include "bmp280.h"
 
-
-// ************************** I2C Configuration Variables **************************
-
-/* definition of fast or default standard mode (bus speed up to 400 or 100 kHz) */
 //#define FAST_I2C_MODE
-
-/* definition of 10-bit or default 7-bit slave address */
-//#define TEN_BITS_ADDRESS
-
-/* uncomment next line when stop request is required between device address sent and read data */
-//#define NO_RESTART
-
-//#define SLAVE_ADDRESS  0x76 //0x51
-
-// ************************* Function Declaration ***************************
+#define USE_I2C_INTERRUPT
 
 
-void I2C_Init(void);
-void TIM4_Init(void);
-void I2C_RandomRead(u8 i2cDevice, u8 *u8_ReadBuffer, u8 u8_NumByteToRead);
-void I2C_ReadRegister(u8 i2cDevice, u8 u8_regAddr, u8 *u8_ReadBuffer, u8 u8_NumByteToRead);
-void I2C_WriteRegister(u8 i2cDevice, u8 u8_regAddr, u8 *u8_DataBuffer, u8 u8_NumByteToWrite);
-void ErrProc(void);
 
 /* flag clearing sequence - uncoment next for peripheral clock under 2MHz */
 #define dead_time() { /* _asm("nop"); _asm("nop"); */ }
-#define delay(a)          { TIM4_tout= a; while(TIM4_tout); }
 #define tout()            (TIM4_tout)
 #define set_tout_ms(a)    { TIM4_tout= a; }
 extern u16 TIM4_tout;
 
 
-// ************************* Interrupt handler Declaration ***************************
 
-@far @interrupt void I2C_error_Interrupt_Handler (void);
+#define I2C_TOUT  40
+#define WRITE 0
+#define READ  1
+#define STOP 0
+#define NOSTOP 1
+
+// Define I2C STATE MACHINE :
+#define INI_00 00
+
+// Write states 0x
+#define SB_01 01
+//#define ADD10_02 02
+#define ADDR_03 03
+#define BTF_04 04
+
+// Read states 1x
+#define SB_11 11
+//#define ADD10_12 12
+#define ADDR_13 13
+#define BTF_14 14
+#define BTF_15 15
+#define RXNE_16 16
+#define BTF_17 17
+#define RXNE_18 18
+
+void I2C_Init(void);
+void TIM4_Init(void);
+void ErrProc(void);
+
+u8 I2C_ReadRegister(u8 i2cDevice, u8 u8_regAddr, u8 *u8_DataBuffer, u8 u8_NumByteToRead);
+u8 I2C_WriteRegister(u8 i2cDevice, u8 u8_regAddr, u8 *u8_DataBuffer, u8 u8_NumByteToWrite);
+
+u8 I2C_ReadRegisterInterrupt(u8 i2cDevice, u8 u8_regAddr, u8 *u8_DataBuffer, u8 u8_NumByteToRead);
+u8 I2C_WriteRegisterInterrupt(u8 i2cDevice, u8 u8_regAddr, u8 *u8_DataBuffer, u8 u8_NumByteToWrite);
+
+
+@far @interrupt void I2CInterruptHandle (void);
+//@far @interrupt void I2C_error_Interrupt_Handler (void);
 @far @interrupt void TIM4InterruptHandle (void);
 
-// ************************* I2C Example decalaration ***************************
-
-#define BUFFER_LEN 10
-#define LED1  0x20
-#define switch_on(msk) GPIOA->ODR |= (msk) ;
-#define switch_off(msk) GPIOA->ODR &= ~(msk);
-
-
 #endif /* __I2C_OPT_H */
-
-/******************* (C) COPYRIGHT 2009 STMicroelectronics *****END OF FILE****/
