@@ -37,9 +37,14 @@ void I2C_Init(void) {
 
   I2C->OARL = 0xA0;              // own address A0;
   I2C->OARH |= 0x40;
-  I2C->ITR =  1; 								 // 3; // enable Event & error interrupts    1; // enable error interrupts
   I2C->CR2 |= 0x04;              // ACK=1, Ack enable
   I2C->CR1 |= 0x01;              // PE=1
+	
+#ifdef USE_I2C_INTERRUPT
+	I2C->ITR =  3;  							 // enable Event & error interrupts
+#else
+  I2C->ITR =  1; 								 // enable error interrupts
+#endif
 	
 	I2C->CR1 &= ~0x80;             // Stretch enable
 	// Initialise I2C State Machine
@@ -55,7 +60,7 @@ void I2C_Init(void) {
 * Return 		    : None
 * See also 		  : None
 *******************************************************************************/
-void I2C_ReadRegister(u8 i2cDevice, u8 u8_regAddr, u8 *u8_DataBuffer, u8 u8_NumByteToRead)
+u8 I2C_ReadRegister(u8 i2cDevice, u8 u8_regAddr, u8 *u8_DataBuffer, u8 u8_NumByteToRead)
 {
   /*--------------- BUSY? -> STOP request ---------------------*/
 	while(I2C->SR3 & I2C_SR3_BUSY  &&  tout())	  				// Wait while the bus is busy
@@ -148,6 +153,7 @@ void I2C_ReadRegister(u8 i2cDevice, u8 u8_regAddr, u8 *u8_DataBuffer, u8 u8_NumB
   /*--------------- All Data Received -----------------------*/
   while((I2C->CR2 & I2C_CR2_STOP)  &&  tout());     		// Wait until stop is performed (STOPF = 1)
   I2C->CR2 &=~I2C_CR2_POS;                          		// return POS to default state (POS=0)
+	return 1;
 }
 
 /******************************************************************************
@@ -157,7 +163,7 @@ void I2C_ReadRegister(u8 i2cDevice, u8 u8_regAddr, u8 *u8_DataBuffer, u8 u8_NumB
 * Return 		    : None.
 * See also 		  : None.
 *******************************************************************************/
-void I2C_WriteRegister(u8 i2cDevice, u8 u8_regAddr, u8 *u8_DataBuffer, u8 u8_NumByteToWrite)
+u8 I2C_WriteRegister(u8 i2cDevice, u8 u8_regAddr, u8 *u8_DataBuffer, u8 u8_NumByteToWrite)
 {
   while((I2C->SR3 & 2) && tout())       									// Wait while the bus is busy
   {
@@ -193,6 +199,7 @@ void I2C_WriteRegister(u8 i2cDevice, u8 u8_regAddr, u8 *u8_DataBuffer, u8 u8_Num
   
   I2C->CR2 |= 2;                        									// generate stop here (STOP=1)
   while((I2C->CR2 & 2) && tout());      									// wait until stop is performed  
+	return 1;
 }
 
 void ErrProc(void)
@@ -206,15 +213,16 @@ void ErrProc(void)
 }
 
 void TIM4_Init (void) {
+  CLK->PCKENR1 |= 4;               // TIM4 clock enable
   TIM4->ARR = 0x80;                // init 	er 4 1ms inetrrupts
   TIM4->PSCR= 7;
   TIM4->IER = 1;
   TIM4->CR1 |= 1;
 }
 
-@far @interrupt void I2C_error_Interrupt_Handler (void) {
-ErrProc();
-}
+//@far @interrupt void I2C_error_Interrupt_Handler (void) {
+//ErrProc();
+//}
 
 @far @interrupt void TIM4InterruptHandle (void) {
   u8 dly= 10;
@@ -223,6 +231,10 @@ ErrProc();
   
   if(TIM4_tout)
     if(--TIM4_tout == 0)
+		{
+      _asm("nop");
+			ErrProc();
+		}
   while(dly--);
 }
 
@@ -271,6 +283,7 @@ u8 I2C_WriteInterrupt(u8 i2cDevice, u8 u8_NoStop, u8 *pu8_DataBuffer, u8 u8_NumB
 *                 1 : START Reading performed 
 * See also 		  : None
 *******************************************************************************/
+
 u8 I2C_ReadInterrupt(u8 i2cDevice, u8 u8_NoStop, u8 *u8_DataBuffer, u8 u8_NumByteToRead) 
 {
 	// check if communication on going

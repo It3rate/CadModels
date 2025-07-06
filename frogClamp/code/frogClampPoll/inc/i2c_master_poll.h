@@ -5,13 +5,10 @@
 #include "stm8s.h"
 #include "bmp280.h"
 
-#define FAST_I2C_MODE
+//#define FAST_I2C_MODE
+#define USE_I2C_INTERRUPT
 
-void I2C_Init(void);
-void TIM4_Init(void);
-void I2C_ReadRegister(u8 i2cDevice, u8 u8_regAddr, u8 *u8_ReadBuffer, u8 u8_NumByteToRead);
-void I2C_WriteRegister(u8 i2cDevice, u8 u8_regAddr, u8 *u8_DataBuffer, u8 u8_NumByteToWrite);
-void ErrProc(void);
+
 
 /* flag clearing sequence - uncoment next for peripheral clock under 2MHz */
 #define dead_time() { /* _asm("nop"); _asm("nop"); */ }
@@ -46,9 +43,19 @@ extern u16 TIM4_tout;
 #define BTF_17 17
 #define RXNE_18 18
 
+void I2C_Init(void);
+void TIM4_Init(void);
+void ErrProc(void);
+
+u8 I2C_ReadRegister(u8 i2cDevice, u8 u8_regAddr, u8 *u8_DataBuffer, u8 u8_NumByteToRead);
+u8 I2C_WriteRegister(u8 i2cDevice, u8 u8_regAddr, u8 *u8_DataBuffer, u8 u8_NumByteToWrite);
+
+u8 I2C_ReadRegisterInterrupt(u8 i2cDevice, u8 u8_regAddr, u8 *u8_DataBuffer, u8 u8_NumByteToRead);
+u8 I2C_WriteRegisterInterrupt(u8 i2cDevice, u8 u8_regAddr, u8 *u8_DataBuffer, u8 u8_NumByteToWrite);
+
+
 @far @interrupt void I2CInterruptHandle (void);
-@far @interrupt void I2C_error_Interrupt_Handler (void);
+//@far @interrupt void I2C_error_Interrupt_Handler (void);
 @far @interrupt void TIM4InterruptHandle (void);
 
 #endif /* __I2C_OPT_H */
-

@@ -39,8 +39,8 @@ struct bme280_dev {
     uint8_t chip_id, intf_rslt;
     u8 deviceId;
     struct bme280_calib_data calib_data;
-    void (*readReg)(u8 i2cDevice, u8 u8_regAddr, u8 *u8_DataBuffer, u8 u8_NumByteToRead);
-    void (*writeReg)(u8 i2cDevice, u8 u8_regAddr, u8 *u8_DataBuffer, u8 u8_NumByteToWrite);
+    u8 (*readReg)(u8 i2cDevice, u8 u8_regAddr, u8 *u8_DataBuffer, u8 u8_NumByteToRead);
+    u8 (*writeReg)(u8 i2cDevice, u8 u8_regAddr, u8 *u8_DataBuffer, u8 u8_NumByteToWrite);
     void (*delay_us)(uint32_t period);
 };
 

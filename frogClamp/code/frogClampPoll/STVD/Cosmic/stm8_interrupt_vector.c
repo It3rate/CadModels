@@ -3,8 +3,6 @@
  */
 #include "i2c_master_poll.h"
 
-@far @interrupt void TIM4InterruptHandle (void);
-
 typedef void @far (*interrupt_handler_t)(void);
 
 struct interrupt_vector {
@@ -44,7 +42,7 @@ struct interrupt_vector const _vectab[] = {
 	{0x82, NonHandledInterrupt}, /* irq16 */
 	{0x82, NonHandledInterrupt}, /* irq17 */
 	{0x82, NonHandledInterrupt}, /* irq18 */
-	{0x82, I2C_error_Interrupt_Handler}, /* irq19 */
+	{0x82, I2CInterruptHandle}, /* irq19 */
 	{0x82, NonHandledInterrupt}, /* irq20 */
 	{0x82, NonHandledInterrupt}, /* irq21 */
 	{0x82, NonHandledInterrupt}, /* irq22 */

@@ -1,3 +1,4 @@
+
 #include "stm8s.h"
 #include "i2c_master_poll.h"
 #include <string.h>
@@ -28,9 +29,15 @@ void main (void) {
 	enableInterrupts();
 	
 	dev.deviceId = BME280_I2C_ADDR_PRIM;
+	dev.delay_us = Delay_us;	
+	
+#ifdef USE_I2C_INTERRUPT
+	dev.readReg = I2C_ReadRegisterInterrupt;
+	dev.writeReg = I2C_WriteRegisterInterrupt;
+#else
 	dev.readReg = I2C_ReadRegister;
 	dev.writeReg = I2C_WriteRegister;
-	dev.delay_us = Delay_us;
+#endif
 	
 	set_tout_ms(10);
 	bme280_init(&dev);
