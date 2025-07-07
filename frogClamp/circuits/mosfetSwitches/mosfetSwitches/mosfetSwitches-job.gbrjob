@@ -5,7 +5,7 @@
       "Application": "Pcbnew",
       "Version": "9.0.2"
     },
-    "CreationDate": "2025-06-30T15:03:41-05:00"
+    "CreationDate": "2025-07-06T13:46:58-05:00"
   },
   "GeneralSpecs": {
     "ProjectId": {
@@ -32,14 +32,9 @@
   ],
   "FilesAttributes": [
     {
-      "Path": "mosfetSwitches-F_Cu.gbr",
-      "FileFunction": "Copper,L1,Top",
+      "Path": "mosfetSwitches-F_Paste.gbr",
+      "FileFunction": "SolderPaste,Top",
       "FilePolarity": "Positive"
-    },
-    {
-      "Path": "mosfetSwitches-F_Mask.gbr",
-      "FileFunction": "SolderMask,Top",
-      "FilePolarity": "Negative"
     },
     {
       "Path": "mosfetSwitches-Edge_Cuts.gbr",

@@ -25,6 +25,7 @@
 (Y range:    0.3892 ...   21.5918  mm)
 
 (Spindle Speed: None RPM)
+S0
 G21
 G90
 G94
